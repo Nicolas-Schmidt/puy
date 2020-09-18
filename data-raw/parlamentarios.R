@@ -1,12 +1,10 @@
 
-
 library(tabulizer)
 library(tidyverse)
 file <- "C:\\Users\\usuario\\Desktop\\R_packages\\speech\\ParlamentariosUruguayos.pdf"
 
 # tabla de periodos de legislaturas
 tabla_legis <- extract_tables(file, pages = 96)
-
 
 legisladores <-
     extract_text(file, pages = 296:1207) %>%
@@ -23,9 +21,6 @@ lista_legis <- list()
 for(i in 1: (length(ul)-1)){
     lista_legis[[i]] <- legisladores[ul[i]:(ul[i+1]-1)]
 }
-
-
-
 
 lista_df_legis <- list()
 
@@ -76,7 +71,6 @@ l <- do.call(rbind, lista_df_legis)
 
 # variable :: partido
 source('data-raw/var_partido.R')
-
 
 
 unique(l$partido)[1:10]
