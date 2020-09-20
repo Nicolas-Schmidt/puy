@@ -23,10 +23,9 @@ for(i in 1: (length(ul)-1)){
 }
 
 lista_df_legis <- list()
-
 for(j in 1:length(lista_legis)){
 
-    m <- lista_legis[[j]]
+    m <- lista_legis[[j]]#954
     print(j)
 
     # partido
@@ -43,16 +42,23 @@ for(j in 1:length(lista_legis)){
     observa  <- ifelse(length(ubic_obs) == 0, "",  paste(m[ubic_obs[1]:length(m)], collapse = " ____ "))
 
     # fechas
-    vector_fechas <- m[(ubic_chamb[length(ubic_chamb)]+1):ifelse(length(ubic_obs) == 0, (ubic_chamb[length(ubic_chamb)]+1), (ubic_obs[1]-1))]
-    vector_fechas <- ifelse(length(ubic_chamb) == length(vector_fechas), vector_fechas, paste(vector_fechas, collapse = " ____ "))
+    vector_fechas <- m[(ubic_chamb[length(ubic_chamb)]+1) : ifelse(length(ubic_obs) == 0, length(m), (ubic_obs[1]-1))]
+    if(length(ubic_chamb) == length(vector_fechas)){
+        vector_fechas <- vector_fechas
+        testigo_fecha <- ifelse(stringr::str_detect(string = vector_fechas, pattern = "Suple"), 1L, 0L)
+    } else {
+        vector_fechas <- paste(vector_fechas, collapse = " ____ ")
+        testigo_fecha <- ifelse(stringr::str_detect(string = vector_fechas, pattern = "___"), 1L, 0L)
+    }
 
     # armo data
     m2 <- data.frame(
-        legislador   = m[1],
-        partido      = ifelse(length(ubic_party) == 1, substring(partido, regexpr(pattern = "P", partido), nchar(partido)), partido),
-        legislatura  = substring(m[ubic_chamb], 1, 2),
-        proto_camara = m[ubic_chamb],
-        fechas       = vector_fechas#,
+        legislador    = m[1],
+        partido       = ifelse(length(ubic_party) == 1, substring(partido, regexpr(pattern = "P", partido), nchar(partido)), partido),
+        legislatura   = substring(m[ubic_chamb], 1, 2),
+        proto_camara  = m[ubic_chamb],
+        fechas        = vector_fechas,
+        testigo_fecha = testigo_fecha
         #observa      = observa
     )
 
@@ -74,4 +80,9 @@ source('data-raw/var_partido.R')
 
 
 unique(l$partido)[1:10]
+
+
+
+f <- distinct(l[, c('legislador', 'testigo_fecha')])
+
 
