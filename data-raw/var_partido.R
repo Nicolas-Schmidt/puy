@@ -83,7 +83,7 @@ l[l$partido == "RepresentÃ³ al Partido Nacional (26, 27, 28. 30, 31, 37, 38 y 
 l[l$partido == "RepresentÃ³ al Partido Nacional (26, 27, 28. 30, 31, 37, 38 y 39) ____ RepresentÃ³ al Partido Nacional Independiente (34, 35 y 36)" & l$legislatura %in% c(34, 35, 36), "partido"] <- "Partido Nacional Independiente"
 #
 l[l$partido == "RepresentÃ³ al Partido Comunista del Uruguay (35 y 38) ____ RepresentÃ³ al Frente Izquierda de LiberaciÃ³n (39 y 40) ____ RepresentÃ³ al Partido DemÃ³crata Cristiano (Frente Amplio) (41)" & l$legislatura %in% c(35, 38), "partido"] <- "Partido Comunista del Uruguay"
-l[l$partido == "RepresentÃ³ al Partido Comunista del Uruguay (35 y 38) ____ RepresentÃ³ al Frente Izquierda de LiberaciÃ³n (39 y 40) ____ RepresentÃ³ al Partido DemÃ³crata Cristiano (Frente Amplio) (41)" & l$legislatura %in% c(39, 40), "partido"] <- "rente Izquierda de Liberacion"
+l[l$partido == "RepresentÃ³ al Partido Comunista del Uruguay (35 y 38) ____ RepresentÃ³ al Frente Izquierda de LiberaciÃ³n (39 y 40) ____ RepresentÃ³ al Partido DemÃ³crata Cristiano (Frente Amplio) (41)" & l$legislatura %in% c(39, 40), "partido"] <- "Frente Izquierda de Liberacion"
 l[l$partido == "RepresentÃ³ al Partido Comunista del Uruguay (35 y 38) ____ RepresentÃ³ al Frente Izquierda de LiberaciÃ³n (39 y 40) ____ RepresentÃ³ al Partido DemÃ³crata Cristiano (Frente Amplio) (41)" & l$legislatura == 41, "partido"] <- "Partido Frente Amplio"
 #
 l[l$partido == "RepresentÃ³ al Partido Colorado (28,29 y 32 ____ RepresentÃ³ al Partido por la TradiciÃ³n Colorada (31)" & l$legislatura %in% c(28, 29, 32), "partido"] <- "Partido Colorado"
@@ -129,7 +129,101 @@ l[l$partido == "Progresista/Frente Amplio (45)", "partido"] <- "Partido Frente A
 l[l$partido == "RepresentÃ³ al Partido Frente Amplio (44) ____ Represento al Encuentro Progresista/Frente Amplio (45)", "partido"] <- "Partido Frente Amplio"
 l[grep(x = l$partido, pattern = "^RepresentÃ³ al Partido Frente Amplio \\(44\\) ____ RepresentÃ³ al Encuentro Progresista/Frente Amplio \\(45\\) ____ RepresentÃ³ al Encuentro Progresista/Frente Amplio/Nueva Mayor"), "partido"] <- "Partido Frente Amplio"
 l[grep(x = l$partido, pattern = "^RepresentÃ³ a la UniÃ³n C"), "partido"] <- "Partido Union Civica del Uruguay"
+l[l$partido == "RepresentÃ³ al Partido Frente Amplio (44) ____ Represento al Encuentro Progresista/Frente Amplio (45)" , "partido"] <- "Partido Frente Amplio"
+#
+l[l$partido == "RepresentÃ³ al Partido Nacional (Legislaturas 26,27 y 28) ____ RepresentÃ³ al Partido Radicalismo Blanco (Legislaturas 29 y 30)" & l$legislatura %in% c(26, 27, 28), "partido"] <- "Partido Nacional"
+l[l$partido == "RepresentÃ³ al Partido Nacional (Legislaturas 26,27 y 28) ____ RepresentÃ³ al Partido Radicalismo Blanco (Legislaturas 29 y 30)" & l$legislatura %in% c(29, 30), "partido"] <- "Partido Radicalismo Blanco"
+#
+l[l$partido == "RepresentÃ³ al Partido Socialista (33,34,35 y 36) ____ RepresentÃ³ al Partido DemÃ³crata Cristiano (Frente Amplio) (42)" & l$legislatura %in% c(33, 34, 35, 36), "partido"] <- "Partido Socialista"
+l[l$partido == "RepresentÃ³ al Partido Socialista (33,34,35 y 36) ____ RepresentÃ³ al Partido DemÃ³crata Cristiano (Frente Amplio) (42)" & l$legislatura == 42, "partido"] <- "Partido Frente Amplio"
+#
+l[l$partido == "RepresentÃ³ al Partido Nacional Independiente (36) ____ RepresentÃ³ al Partido Nacional (39.40 y 41)" & l$legislatura == 36, "partido"] <- "Partido Nacional Independiente"
+l[l$partido == "RepresentÃ³ al Partido Nacional Independiente (36) ____ RepresentÃ³ al Partido Nacional (39.40 y 41)" & l$legislatura %in% c(39, 40, 41), "partido"] <- "Partido Nacional"
+#
+l[grep(x = l$partido, pattern = "^RepresentÃ³ al Partido Encuentro Progresista/Frente Amplio \\(45\\) ____ RepresentÃ³ al Encuentro Progresista/Frente Amplio/Nueva Mayor"), "partido"] <- "Partido Frente Amplio"
+l[l$partido == "RepresentÃ³ al Partido Colorado ____ RepresentÃ³ al Partido Colorado" , "partido"] <- "Partido Colorado"
+l[l$partido == "Partido DemÃ³crata Cristiano" , "partido"] <- "Partido Democrata Cristiano"
+#
+l[l$partido == "RepresentÃ³  al Partido Colorado (40) ____ RepresentÃ³ al Partido DemÃ³crata Cristiano (Frente Amplio) (42) ____ RepresentÃ³ al Partido por el Gobierno del Pueblo (43)" & l$legislatura == 40, "partido"] <- "Partido Colorado"
+l[l$partido == "RepresentÃ³  al Partido Colorado (40) ____ RepresentÃ³ al Partido DemÃ³crata Cristiano (Frente Amplio) (42) ____ RepresentÃ³ al Partido por el Gobierno del Pueblo (43)" & l$legislatura == 42, "partido"] <- "Partido Frente Amplio"
+l[l$partido == "RepresentÃ³  al Partido Colorado (40) ____ RepresentÃ³ al Partido DemÃ³crata Cristiano (Frente Amplio) (42) ____ RepresentÃ³ al Partido por el Gobierno del Pueblo (43)" & l$legislatura == 43, "partido"] <- "Partido por el Gobierno del Pueblo"
+#
+l[l$partido == "RepresentÃ³ al Partido DemÃ³crata Cristiano (Frente Amplio) (42) ____ RepresentÃ³ al Frente Amplio (43 y 44) ____ RepresentÃ³ al Encuentro Progresista/Frente Amplio (45)", "partido"] <- "Partido Frente Amplio"
+l[l$partido == "Partido DemÃ³crata Cristiano (Frente Amplio) (42)", "partido"] <- "Partido Frente Amplio"
+l[l$partido == "RepresentÃ³ al Partido Frente Amplio (44) ____ RepresentÃ³ al Partido Encuentro Progresista/Frente Amplio (45)", "partido"] <- "Partido Frente Amplio"
+l[l$partido == "Partido DemÃ³crata Cristiano (Frente Amplio)", "partido"] <- "Partido Frente Amplio"
+l[l$partido == "RepresentÃ³ al Partido DemÃ³crata Cristiano (Frente Amplio) (42) ____ RepresentÃ³ al Partido Frente Amplio (43)", "partido"] <- "Partido Frente Amplio"
+#
+l[l$partido == "RepresentÃ³ al Partido Socialista (38) ____ RepresentÃ³ al Partido DemÃ³crata Cristiano (Frente Amplio) (42)" & l$legislatura == 38, "partido"] <- "Partido Socialista"
+l[l$partido == "RepresentÃ³ al Partido Socialista (38) ____ RepresentÃ³ al Partido DemÃ³crata Cristiano (Frente Amplio) (42)" & l$legislatura == 42, "partido"] <- "Partido Frente Amplio"
+#
+l[grep(x = l$partido, pattern = "^RepresentÃ³ al Partido Frente Amplio \\(43\\) ____ RepresentÃ³ al Encuentro Progresista/Frente Amplio/Nueva Mayor"), "partido"] <- "Partido Frente Amplio"
+l[grep(x = l$partido, pattern = "^RepresentÃ³ al Partido Frente Amplio \\(44\\) ____ RepresentÃ³ al Partido Encuentro Progresista/Frente Amplio (45) ____ RepresentÃ³ al Encuentro Progresista/Frente Amplio/Nueva Mayor"), "partido"] <- "Partido Frente Amplio"
+l[grep(x = l$partido, pattern = "^RepresentÃ³ al Partido Frente Amplio (44) ____ RepresentÃ³ al Partido Encuentro Progresista/Frente Amplio \\(45\\) ____ RepresentÃ³ al  Encuentro Progresista/Frente Amplio/Nueva Mayor"), "partido"] <- "Partido Frente Amplio"
+l[grep(x = l$partido, pattern = "^RepresentÃ³ al Partido Frente Amplio \\(43 y 44\\) ____ RepresentÃ³ al Encuentro Progresista/Frente Amplio 45\\) ____ RepresentÃ³ al Encuentro Progresista/Frente Amplio/Nueva Mayor"), "partido"] <- "Partido Frente Amplio"
+l[grep(x = l$partido, pattern = "^RepresentÃ³ al Partido DemÃ³crata Cristiano \\(Frente Amplio\\) \\(41\\) ____ RepresentÃ³ al Partido Frente Amplio \\(44\\) ____ RepresentÃ³ al Partido Encuentro Progresista/Frente Amplio \\(45\\) ____ RepresentÃ³ al  Encuentro Progresista/Frente Amplio/Nueva Mayor"), "partido"] <- "Partido Frente Amplio"
+#
+l[l$partido == "RepresentÃ³ al Partido Nacional  (29,30 y 34) ____ RepresentÃ³ al Partido Nacional Independiente (35,36 y 37)" & l$legislatura %in% c(29, 30, 34), "partido"] <- "Partido Nacional"
+l[l$partido == "RepresentÃ³ al Partido Nacional  (29,30 y 34) ____ RepresentÃ³ al Partido Nacional Independiente (35,36 y 37)" & l$legislatura %in% c(35, 36, 37), "partido"] <- "Partido Nacional Independiente"
+#
+l[l$partido == "RepresentÃ³ al Partido Comunista del Uruguay (34,35,36,37 y 38) ____ RepresentÃ³ al Frente Izquierda de LiberaciÃ³n (39 y 40) ____ RepresentÃ³ al Partido DemÃ³crata Cristiano (Frente Amplio) (41)" & l$legislatura %in% c(34, 35, 36, 37, 38), "partido"] <- "Partido Nacional"
+l[l$partido == "RepresentÃ³ al Partido Comunista del Uruguay (34,35,36,37 y 38) ____ RepresentÃ³ al Frente Izquierda de LiberaciÃ³n (39 y 40) ____ RepresentÃ³ al Partido DemÃ³crata Cristiano (Frente Amplio) (41)" & l$legislatura %in% c(39, 40), "partido"] <- "Frente Izquierda de Liberacion"
+l[l$partido == "RepresentÃ³ al Partido Comunista del Uruguay (34,35,36,37 y 38) ____ RepresentÃ³ al Frente Izquierda de LiberaciÃ³n (39 y 40) ____ RepresentÃ³ al Partido DemÃ³crata Cristiano (Frente Amplio) (41)" & l$legislatura == 41, "partido"] <- "Partido Frente Amplio"
+#
+l[l$partido == "RepresentÃ³ al Partido Nacional (30 y 31) ____ RepresentÃ³ al Partido Nacional Independiente (34)" & l$legislatura %in% c(30, 31), "partido"] <- "Partido Nacional"
+l[l$partido == "RepresentÃ³ al Partido Nacional (30 y 31) ____ RepresentÃ³ al Partido Nacional Independiente (34)" & l$legislatura  == 34, "partido"] <- "Partido Nacional Independiente"
+#
+l[l$partido == "RepresentÃ³ al Partido Por el Gobierno del Pueblo (43) ____ RepresentÃ³ al Partido Nuevo Espacio (44)" & l$legislatura == 43, "partido"] <- "Partido Por el Gobierno del Pueblo"
+l[l$partido == "RepresentÃ³ al Partido Por el Gobierno del Pueblo (43) ____ RepresentÃ³ al Partido Nuevo Espacio (44)" & l$legislatura == 44, "partido"] <- "Partido Nuevo Espacio"
+#
+l[l$partido == "RepresentÃ³ al Partido Nacional (31 y 38) ____ RepresentÃ³ al Partido Nacional Independiente (34,35 y 36)" & l$legislatura %in% c(31, 38), "partido"] <- "Partido Nacional"
+l[l$partido == "RepresentÃ³ al Partido Nacional (31 y 38) ____ RepresentÃ³ al Partido Nacional Independiente (34,35 y 36)" & l$legislatura %in% c(34, 35, 36), "partido"] <- "Partido Nacional Independiente"
+#
+l[l$partido == "Partido Colorado General Rivera ", "partido"] <- "Partido Colorado General Rivera"
+l[l$partido == "Represento al Partido DemÃ³crata Cristiano (Frente Amplio) (42) ____ RepresentÃ³ al Partido Frente Amplio (43)", "partido"] <- "Partido Frente Amplio"
+l[l$partido == "RepresentÃ³ al Partido DemÃ³crata Cristiano (Frente Amplio) ( 41 y 42) ____ RepresentÃ³ al Partido Frente Amplio ( 43)", "partido"] <- "Partido Frente Amplio"
+l[grep(x = l$partido, pattern = "^RepresentÃ³ al Partido Frente Amplio \\(43 y 44\\) ____ RepresentÃ³ al Encuentro Progresista/Frente Amplio \\(45\\) ____ RepresentÃ³ al Encuentro Progresista/Frente Amplio/Nueva Mayor"), "partido"] <- "Partido Frente Amplio"
+l[l$partido == "Progresista/Frente Amplio ", "partido"] <- "Partido Frente Amplio"
+l[l$partido == "RepresentÃ³ al Frente Izquierda de LiberaciÃ³n", "partido"] <- "Frente Izquierda de Liberacion"
+#
+l[l$partido == "RepresentÃ³ al Partido Colorado ( 27 y 28) ____ RepresentÃ³ al Partido Colorado General Rivera ( 29 y 30)" & l$legislatura %in% c(27, 28), "partido"] <- "Partido Colorado"
+l[l$partido == "RepresentÃ³ al Partido Colorado ( 27 y 28) ____ RepresentÃ³ al Partido Colorado General Rivera ( 29 y 30)" & l$legislatura %in% c(29, 30), "partido"] <- "Partido Colorado General Rivera"
+#
+l[l$partido == "RepresentÃ³ al Partido Socialista (33,34,35 y 36) ____ RepresentÃ³ al Partido DemÃ³crata Cristiano (Frente Amplio) (42)" & l$legislatura %in% c(33, 34, 35, 36), "partido"] <- "Partido Socialista"
+l[l$partido == "RepresentÃ³ al Partido Socialista (33,34,35 y 36) ____ RepresentÃ³ al Partido DemÃ³crata Cristiano (Frente Amplio) (42)" & l$legislatura == 42, "partido"] <- "Partido Frente Amplio"
+#
+l[l$partido == "Represento al Partido DemÃ³crata Cristiano (Frente Amplio) (42) ____ RepresentÃ³ al Partido Por el Gobierno del Pueblo (43)" & l$legislatura == 42, "partido"] <- "Partido Frente Amplio"
+l[l$partido == "Represento al Partido DemÃ³crata Cristiano (Frente Amplio) (42) ____ RepresentÃ³ al Partido Por el Gobierno del Pueblo (43)" & l$legislatura == 42, "partido"] <- "Partido Por el Gobierno del Pueblo"
+#
+l[l$partido == "RepresentÃ³ al Partido Nacional (38)  ____ RepresentÃ³ al Frente Izquierda de LiberaciÃ³n (39 y 40)" & l$legislatura == 38, "partido"] <- "Partido Nacional"
+l[l$partido == "RepresentÃ³ al Partido Nacional (38)  ____ RepresentÃ³ al Frente Izquierda de LiberaciÃ³n (39 y 40)" & l$legislatura %in% c(39, 40), "partido"] <- "Frente Izquierda de Liberacion"
 
 
 
-unique(l$partido)[1:50]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
