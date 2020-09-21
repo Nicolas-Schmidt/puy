@@ -73,6 +73,9 @@ l$legislador <- stringr::str_replace_all(string = l$legislador, pattern = "Quint
 l$legislador <- stringr::str_replace_all(string = l$legislador, pattern = "VelardÃ©s"     , "Velardes")
 l$legislador <- stringr::str_replace_all(string = l$legislador, pattern = "MatÃ"          , "Mati")
 l$legislador <- stringr::str_replace_all(string = l$legislador, pattern = "RenÃ©"         , "Rene")
+l$legislador <- stringr::str_replace_all(string = l$legislador, pattern = "GermÃ¡n"       , "German")
+
+
 
 ## apellidos
 
@@ -101,12 +104,24 @@ l$legislador <- stringr::str_replace_all(string = l$legislador, pattern = "BARA�
 
 
 
-unique(l$legislador)[]
+#unique(l$legislador)[]
 
-l$legislador[stringr::str_detect(l$legislador, "Zacari")]
+#l$legislador[stringr::str_detect(l$legislador, "Zacari")]
 
 
-l$legislador <- stringr::str_remove_all(l$legislador, pattern = "[^A-z. ]")
+l$legislador2 <- stringr::str_remove_all(l$legislador, pattern = "[^A-z. ]")
+apellidos <- stringr::str_sub(stringr::str_extract(l$legislador2, "([A-Z. ]){1,}"), 1, -2)
+nombre    <- sapply(stringr::str_extract_all(l$legislador2, "([A-Z]{1}[a-z]{2,})"), paste, collapse = " ")
+l$legislador2 <- paste(apellidos, nombre, sep = ", ")
+
+
+
+
+
+
+View(l)
+
+
 
 
 

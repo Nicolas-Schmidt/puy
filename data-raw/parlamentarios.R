@@ -117,10 +117,19 @@ base_testigo_1 <- data.frame(
 
 l <- rbind(base_testigo_0, base_testigo_1)
 
-View(l)
-
+#View(l)
 # check
-l$fecha_inicio[stringr::str_which(l$fecha_inicio, pattern = '^\\D')]
+#l$fecha_inicio[stringr::str_which(l$fecha_inicio, pattern = '^\\D')]
+
+
+
+
+
+
+
+
+
+
 
 
 
