@@ -75,14 +75,57 @@ for(j in 1:length(lista_legis)){
 
 l <- do.call(rbind, lista_df_legis)
 
-# variable :: partido
-source('data-raw/var_partido.R')
 
 
-unique(l$partido)[1:10]
+## periodo en el cargo del legislador
+
+base_testigo_0 <- subset(l, l$testigo_fecha == 0)
+base_testigo_1 <- subset(l, l$testigo_fecha == 1) # error
+
+## base 0
+base_testigo_0 <- separate(data = base_testigo_0,
+                           col = 'fechas',
+                           into = c("fecha_inicio", "fecha_fin"),
+                           sep = "( a | al )")
+
+base_testigo_0$fecha_inicio <-
+    substring(base_testigo_0$fecha_inicio, 7, 50) %>%
+    stringr::str_remove_all(pattern = "(al...|\\.\\.\\.)") %>%
+    stringr::str_squish()
+
+base_testigo_0$fecha_fin <-
+    stringr::str_remove_all(base_testigo_0$fecha_fin, pattern = "[^A-z\\d. ]") %>%
+    stringr::str_remove_all(pattern = "(Diputados|Senado)") %>%
+    stringr::str_squish()
+
+
+## base 1
+
+base_testigo_1 <- data.frame(
+    legislador      = base_testigo_1$legislador,
+    partido         = base_testigo_1$partido,
+    legislatura     = base_testigo_1$legislatura,
+    proto_camara    = base_testigo_1$proto_camara,
+    fecha_inicio    = base_testigo_1$fechas,
+    fecha_fin       = NA,
+    testigo_fecha   = base_testigo_1$testigo_fecha,
+    camara          = base_testigo_1$camara,
+    condicion       = base_testigo_1$condicion,
+    departamento    = base_testigo_1$departamento
+)
+
+
+l <- rbind(base_testigo_0, base_testigo_1)
+
+View(l)
+
+# check
+l$fecha_inicio[stringr::str_which(l$fecha_inicio, pattern = '^\\D')]
 
 
 
-f <- distinct(l[, c('legislador', 'testigo_fecha')])
+
+
+
 
 
