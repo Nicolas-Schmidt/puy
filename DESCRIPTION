@@ -13,7 +13,12 @@ Authors@R: c(person(given = "Nicolas",
                     role = c("aut")),
              person(given = "Alfonso",
                     family = "Castiglia",
-                    role = c("aut"))
+                    role = c("aut")), 
+             person(given = "Fabricio",
+                    family = "Carneiro",
+                    role = c("aut")),
+             person(family = "Unidad de Metodos y Acceso a Datos (UMAD)",
+                    role = c("dtc"))
                     )
 Maintainer: Nicolas Schmidt <nschmidt@cienciassociales.edu.uy>
 Description: Contiene una base de datos original de politicos uruguayos desde 1830. 
