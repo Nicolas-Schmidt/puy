@@ -24,16 +24,16 @@ políticos que ocuparon alguna cartera ministerial.
 
 ##### Responsables
 
-| Responsable        | Datos                       | Periodo     | Avance                            | Pendiente              | Status           |
-| ------------------ | --------------------------- | ----------- | --------------------------------- | ---------------------- | ---------------- |
-| NicolásSchmidt     | Poder Legislativo           | 1830 - 2020 | 1830 - 2005: :heavy\_check\_mark: | 2006 - 2020: :warning: | 92% :arrow\_up:  |
-| Antonio Cardarello | Ejecutivo departamental     | 1830 - 2020 | 1830 - 2020: :x:                  | 1830 - 2020: :warning: | 0% :arrow\_down: |
-| Alfonso Castiglia  | Gabinetes Ministeriales     | 1830 - 2020 | 1830 - 2020: :x:                  | 1830 - 2020: :warning: | 0% :arrow\_down: |
-| Fabricio Carneiro  | Directores OPP              | 196..- 2020 | 1830 - 2020: :x:                  | 1830 - 2020: :warning: | 0% :arrow\_down: |
-| Fabricio Carneiro  | Presidencia de la Republica | 1830 - 2020 | 1830 - 2020: :x:                  | 1830 - 2020: :warning: | 0% :arrow\_down: |
-| Fabricio Carneiro  | BROU                        | 1896 - 2020 | 1896 - 2020: :x:                  | 1896 - 2020: :warning: | 0% :arrow\_down: |
-| Fabricio Carneiro  | Banco Central               | 1967 - 2020 | 1967 - 2020: :x:                  | 1967 - 2020: :warning: | 0% :arrow\_down: |
-| \-                 | Entes publicos              | \-          | \-                                | \-                     | \-               |
+| Responsable | Datos                   | Periodo     | Avance                            | Pendiente              | Status           |
+| ----------- | ----------------------- | ----------- | --------------------------------- | ---------------------- | ---------------- |
+| Schmidt     | Poder Legislativo       | 1830 - 2020 | 1830 - 2005: :heavy\_check\_mark: | 2006 - 2020: :warning: | 92% :arrow\_up:  |
+| Cardarello  | Ejecutivo departamental | 1830 - 2020 | 1830 - 2020: :x:                  | 1830 - 2020: :warning: | 0% :arrow\_down: |
+| Castiglia   | Gabinetes Ministeriales | 1830 - 2020 | 1830 - 2020: :x:                  | 1830 - 2020: :warning: | 0% :arrow\_down: |
+| Carneiro    | Directores OPP          | 196..- 2020 | 1830 - 2020: :x:                  | 1830 - 2020: :warning: | 0% :arrow\_down: |
+| Carneiro    | Presidencia y Vice      | 1830 - 2020 | 1830 - 2020: :x:                  | 1830 - 2020: :warning: | 0% :arrow\_down: |
+| Carneiro    | BROU                    | 1896 - 2020 | 1896 - 2020: :x:                  | 1896 - 2020: :warning: | 0% :arrow\_down: |
+| Carneiro    | Banco Central           | 1967 - 2020 | 1967 - 2020: :x:                  | 1967 - 2020: :warning: | 0% :arrow\_down: |
+| \-          | Entes publicos          | \-          | \-                                | \-                     | \-               |
 
 **Juntas Militares?** Para hacer la trayectoria de civiles que iniciaron
 en politica y se volveron gorilas… Alberto Demicheli recuerdo es el
