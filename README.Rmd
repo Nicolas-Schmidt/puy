@@ -104,15 +104,29 @@ politicos2 <-
     na.omit() %>% 
     split(.$legislador2)
     
+set <- politicos2[[which.max(lapply(politicos2, nrow))]]
+rownames(set) <- NULL
 
-unique(politicos2[[which.max(lapply(politicos2, nrow))]]$legislador2)
-
-legis <- unique(politicos2[[which.max(lapply(politicos2, nrow))]]$legislatura)
+legis <- unique(set$legislatura)
 cat("\nLegislaturas:\n", " numero  : ", legis, "\n", " cantidad: ", length(legis))
 
-unique(politicos2[[which.max(lapply(politicos2, nrow))]]$partido)
+
+set
 
 
+## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## legislador más party-volat
+## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+set2 <-  do.call(rbind, politicos2[lengths(lapply(politicos2, function(x){unique(x$partido)})) == 3])
+unique(set2$legislador2)
+
+
+print(tibble::as_tibble(set2), n = Inf)
+
+# global
+table(sapply(politicos2, function(x){length(unique(x$partido))}))
 
 ```
 
