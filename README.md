@@ -70,12 +70,12 @@ source("https://install-github.me/Nicolas-Schmidt/puy")
 
 ### Ejemplo
 
-    #> -- Attaching packages ---------------------------------------------------------------------------------------- tidyverse 1.3.0 --
+    #> -- Attaching packages ------------------------------------------ tidyverse 1.3.0 --
     #> v ggplot2 3.3.2     v purrr   0.3.4
     #> v tibble  3.0.1     v dplyr   0.8.5
     #> v tidyr   1.1.0     v stringr 1.4.0
     #> v readr   1.3.1     v forcats 0.5.0
-    #> -- Conflicts ------------------------------------------------------------------------------------------- tidyverse_conflicts() --
+    #> -- Conflicts --------------------------------------------- tidyverse_conflicts() --
     #> x dplyr::filter() masks stats::filter()
     #> x dplyr::lag()    masks stats::lag()
 
@@ -147,81 +147,59 @@ set
 set2 <-  do.call(rbind, politicos2[lengths(lapply(politicos2, function(x){unique(x$partido)})) == 3])
 unique(set2$legislador2)
 #>  [1] "ALONSO, Nelson"         "ARISMENDI, Rodney"      "BATALLA, Hugo"         
-#>  [4] "CARDOSO, Jose Pedro"    "ERRO, Enrique"          "FAU, Yamandu"          
-#>  [7] "MIERES, Pablo"          "PRANDO, Carlos Maria"   "PRIETO, Baltasar"      
-#> [10] "ROBALLO, Alba"          "RODRIGUEZ, Enrique"     "SANTAMARINA, Eden Melo"
+#>  [4] "ERRO, Enrique"          "FAU, Yamandu"           "MIERES, Pablo"         
+#>  [7] "PRANDO, Carlos Maria"   "PRIETO, Baltasar"       "ROBALLO, Alba"         
+#> [10] "RODRIGUEZ, Enrique"     "SANTAMARINA, Eden Melo"
 
 
-print(tibble::as_tibble(set2), n = Inf)
-#> # A tibble: 60 x 4
-#>    legislador2            legislatura partido                           camara  
-#>    <chr>                        <dbl> <chr>                             <chr>   
-#>  1 ALONSO, Nelson                  40 Partido Colorado                  Diputad~
-#>  2 ALONSO, Nelson                  42 Partido Frente Amplio             Diputad~
-#>  3 ALONSO, Nelson                  42 Partido Frente Amplio             Senado  
-#>  4 ALONSO, Nelson                  43 Partido por el Gobierno del Pueb~ Senado  
-#>  5 ARISMENDI, Rodney               34 Partido Comunista del Uruguay     Diputad~
-#>  6 ARISMENDI, Rodney               35 Partido Comunista del Uruguay     Diputad~
-#>  7 ARISMENDI, Rodney               36 Partido Comunista del Uruguay     Diputad~
-#>  8 ARISMENDI, Rodney               37 Partido Comunista del Uruguay     Diputad~
-#>  9 ARISMENDI, Rodney               38 Partido Comunista del Uruguay     Diputad~
-#> 10 ARISMENDI, Rodney               39 Frente Izquierda de Liberacion    Diputad~
-#> 11 ARISMENDI, Rodney               40 Frente Izquierda de Liberacion    Diputad~
-#> 12 ARISMENDI, Rodney               41 Partido Frente Amplio             Diputad~
-#> 13 BATALLA, Hugo                   38 Partido Colorado                  Diputad~
-#> 14 BATALLA, Hugo                   39 Partido Colorado                  Diputad~
-#> 15 BATALLA, Hugo                   40 Partido Colorado                  Diputad~
-#> 16 BATALLA, Hugo                   41 Partido Democrata Cristiano       Diputad~
-#> 17 BATALLA, Hugo                   42 Partido Democrata Cristiano       Senado  
-#> 18 BATALLA, Hugo                   43 Partido Por el Gobierno del Pueb~ Senado  
-#> 19 BATALLA, Hugo                   44 Partido Colorado                  Senado  
-#> 20 CARDOSO, Jose Pedro             33 Partido Socialista                Diputad~
-#> 21 CARDOSO, Jose Pedro             34 Partido Socialista                Diputad~
-#> 22 CARDOSO, Jose Pedro             35 Partido Socialista                Diputad~
-#> 23 CARDOSO, Jose Pedro             36 Partido Socialista                Diputad~
-#> 24 CARDOSO, Jose Pedro             37 Partido Socialista del Uruguay    Senado  
-#> 25 CARDOSO, Jose Pedro             38 Partido Socialista del Uruguay    Senado  
-#> 26 CARDOSO, Jose Pedro             42 Partido Frente Amplio             Senado  
-#> 27 ERRO, Enrique                   36 Partido Nacional                  Diputad~
-#> 28 ERRO, Enrique                   37 Partido Nacional                  Diputad~
-#> 29 ERRO, Enrique                   38 Partido Nacional                  Diputad~
-#> 30 ERRO, Enrique                   39 Partido Union Popular             Diputad~
-#> 31 ERRO, Enrique                   41 Partido Frente Amplio             Senado  
-#> 32 FAU, Yamandu                    42 Partido Frente Amplio             Diputad~
-#> 33 FAU, Yamandu                    42 Partido Frente Amplio             Senado  
-#> 34 FAU, Yamandu                    43 Partido por el Gobierno del Pueb~ Diputad~
-#> 35 FAU, Yamandu                    44 Partido Colorado                  Diputad~
-#> 36 FAU, Yamandu                    45 Partido Colorado                  Senado  
-#> 37 MIERES, Pablo                   42 Partido Frente Amplio             Diputad~
-#> 38 MIERES, Pablo                   43 Partido Por el Gobierno del Pueb~ Diputad~
-#> 39 MIERES, Pablo                   45 Partido Nuevo Espacio             Diputad~
-#> 40 PRANDO, Carlos Maria            24 Partido Colorado                  Diputad~
-#> 41 PRANDO, Carlos Maria            28 Partido Colorado                  Diputad~
-#> 42 PRANDO, Carlos Maria            29 Partido Colorado General Rivera   Diputad~
-#> 43 PRANDO, Carlos Maria            30 Partido Colorado General Rivera   Diputad~
-#> 44 PRANDO, Carlos Maria            31 Partido por la Tradicion Colorad~ Diputad~
-#> 45 PRIETO, Baltasar                42 Partido Frente Amplio             Diputad~
-#> 46 PRIETO, Baltasar                43 Partido Por el Gobierno del Pueb~ Diputad~
-#> 47 PRIETO, Baltasar                44 Partido Colorado                  Diputad~
-#> 48 ROBALLO, Alba                   38 Partido Colorado                  Senado  
-#> 49 ROBALLO, Alba                   39 Partido Colorado                  Senado  
-#> 50 ROBALLO, Alba                   40 Partido Colorado                  Senado  
-#> 51 ROBALLO, Alba                   41 Partido Democrata Cristiano       Senado  
-#> 52 ROBALLO, Alba                   43 Partido Frente Amplio             Senado  
-#> 53 RODRIGUEZ, Enrique              35 Partido Comunista del Uruguay     Diputad~
-#> 54 RODRIGUEZ, Enrique              38 Partido Comunista del Uruguay     Diputad~
-#> 55 RODRIGUEZ, Enrique              39 Frente Izquierda de Liberacion    Senado  
-#> 56 RODRIGUEZ, Enrique              40 Frente Izquierda de Liberacion    Senado  
-#> 57 RODRIGUEZ, Enrique              41 Partido Frente Amplio             Senado  
-#> 58 SANTAMARINA, Eden Melo          42 Partido Frente Amplio             Diputad~
-#> 59 SANTAMARINA, Eden Melo          43 Partido Por el Gobierno del Pueb~ Diputad~
-#> 60 SANTAMARINA, Eden Melo          44 Partido Colorado                  Diputad~
+print(tibble::as_tibble(set2 %>% select(-legislatura) %>% distinct()), n = Inf)
+#> # A tibble: 38 x 3
+#>    legislador2            partido                            camara   
+#>    <chr>                  <chr>                              <chr>    
+#>  1 ALONSO, Nelson         Partido Colorado                   Diputados
+#>  2 ALONSO, Nelson         Partido Frente Amplio              Diputados
+#>  3 ALONSO, Nelson         Partido Frente Amplio              Senado   
+#>  4 ALONSO, Nelson         Partido por el Gobierno del Pueblo Senado   
+#>  5 ARISMENDI, Rodney      Partido Comunista del Uruguay      Diputados
+#>  6 ARISMENDI, Rodney      Frente Izquierda de Liberacion     Diputados
+#>  7 ARISMENDI, Rodney      Partido Frente Amplio              Diputados
+#>  8 BATALLA, Hugo          Partido Colorado                   Diputados
+#>  9 BATALLA, Hugo          Partido Democrata Cristiano        Diputados
+#> 10 BATALLA, Hugo          Partido Democrata Cristiano        Senado   
+#> 11 BATALLA, Hugo          Partido Por el Gobierno del Pueblo Senado   
+#> 12 BATALLA, Hugo          Partido Colorado                   Senado   
+#> 13 ERRO, Enrique          Partido Nacional                   Diputados
+#> 14 ERRO, Enrique          Partido Union Popular              Diputados
+#> 15 ERRO, Enrique          Partido Frente Amplio              Senado   
+#> 16 FAU, Yamandu           Partido Frente Amplio              Diputados
+#> 17 FAU, Yamandu           Partido Frente Amplio              Senado   
+#> 18 FAU, Yamandu           Partido por el Gobierno del Pueblo Diputados
+#> 19 FAU, Yamandu           Partido Colorado                   Diputados
+#> 20 FAU, Yamandu           Partido Colorado                   Senado   
+#> 21 MIERES, Pablo          Partido Frente Amplio              Diputados
+#> 22 MIERES, Pablo          Partido Por el Gobierno del Pueblo Diputados
+#> 23 MIERES, Pablo          Partido Nuevo Espacio              Diputados
+#> 24 PRANDO, Carlos Maria   Partido Colorado                   Diputados
+#> 25 PRANDO, Carlos Maria   Partido Colorado General Rivera    Diputados
+#> 26 PRANDO, Carlos Maria   Partido por la Tradicion Coloradal Diputados
+#> 27 PRIETO, Baltasar       Partido Frente Amplio              Diputados
+#> 28 PRIETO, Baltasar       Partido Por el Gobierno del Pueblo Diputados
+#> 29 PRIETO, Baltasar       Partido Colorado                   Diputados
+#> 30 ROBALLO, Alba          Partido Colorado                   Senado   
+#> 31 ROBALLO, Alba          Partido Democrata Cristiano        Senado   
+#> 32 ROBALLO, Alba          Partido Frente Amplio              Senado   
+#> 33 RODRIGUEZ, Enrique     Partido Comunista del Uruguay      Diputados
+#> 34 RODRIGUEZ, Enrique     Frente Izquierda de Liberacion     Senado   
+#> 35 RODRIGUEZ, Enrique     Partido Frente Amplio              Senado   
+#> 36 SANTAMARINA, Eden Melo Partido Frente Amplio              Diputados
+#> 37 SANTAMARINA, Eden Melo Partido Por el Gobierno del Pueblo Diputados
+#> 38 SANTAMARINA, Eden Melo Partido Colorado                   Diputados
 
 # global
 table(sapply(politicos2, function(x){length(unique(x$partido))}))
 #> 
 #>    1    2    3 
-#> 2576   55   12
+#> 2576   56   11
 ```
 
 #### Notas

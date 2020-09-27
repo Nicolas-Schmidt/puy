@@ -123,7 +123,7 @@ set2 <-  do.call(rbind, politicos2[lengths(lapply(politicos2, function(x){unique
 unique(set2$legislador2)
 
 
-print(tibble::as_tibble(set2), n = Inf)
+print(tibble::as_tibble(set2 %>% select(-legislatura) %>% distinct()), n = Inf)
 
 # global
 table(sapply(politicos2, function(x){length(unique(x$partido))}))
