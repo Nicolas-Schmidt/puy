@@ -64,6 +64,7 @@ En carpeta `data-raw/viejo_banco` estan las bases que estaban en banco de datos:
 - `fraccion`
 - `fecha_inicio`
 - `fecha_fin`
+- `departamento`
 - `observaciones`
 
 
@@ -78,11 +79,19 @@ source("https://install-github.me/Nicolas-Schmidt/puy")
 
 ### Ejemplo
 
-```{r}
-# head(politicos)
+```{r, echo = FALSE}
+load("data/politicos.rda")
 ```
 
+```{r}
+str(politicos)
 
+vars <- c("legislador2", "camara", "condicion", "departamento", 
+          "fecha_inicio", "fecha_fin", "partido", "legislatura")
+
+str(politicos[, vars], 15)
+
+```
 
 #### Notas
 

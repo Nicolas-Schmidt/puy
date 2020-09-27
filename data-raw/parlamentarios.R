@@ -122,9 +122,8 @@ l <- rbind(base_testigo_0, base_testigo_1)
 #l$fecha_inicio[stringr::str_which(l$fecha_inicio, pattern = '^\\D')]
 
 
-
-
-
+#politicos <- l
+#save(politicos, file = "data/politicos.rda")
 
 
 
