@@ -323,7 +323,7 @@ l[grep(x = l$partido, pattern = "^Prograsista/Frente Amplio/Nueva Mayor"), "part
 l[l$partido == "RepresentÃ³ al Partido Colorado (40) ____ RepresentÃ³ al Partido DemÃ³crata Cristiano (Frente Amplio) (42)" & l$legislatura == 40, "partido"] <- "Partido Colorado"
 l[l$partido == "RepresentÃ³ al Partido Colorado (40) ____ RepresentÃ³ al Partido DemÃ³crata Cristiano (Frente Amplio) (42)" & l$legislatura == 42, "partido"] <- "Partido Frente Amplio"
 
-l[l$partido == "RepresentÃ³ al Partido Colorado (19,20,21,22,23,24,25,26,27, 32 y 33) ____ RepresentÃ³ al Partido Colorado Radical (29 y 30)" & l$legislatura %in% c(19,20,21,22,23,24,25,26,27, 32,33), "partido"] <- "Partido Colorado"
+l[l$partido == "RepresentÃ³ al Partido Colorado (19,20,21,22,23,24,25,26,27, 32 y 33) ____ RepresentÃ³ al Partido Colorado Radical (29 y 30)" & l$legislatura %in% c(19,20,21,22,23,24,25,26,27, 28, 32,33), "partido"] <- "Partido Colorado"
 l[l$partido == "RepresentÃ³ al Partido Colorado (19,20,21,22,23,24,25,26,27, 32 y 33) ____ RepresentÃ³ al Partido Colorado Radical (29 y 30)" & l$legislatura %in% c(29, 30), "partido"] <- "Partido Colorado Radical"
 l[l$partido == "RepresentÃ³ al Partido Colorado (22,23,24, 25 y 26) ____ RepresentÃ³ al Partido Colorado General Rivera (27,29,30,31 y 32)" & l$legislatura %in% c(22,23,24,25, 26), "partido"] <- "Partido Colorado"
 l[l$partido == "RepresentÃ³ al Partido Colorado (22,23,24, 25 y 26) ____ RepresentÃ³ al Partido Colorado General Rivera (27,29,30,31 y 32)" & l$legislatura %in% c(27,29,30,31, 32), "partido"] <- "Partido Colorado General Rivera"
@@ -344,19 +344,21 @@ l[l$partido == "RepresentÃ³ al Partido Nuevo Espacio (45) ____ RepresentÃ³ a
 l[l$partido == "RepresentÃ³ al Partido Nuevo Espacio (45) ____ RepresentÃ³ al Partido Independiente (46)" & l$legislatura == 45, "partido"] <- "Partido Nuevo Espacio"
 l[l$partido == "RepresentÃ³ al Partido Nuevo Espacio (45) ____ RepresentÃ³ al Partido Independiente (46)" & l$legislatura == 46, "partido"] <- "Partido Independiente"
 
+l[l$partido == "RepresentÃ³ al Partido Colorado (19,20,21,22,23,24,25,26,27, 32 y 33) ____ RepresentÃ³ al Partido Colorado Radical (29 y 30)" & l$legislatura == 46, "partido"] <- "Partido Independiente"
+l[l$partido == "RepresentÃ³ al Partido Colorado (19,20,21,22,23,24,25,26,27, 32 y 33) ____ RepresentÃ³ al Partido Colorado Radical (29 y 30)" & l$legislatura == 46, "partido"] <- "Partido Independiente"
 
 
 
 
 
 
-l[which(l$partido == ),]
+l[which(l$partido =="RepresentÃ³ al Partido Colorado (19,20,21,22,23,24,25,26,27, 32 y 33) ____ RepresentÃ³ al Partido Colorado Radical (29 y 30)"),]
 
 
-"RepresentÃ³ al Partido Colorado (42) ____ Represento al Encuentro Progresista/Frente Amplio/Nueva MayorÃ�a (46)"
-"RepresentÃ³ al Partido Nuevo Espacio (44 y 45) ____ RepresentÃ³ al Encuentro Progresista/Frente Amplio/Nueva MayorÃ�a (46)"
-"RepresentÃ³ al Partido Por el Gobierno del Pueblo (43) ____ RepresentÃ³ al Partido Nuevo Espacio (44 y 45) ____ RepresentÃ³ al Encuentro Progresista/Frente Amplio/Nueva MayorÃ�a (46)"
-"RepresentÃ³ al Partido Nuevo Espacio (44 y 45) ____ RepresentÃ³ al Encuentro Progresista/Frente Amplio/Nueva MayorÃ�a (46) ____ RepresentÃ³ al Partido Nuevo Espacio"
+"RepresentÃ³ al Partido Colorado (42) ____ Represento al Encuentro Progresista/Frente Amplio/Nueva MayorÃ?a (46)"
+"RepresentÃ³ al Partido Nuevo Espacio (44 y 45) ____ RepresentÃ³ al Encuentro Progresista/Frente Amplio/Nueva MayorÃ?a (46)"
+"RepresentÃ³ al Partido Por el Gobierno del Pueblo (43) ____ RepresentÃ³ al Partido Nuevo Espacio (44 y 45) ____ RepresentÃ³ al Encuentro Progresista/Frente Amplio/Nueva MayorÃ?a (46)"
+"RepresentÃ³ al Partido Nuevo Espacio (44 y 45) ____ RepresentÃ³ al Encuentro Progresista/Frente Amplio/Nueva MayorÃ?a (46) ____ RepresentÃ³ al Partido Nuevo Espacio"
 
 
 

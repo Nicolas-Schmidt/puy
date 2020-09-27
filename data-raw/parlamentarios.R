@@ -7,7 +7,7 @@ file <- "C:\\Users\\usuario\\Desktop\\R_packages\\speech\\ParlamentariosUruguayo
 tabla_legis <- extract_tables(file, pages = 96)
 
 legisladores <-
-    extract_text(file, pages = 296:1207) %>%
+    extract_text(file, pages = 296:1207) %>%  #535:560
     unlist() %>%
     paste(collapse = " ") %>%
     strsplit(., split = "\n") %>%
@@ -16,7 +16,7 @@ legisladores <-
     .[which(nchar(.) > 5L)]
 
 
-ul <- grep(pattern = "^[A-Z]{3}" , legisladores)
+ul <- grep(pattern = "^[A-Z]{2}" , legisladores)
 lista_legis <- list()
 for(i in 1: (length(ul)-1)){
     lista_legis[[i]] <- legisladores[ul[i]:(ul[i+1]-1)]
@@ -126,7 +126,7 @@ l <- rbind(base_testigo_0, base_testigo_1)
 #save(politicos, file = "data/politicos.rda")
 
 
-
+View(l)
 
 
 

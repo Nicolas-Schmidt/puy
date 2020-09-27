@@ -81,15 +81,38 @@ source("https://install-github.me/Nicolas-Schmidt/puy")
 
 ```{r, echo = FALSE}
 load("data/politicos.rda")
+library(tidyverse)
 ```
 
 ```{r}
-str(politicos)
-
 vars <- c("legislador2", "camara", "condicion", "departamento", 
           "fecha_inicio", "fecha_fin", "partido", "legislatura")
 
 str(politicos[, vars], 15)
+
+
+
+## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## legislador más prolifico
+## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+politicos2 <-
+    politicos %>% 
+    select(legislador2, legislatura, partido, camara) %>% 
+    filter(partido != "") %>% 
+    distinct() %>% 
+    na.omit() %>% 
+    split(.$legislador2)
+    
+
+unique(politicos2[[which.max(lapply(politicos2, nrow))]]$legislador2)
+
+legis <- unique(politicos2[[which.max(lapply(politicos2, nrow))]]$legislatura)
+cat("\nLegislaturas:\n", " numero  : ", legis, "\n", " cantidad: ", length(legis))
+
+unique(politicos2[[which.max(lapply(politicos2, nrow))]]$partido)
+
+
 
 ```
 

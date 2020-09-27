@@ -119,12 +119,6 @@ l$legislador2 <- paste(apellidos, nombre, sep = ", ")
 
 
 
-View(l)
-
-
-
-
-
 
 
 
