@@ -70,15 +70,6 @@ source("https://install-github.me/Nicolas-Schmidt/puy")
 
 ### Ejemplo
 
-    #> -- Attaching packages ------------------------------------------ tidyverse 1.3.0 --
-    #> v ggplot2 3.3.2     v purrr   0.3.4
-    #> v tibble  3.0.1     v dplyr   0.8.5
-    #> v tidyr   1.1.0     v stringr 1.4.0
-    #> v readr   1.3.1     v forcats 0.5.0
-    #> -- Conflicts --------------------------------------------- tidyverse_conflicts() --
-    #> x dplyr::filter() masks stats::filter()
-    #> x dplyr::lag()    masks stats::lag()
-
 ``` r
 vars <- c("legislador2", "camara", "condicion", "departamento", 
           "fecha_inicio", "fecha_fin", "partido", "legislatura")
@@ -152,48 +143,41 @@ unique(set2$legislador2)
 #> [10] "RODRIGUEZ, Enrique"     "SANTAMARINA, Eden Melo"
 
 
-print(tibble::as_tibble(set2 %>% select(-legislatura) %>% distinct()), n = Inf)
-#> # A tibble: 38 x 3
-#>    legislador2            partido                            camara   
-#>    <chr>                  <chr>                              <chr>    
-#>  1 ALONSO, Nelson         Partido Colorado                   Diputados
-#>  2 ALONSO, Nelson         Partido Frente Amplio              Diputados
-#>  3 ALONSO, Nelson         Partido Frente Amplio              Senado   
-#>  4 ALONSO, Nelson         Partido por el Gobierno del Pueblo Senado   
-#>  5 ARISMENDI, Rodney      Partido Comunista del Uruguay      Diputados
-#>  6 ARISMENDI, Rodney      Frente Izquierda de Liberacion     Diputados
-#>  7 ARISMENDI, Rodney      Partido Frente Amplio              Diputados
-#>  8 BATALLA, Hugo          Partido Colorado                   Diputados
-#>  9 BATALLA, Hugo          Partido Democrata Cristiano        Diputados
-#> 10 BATALLA, Hugo          Partido Democrata Cristiano        Senado   
-#> 11 BATALLA, Hugo          Partido Por el Gobierno del Pueblo Senado   
-#> 12 BATALLA, Hugo          Partido Colorado                   Senado   
-#> 13 ERRO, Enrique          Partido Nacional                   Diputados
-#> 14 ERRO, Enrique          Partido Union Popular              Diputados
-#> 15 ERRO, Enrique          Partido Frente Amplio              Senado   
-#> 16 FAU, Yamandu           Partido Frente Amplio              Diputados
-#> 17 FAU, Yamandu           Partido Frente Amplio              Senado   
-#> 18 FAU, Yamandu           Partido por el Gobierno del Pueblo Diputados
-#> 19 FAU, Yamandu           Partido Colorado                   Diputados
-#> 20 FAU, Yamandu           Partido Colorado                   Senado   
-#> 21 MIERES, Pablo          Partido Frente Amplio              Diputados
-#> 22 MIERES, Pablo          Partido Por el Gobierno del Pueblo Diputados
-#> 23 MIERES, Pablo          Partido Nuevo Espacio              Diputados
-#> 24 PRANDO, Carlos Maria   Partido Colorado                   Diputados
-#> 25 PRANDO, Carlos Maria   Partido Colorado General Rivera    Diputados
-#> 26 PRANDO, Carlos Maria   Partido por la Tradicion Coloradal Diputados
-#> 27 PRIETO, Baltasar       Partido Frente Amplio              Diputados
-#> 28 PRIETO, Baltasar       Partido Por el Gobierno del Pueblo Diputados
-#> 29 PRIETO, Baltasar       Partido Colorado                   Diputados
-#> 30 ROBALLO, Alba          Partido Colorado                   Senado   
-#> 31 ROBALLO, Alba          Partido Democrata Cristiano        Senado   
-#> 32 ROBALLO, Alba          Partido Frente Amplio              Senado   
-#> 33 RODRIGUEZ, Enrique     Partido Comunista del Uruguay      Diputados
-#> 34 RODRIGUEZ, Enrique     Frente Izquierda de Liberacion     Senado   
-#> 35 RODRIGUEZ, Enrique     Partido Frente Amplio              Senado   
-#> 36 SANTAMARINA, Eden Melo Partido Frente Amplio              Diputados
-#> 37 SANTAMARINA, Eden Melo Partido Por el Gobierno del Pueblo Diputados
-#> 38 SANTAMARINA, Eden Melo Partido Colorado                   Diputados
+print(set2 %>% select(-legislatura, -camara) %>% distinct())
+#>               legislador2                            partido
+#> 1          ALONSO, Nelson                   Partido Colorado
+#> 2          ALONSO, Nelson              Partido Frente Amplio
+#> 3          ALONSO, Nelson Partido por el Gobierno del Pueblo
+#> 4       ARISMENDI, Rodney      Partido Comunista del Uruguay
+#> 5       ARISMENDI, Rodney     Frente Izquierda de Liberacion
+#> 6       ARISMENDI, Rodney              Partido Frente Amplio
+#> 7           BATALLA, Hugo                   Partido Colorado
+#> 8           BATALLA, Hugo        Partido Democrata Cristiano
+#> 9           BATALLA, Hugo Partido Por el Gobierno del Pueblo
+#> 10          ERRO, Enrique                   Partido Nacional
+#> 11          ERRO, Enrique              Partido Union Popular
+#> 12          ERRO, Enrique              Partido Frente Amplio
+#> 13           FAU, Yamandu              Partido Frente Amplio
+#> 14           FAU, Yamandu Partido por el Gobierno del Pueblo
+#> 15           FAU, Yamandu                   Partido Colorado
+#> 16          MIERES, Pablo              Partido Frente Amplio
+#> 17          MIERES, Pablo Partido Por el Gobierno del Pueblo
+#> 18          MIERES, Pablo              Partido Nuevo Espacio
+#> 19   PRANDO, Carlos Maria                   Partido Colorado
+#> 20   PRANDO, Carlos Maria    Partido Colorado General Rivera
+#> 21   PRANDO, Carlos Maria Partido por la Tradicion Coloradal
+#> 22       PRIETO, Baltasar              Partido Frente Amplio
+#> 23       PRIETO, Baltasar Partido Por el Gobierno del Pueblo
+#> 24       PRIETO, Baltasar                   Partido Colorado
+#> 25          ROBALLO, Alba                   Partido Colorado
+#> 26          ROBALLO, Alba        Partido Democrata Cristiano
+#> 27          ROBALLO, Alba              Partido Frente Amplio
+#> 28     RODRIGUEZ, Enrique      Partido Comunista del Uruguay
+#> 29     RODRIGUEZ, Enrique     Frente Izquierda de Liberacion
+#> 30     RODRIGUEZ, Enrique              Partido Frente Amplio
+#> 31 SANTAMARINA, Eden Melo              Partido Frente Amplio
+#> 32 SANTAMARINA, Eden Melo Partido Por el Gobierno del Pueblo
+#> 33 SANTAMARINA, Eden Melo                   Partido Colorado
 
 # global
 table(sapply(politicos2, function(x){length(unique(x$partido))}))
