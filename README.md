@@ -68,7 +68,7 @@ de datos:
 source("https://install-github.me/Nicolas-Schmidt/puy")
 ```
 
-### Ejemplo
+### Ejemplos de color
 
 <details>
 
@@ -76,6 +76,8 @@ source("https://install-github.me/Nicolas-Schmidt/puy")
 </summary>
 
 ``` r
+library(puy)
+
 vars <- c("legislador2", "camara", "condicion", "departamento", 
           "fecha_inicio", "fecha_fin", "partido", "legislatura")
 
@@ -189,6 +191,26 @@ table(sapply(politicos2, function(x){length(unique(x$partido))}))
 #> 
 #>    1    2    3 
 #> 2576   56   11
+
+
+
+## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## Frecuencia de nombres
+## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+puy_nombres()
+#>         nombre cantidad porcentaje
+#>   1:    Carlos      118       3.60
+#>   2:      Jose      110       3.36
+#>   3:      Juan      101       3.08
+#>   4:      Luis       82       2.50
+#>   5: Francisco       72       2.20
+#>  ---                              
+#> 783:  Yeanneth        1       0.03
+#> 784:   Yolanda        1       0.03
+#> 785:    Zelmar        1       0.03
+#> 786:     Zoilo        1       0.03
+#> 787:     Zulma        1       0.03
 ```
 
 </details>
