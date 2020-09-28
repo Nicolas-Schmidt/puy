@@ -70,6 +70,11 @@ source("https://install-github.me/Nicolas-Schmidt/puy")
 
 ### Ejemplo
 
+<details>
+
+<summary><b><a style="cursor: pointer;">Click here to expand </a></b>
+</summary>
+
 ``` r
 vars <- c("legislador2", "camara", "condicion", "departamento", 
           "fecha_inicio", "fecha_fin", "partido", "legislatura")
@@ -185,6 +190,12 @@ table(sapply(politicos2, function(x){length(unique(x$partido))}))
 #>    1    2    3 
 #> 2576   56   11
 ```
+
+</details>
+
+<p>
+
+</p>
 
 #### Notas
 

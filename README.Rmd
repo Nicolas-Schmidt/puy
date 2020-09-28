@@ -79,6 +79,9 @@ source("https://install-github.me/Nicolas-Schmidt/puy")
 
 ### Ejemplo
 
+<details>
+  <summary><b><a style="cursor: pointer;">Click here to expand </a></b> </summary>
+
 ```{r, echo = FALSE}
 load("data/politicos.rda")
 suppressPackageStartupMessages(library(tidyverse))
@@ -129,6 +132,11 @@ print(set2 %>% select(-legislatura, -camara) %>% distinct())
 table(sapply(politicos2, function(x){length(unique(x$partido))}))
 
 ```
+
+</details>
+<p> </p>
+
+
 
 #### Notas
 
