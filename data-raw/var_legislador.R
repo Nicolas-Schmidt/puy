@@ -110,8 +110,8 @@ l$legislador <- stringr::str_replace_all(string = l$legislador, pattern = "BARAÃ
 
 
 l$legislador2 <- stringr::str_remove_all(l$legislador, pattern = "[^A-z. ]")
-apellidos <- stringr::str_squish(stringr::str_sub(stringr::str_extract(l$legislador2, "([A-Z. ]){1,}"), 1, -2))
-nombre    <- stringr::str_squish(sapply(stringr::str_extract_all(l$legislador2, "([A-Z]{1}[a-z.]{1,})"), paste, collapse = " "))
+apellidos     <- stringr::str_squish(stringr::str_sub(stringr::str_extract(l$legislador2, "([A-Z. ]){1,}"), 1, -2))
+nombre        <- stringr::str_squish(sapply(stringr::str_extract_all(l$legislador2, "([A-Z]{1}[a-z.]{1,})"), paste, collapse = " "))
 l$legislador2 <- paste(apellidos, nombre, sep = ", ")
 
 

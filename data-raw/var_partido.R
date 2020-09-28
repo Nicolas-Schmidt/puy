@@ -347,6 +347,7 @@ l[l$partido == "RepresentÃ³ al Partido Nuevo Espacio (45) ____ RepresentÃ³ a
 l[l$partido == "RepresentÃ³ al Partido Colorado (19,20,21,22,23,24,25,26,27, 32 y 33) ____ RepresentÃ³ al Partido Colorado Radical (29 y 30)" & l$legislatura == 46, "partido"] <- "Partido Independiente"
 l[l$partido == "RepresentÃ³ al Partido Colorado (19,20,21,22,23,24,25,26,27, 32 y 33) ____ RepresentÃ³ al Partido Colorado Radical (29 y 30)" & l$legislatura == 46, "partido"] <- "Partido Independiente"
 
+l[l$partido == "Partido Socialista del Uruguay", "partido"] <- "Partido Socialista"
 
 
 

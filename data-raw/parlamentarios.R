@@ -7,7 +7,7 @@ file <- "C:\\Users\\usuario\\Desktop\\R_packages\\speech\\ParlamentariosUruguayo
 tabla_legis <- extract_tables(file, pages = 96)
 
 legisladores <-
-    extract_text(file, pages = 296:1207) %>%  #535:560
+    extract_text(file, pages = 296:1207) %>%  #535:560 296:1207
     unlist() %>%
     paste(collapse = " ") %>%
     strsplit(., split = "\n") %>%
@@ -117,11 +117,9 @@ base_testigo_1 <- data.frame(
 
 l <- rbind(base_testigo_0, base_testigo_1)
 
-#View(l)
+# View(l)
 # check
-#l$fecha_inicio[stringr::str_which(l$fecha_inicio, pattern = '^\\D')]
-
-
+# l$fecha_inicio[stringr::str_which(l$fecha_inicio, pattern = '^\\D')]
 # politicos <- l
 # save(politicos, file = "data/politicos.rda")
 # View(l)
