@@ -155,6 +155,38 @@ legislaturas
 
 
 
+
+
+### Ejemplo con `speech`
+
+<details>
+  <summary><b><a style="cursor: pointer;">Click here to expand </a></b> </summary>
+
+```{r}
+
+url_speech <- "https://legislativo.parlamento.gub.uy/temporales/4456542957638.PDF" 
+floor_speech <- speech::speech_build(file = url_speech, compiler = TRUE) 
+
+str(floor_speech)
+
+## add party
+floor_speech <- left_join(floor_speech, as_speech_politicos(), by = c("legislator", "legislature"))
+    
+str(floor_speech)
+
+
+
+
+```
+
+
+
+</details>
+<p> </p>
+
+
+
+
 #### Notas
 
 ---

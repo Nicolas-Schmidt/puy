@@ -274,6 +274,48 @@ legislaturas
 
 </p>
 
+### Ejemplo con `speech`
+
+<details>
+
+<summary><b><a style="cursor: pointer;">Click here to expand </a></b>
+</summary>
+
+``` r
+
+url_speech <- "https://legislativo.parlamento.gub.uy/temporales/4456542957638.PDF" 
+floor_speech <- speech::speech_build(file = url_speech, compiler = TRUE) 
+
+str(floor_speech)
+#> tibble [21 x 6] (S3: tbl_df/tbl/data.frame/puy)
+#>  $ legislator : chr [1:21] "ARISMENDI" "ATCHUGARRY" "BERGSTEIN" "BERTOLINI" ...
+#>  $ legislature: chr [1:21] "44" "44" "44" "44" ...
+#>  $ chamber    : chr [1:21] "CAMARA DE SENADORES" "CAMARA DE SENADORES" "CAMARA DE SENADORES" "CAMARA DE SENADORES" ...
+#>  $ date       : chr [1:21] "1999-09-15" "1999-09-15" "1999-09-15" "1999-09-15" ...
+#>  $ id         : chr [1:21] "4456542957638" "4456542957638" "4456542957638" "4456542957638" ...
+#>  $ speech     : chr [1:21] "SEÑORA ARISMENDI. Pido la palabra para una moción de orden. CAMARA DE SENADORES C.S.28115 de Setiembre de 1999 "| __truncated__ "SEÑOR ATCHUGARRY. Pido la palabra para fundar el voto. SEÑOR ATCHUGARRY. En el mismo sentido que se ha hecho ex"| __truncated__ "SEÑOR BERGSTEIN. Pido la palabra para referirme a la moción. SEÑOR BERGSTEIN. La moción que acaba de presentar "| __truncated__ "SEÑOR BERTOLINI. Pido la palabra. SEÑOR BERTOLINI. Dado que me interesa mucho el tratamiento del tema que han p"| __truncated__ ...
+
+## add party
+floor_speech <- left_join(floor_speech, as_speech_politicos(), by = c("legislator", "legislature"))
+    
+str(floor_speech)
+#> tibble [23 x 8] (S3: tbl_df/tbl/data.frame/puy)
+#>  $ legislator   : chr [1:23] "ARISMENDI" "ATCHUGARRY" "ATCHUGARRY" "BERGSTEIN" ...
+#>  $ legislature  : chr [1:23] "44" "44" "44" "44" ...
+#>  $ chamber      : chr [1:23] "CAMARA DE SENADORES" "CAMARA DE SENADORES" "CAMARA DE SENADORES" "CAMARA DE SENADORES" ...
+#>  $ date         : chr [1:23] "1999-09-15" "1999-09-15" "1999-09-15" "1999-09-15" ...
+#>  $ id           : chr [1:23] "4456542957638" "4456542957638" "4456542957638" "4456542957638" ...
+#>  $ speech       : chr [1:23] "SEÑORA ARISMENDI. Pido la palabra para una moción de orden. CAMARA DE SENADORES C.S.28115 de Setiembre de 1999 "| __truncated__ "SEÑOR ATCHUGARRY. Pido la palabra para fundar el voto. SEÑOR ATCHUGARRY. En el mismo sentido que se ha hecho ex"| __truncated__ "SEÑOR ATCHUGARRY. Pido la palabra para fundar el voto. SEÑOR ATCHUGARRY. En el mismo sentido que se ha hecho ex"| __truncated__ "SEÑOR BERGSTEIN. Pido la palabra para referirme a la moción. SEÑOR BERGSTEIN. La moción que acaba de presentar "| __truncated__ ...
+#>  $ legislator_nc: chr [1:23] "ARISMENDI, Marina" "ATCHUGARRY, Alejandro" "ATCHUGARRY, Alejandro" "BERGSTEIN, Nahum" ...
+#>  $ party        : chr [1:23] "Partido Frente Amplio" "Partido Colorado" "Partido Colorado" "Partido Colorado" ...
+```
+
+</details>
+
+<p>
+
+</p>
+
 #### Notas
 
 -----
