@@ -124,7 +124,7 @@ set
 
 
 set2 <-  do.call(rbind, politicos2[lengths(lapply(politicos2, function(x){unique(x$partido)})) == 3])
-rownames(set) <- NULL
+rownames(set2) <- NULL
 unique(set2$legislador2)
 
 

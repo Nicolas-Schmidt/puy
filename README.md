@@ -143,7 +143,7 @@ set
 
 
 set2 <-  do.call(rbind, politicos2[lengths(lapply(politicos2, function(x){unique(x$partido)})) == 3])
-rownames(set) <- NULL
+rownames(set2) <- NULL
 unique(set2$legislador2)
 #>  [1] "ALONSO, Nelson"         "ARISMENDI, Rodney"      "BATALLA, Hugo"         
 #>  [4] "ERRO, Enrique"          "FAU, Yamandu"           "MIERES, Pablo"         
@@ -152,74 +152,40 @@ unique(set2$legislador2)
 
 
 print(set2 %>% select(-legislatura, -camara) %>% distinct())
-#>                                         legislador2
-#> ALONSO, Nelson.5411                  ALONSO, Nelson
-#> ALONSO, Nelson.5516                  ALONSO, Nelson
-#> ALONSO, Nelson.5710                  ALONSO, Nelson
-#> ARISMENDI, Rodney.424             ARISMENDI, Rodney
-#> ARISMENDI, Rodney.429             ARISMENDI, Rodney
-#> ARISMENDI, Rodney.431             ARISMENDI, Rodney
-#> BATALLA, Hugo.698                     BATALLA, Hugo
-#> BATALLA, Hugo.701                     BATALLA, Hugo
-#> BATALLA, Hugo.703                     BATALLA, Hugo
-#> ERRO, Enrique.2237                    ERRO, Enrique
-#> ERRO, Enrique.2240                    ERRO, Enrique
-#> ERRO, Enrique.2241                    ERRO, Enrique
-#> FAU, Yamandu.2387                      FAU, Yamandu
-#> FAU, Yamandu.2389                      FAU, Yamandu
-#> FAU, Yamandu.2390                      FAU, Yamandu
-#> MIERES, Pablo.4188                    MIERES, Pablo
-#> MIERES, Pablo.4189                    MIERES, Pablo
-#> MIERES, Pablo.4190                    MIERES, Pablo
-#> PRANDO, Carlos Maria.5061      PRANDO, Carlos Maria
-#> PRANDO, Carlos Maria.5063      PRANDO, Carlos Maria
-#> PRANDO, Carlos Maria.5065      PRANDO, Carlos Maria
-#> PRIETO, Baltasar.13901             PRIETO, Baltasar
-#> PRIETO, Baltasar.1391              PRIETO, Baltasar
-#> PRIETO, Baltasar.13921             PRIETO, Baltasar
-#> ROBALLO, Alba.14721                   ROBALLO, Alba
-#> ROBALLO, Alba.14751                   ROBALLO, Alba
-#> ROBALLO, Alba.14761                   ROBALLO, Alba
-#> RODRIGUEZ, Enrique.15381         RODRIGUEZ, Enrique
-#> RODRIGUEZ, Enrique.1540          RODRIGUEZ, Enrique
-#> RODRIGUEZ, Enrique.15421         RODRIGUEZ, Enrique
-#> SANTAMARINA, Eden Melo.16221 SANTAMARINA, Eden Melo
-#> SANTAMARINA, Eden Melo.16231 SANTAMARINA, Eden Melo
-#> SANTAMARINA, Eden Melo.16241 SANTAMARINA, Eden Melo
-#>                                                         partido
-#> ALONSO, Nelson.5411                            Partido Colorado
-#> ALONSO, Nelson.5516                       Partido Frente Amplio
-#> ALONSO, Nelson.5710          Partido por el Gobierno del Pueblo
-#> ARISMENDI, Rodney.424             Partido Comunista del Uruguay
-#> ARISMENDI, Rodney.429            Frente Izquierda de Liberacion
-#> ARISMENDI, Rodney.431                     Partido Frente Amplio
-#> BATALLA, Hugo.698                              Partido Colorado
-#> BATALLA, Hugo.701                   Partido Democrata Cristiano
-#> BATALLA, Hugo.703            Partido Por el Gobierno del Pueblo
-#> ERRO, Enrique.2237                             Partido Nacional
-#> ERRO, Enrique.2240                        Partido Union Popular
-#> ERRO, Enrique.2241                        Partido Frente Amplio
-#> FAU, Yamandu.2387                         Partido Frente Amplio
-#> FAU, Yamandu.2389            Partido por el Gobierno del Pueblo
-#> FAU, Yamandu.2390                              Partido Colorado
-#> MIERES, Pablo.4188                        Partido Frente Amplio
-#> MIERES, Pablo.4189           Partido Por el Gobierno del Pueblo
-#> MIERES, Pablo.4190                        Partido Nuevo Espacio
-#> PRANDO, Carlos Maria.5061                      Partido Colorado
-#> PRANDO, Carlos Maria.5063       Partido Colorado General Rivera
-#> PRANDO, Carlos Maria.5065    Partido por la Tradicion Coloradal
-#> PRIETO, Baltasar.13901                    Partido Frente Amplio
-#> PRIETO, Baltasar.1391        Partido Por el Gobierno del Pueblo
-#> PRIETO, Baltasar.13921                         Partido Colorado
-#> ROBALLO, Alba.14721                            Partido Colorado
-#> ROBALLO, Alba.14751                 Partido Democrata Cristiano
-#> ROBALLO, Alba.14761                       Partido Frente Amplio
-#> RODRIGUEZ, Enrique.15381          Partido Comunista del Uruguay
-#> RODRIGUEZ, Enrique.1540          Frente Izquierda de Liberacion
-#> RODRIGUEZ, Enrique.15421                  Partido Frente Amplio
-#> SANTAMARINA, Eden Melo.16221              Partido Frente Amplio
-#> SANTAMARINA, Eden Melo.16231 Partido Por el Gobierno del Pueblo
-#> SANTAMARINA, Eden Melo.16241                   Partido Colorado
+#>               legislador2                            partido
+#> 1          ALONSO, Nelson                   Partido Colorado
+#> 2          ALONSO, Nelson              Partido Frente Amplio
+#> 3          ALONSO, Nelson Partido por el Gobierno del Pueblo
+#> 4       ARISMENDI, Rodney      Partido Comunista del Uruguay
+#> 5       ARISMENDI, Rodney     Frente Izquierda de Liberacion
+#> 6       ARISMENDI, Rodney              Partido Frente Amplio
+#> 7           BATALLA, Hugo                   Partido Colorado
+#> 8           BATALLA, Hugo        Partido Democrata Cristiano
+#> 9           BATALLA, Hugo Partido Por el Gobierno del Pueblo
+#> 10          ERRO, Enrique                   Partido Nacional
+#> 11          ERRO, Enrique              Partido Union Popular
+#> 12          ERRO, Enrique              Partido Frente Amplio
+#> 13           FAU, Yamandu              Partido Frente Amplio
+#> 14           FAU, Yamandu Partido por el Gobierno del Pueblo
+#> 15           FAU, Yamandu                   Partido Colorado
+#> 16          MIERES, Pablo              Partido Frente Amplio
+#> 17          MIERES, Pablo Partido Por el Gobierno del Pueblo
+#> 18          MIERES, Pablo              Partido Nuevo Espacio
+#> 19   PRANDO, Carlos Maria                   Partido Colorado
+#> 20   PRANDO, Carlos Maria    Partido Colorado General Rivera
+#> 21   PRANDO, Carlos Maria Partido por la Tradicion Coloradal
+#> 22       PRIETO, Baltasar              Partido Frente Amplio
+#> 23       PRIETO, Baltasar Partido Por el Gobierno del Pueblo
+#> 24       PRIETO, Baltasar                   Partido Colorado
+#> 25          ROBALLO, Alba                   Partido Colorado
+#> 26          ROBALLO, Alba        Partido Democrata Cristiano
+#> 27          ROBALLO, Alba              Partido Frente Amplio
+#> 28     RODRIGUEZ, Enrique      Partido Comunista del Uruguay
+#> 29     RODRIGUEZ, Enrique     Frente Izquierda de Liberacion
+#> 30     RODRIGUEZ, Enrique              Partido Frente Amplio
+#> 31 SANTAMARINA, Eden Melo              Partido Frente Amplio
+#> 32 SANTAMARINA, Eden Melo Partido Por el Gobierno del Pueblo
+#> 33 SANTAMARINA, Eden Melo                   Partido Colorado
 
 # global
 table(sapply(politicos2, function(x){length(unique(x$partido))}))
