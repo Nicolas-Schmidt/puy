@@ -163,8 +163,7 @@ legislaturas
   <summary><b><a style="cursor: pointer;">Click here to expand </a></b> </summary>
 
 ```{r}
-
-url_speech <- "https://legislativo.parlamento.gub.uy/temporales/4456542957638.PDF" 
+url_speech <- "https://parlamento.gub.uy/documentosyleyes/documentos/diario-de-sesion/senadores/2094/IMG/0?width=800&height=600&hl=en_US1&iframe=true&rel=nofollow" 
 floor_speech <- speech::speech_build(file = url_speech, compiler = TRUE) 
 
 str(floor_speech)
@@ -173,8 +172,6 @@ str(floor_speech)
 floor_speech <- left_join(floor_speech, as_speech_politicos(), by = c("legislator", "legislature"))
     
 str(floor_speech)
-
-
 
 
 ```
