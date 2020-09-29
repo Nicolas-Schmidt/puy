@@ -143,6 +143,7 @@ set
 
 
 set2 <-  do.call(rbind, politicos2[lengths(lapply(politicos2, function(x){unique(x$partido)})) == 3])
+rownames(set) <- NULL
 unique(set2$legislador2)
 #>  [1] "ALONSO, Nelson"         "ARISMENDI, Rodney"      "BATALLA, Hugo"         
 #>  [4] "ERRO, Enrique"          "FAU, Yamandu"           "MIERES, Pablo"         
