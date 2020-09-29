@@ -295,7 +295,11 @@ str(floor_speech)
 #>  $ id         : chr [1:21] "0?width=800&height=600&hl=en_US1&iframe=true&rel=nofollow" "0?width=800&height=600&hl=en_US1&iframe=true&rel=nofollow" "0?width=800&height=600&hl=en_US1&iframe=true&rel=nofollow" "0?width=800&height=600&hl=en_US1&iframe=true&rel=nofollow" ...
 #>  $ speech     : chr [1:21] "SEÑORA ARISMENDI. Pido la palabra para una moción de orden. CAMARA DE SENADORES C.S.28115 de Setiembre de 1999 "| __truncated__ "SEÑOR ATCHUGARRY. Pido la palabra para fundar el voto. SEÑOR ATCHUGARRY. En el mismo sentido que se ha hecho ex"| __truncated__ "SEÑOR BERGSTEIN. Pido la palabra para referirme a la moción. SEÑOR BERGSTEIN. La moción que acaba de presentar "| __truncated__ "SEÑOR BERTOLINI. Pido la palabra. SEÑOR BERTOLINI. Dado que me interesa mucho el tratamiento del tema que han p"| __truncated__ ...
 
-## add party
+
+## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## add party and complete name
+## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 floor_speech <- left_join(floor_speech, as_speech_politicos(), by = c("legislator", "legislature"))
     
 str(floor_speech)
