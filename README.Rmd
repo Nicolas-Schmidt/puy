@@ -21,6 +21,7 @@ knitr::opts_chunk$set(
 
 
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+`r badger::badge_devel("Nicolas-Schmidt/puy", "orange")`
 <!-- badges: end -->
 
 ### Descripción
