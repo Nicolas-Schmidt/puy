@@ -41,7 +41,7 @@ Este paquete de R contiene varios conjuntos de datos relativos a carreras polít
 | Carneiro     | BROU                    | 1896 - 2020 | 1896 - 2020: :x:               | 1896 - 2020: :warning: | 0%  :arrow_down:       | 
 | Carneiro     | Banco Central           | 1967 - 2020 | 1967 - 2020: :x:               | 1967 - 2020: :warning: | 0%  :arrow_down:       | 
 | Luján        | Candidaturas y Pre. Can.| 1830 - 2020 | 1830 - 2020: :x:               | 1830 - 2020: :warning: | 0%  :arrow_down:       | 
-| -            | Entes publicos                 |     -    | -               | - | -       | 
+| ASIGNAR            | Entes publicos                 |     -    | -               | - | -       | 
 
 **Juntas Militares?** Para hacer la trayectoria de civiles que iniciaron en politica y se volveron gorilas... Alberto Demicheli recuerdo es el facho, estuvo con Terra y luego en el 70 y algo
 

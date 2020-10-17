@@ -35,7 +35,7 @@ políticos que ocuparon alguna cartera ministerial.
 | Carneiro    | BROU                     | 1896 - 2020 | 1896 - 2020: :x:                  | 1896 - 2020: :warning: | 0% :arrow\_down: |
 | Carneiro    | Banco Central            | 1967 - 2020 | 1967 - 2020: :x:                  | 1967 - 2020: :warning: | 0% :arrow\_down: |
 | Luján       | Candidaturas y Pre. Can. | 1830 - 2020 | 1830 - 2020: :x:                  | 1830 - 2020: :warning: | 0% :arrow\_down: |
-| \-          | Entes publicos           | \-          | \-                                | \-                     | \-               |
+| ASIGNAR     | Entes publicos           | \-          | \-                                | \-                     | \-               |
 
 **Juntas Militares?** Para hacer la trayectoria de civiles que iniciaron
 en politica y se volveron gorilas… Alberto Demicheli recuerdo es el
