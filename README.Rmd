@@ -74,7 +74,7 @@ En carpeta `data-raw/viejo_banco` estan las bases que estaban en banco de datos:
 
 ``` r
 ## Versión en desarrollo
-source("https://install-github.me/Nicolas-Schmidt/puy")
+# source("https://install-github.me/Nicolas-Schmidt/puy")
 ```
 
 

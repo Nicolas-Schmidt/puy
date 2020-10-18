@@ -67,7 +67,7 @@ de datos:
 
 ``` r
 ## Versión en desarrollo
-source("https://install-github.me/Nicolas-Schmidt/puy")
+# source("https://install-github.me/Nicolas-Schmidt/puy")
 ```
 
 ### Ejemplos de color
