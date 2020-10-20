@@ -73,7 +73,8 @@ de datos:
     “n”.**  
   - **La variable `legislador2` es el nombre del político cargado de
     esta forma: `APELLIDO, Nombre`**
-  - **¿Se pueden agregar variables?, SI OBVIO\!**
+  - **¿Se pueden agregar variables?, SI OBVIO\!, por ejemplo, si esta
+    disponible la fracción hay que cargarla**
 
 <!-- end list -->
 

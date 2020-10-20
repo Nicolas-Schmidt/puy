@@ -75,7 +75,7 @@ En carpeta `data-raw/viejo_banco` estan las bases que estaban en banco de datos:
 
 * **Los datos no deben tener tildes y las "ñ" hay que cambiarlas con "n".**  
 * **La variable `legislador2` es el nombre del político cargado de esta forma: `APELLIDO, Nombre`** 
-* **¿Se pueden agregar variables?, SI OBVIO!**
+* **¿Se pueden agregar variables?, SI OBVIO!, por ejemplo, si esta disponible la fracción hay que cargarla**
 
 ```{r}
 library(puy)
