@@ -69,6 +69,31 @@ En carpeta `data-raw/viejo_banco` estan las bases que estaban en banco de datos:
 - `observaciones`
 
 
+## ¿Cómo cargar datos?
+
+**Sigiuendo la siguiente estructura:**  
+
+* **Los datos no deben tener tildes y las "ñ" hay que cambiarlas con "n".**  
+* **La variable `legislador2` es el nombre del político cargado de esta forma: `APELLIDO, Nombre`** 
+* **¿Se pueden agregar variables?, SI OBVIO!**
+
+```{r}
+library(puy)
+
+# estas son las variables que van en la base actualmente
+
+vars <- c("legislador2", "camara", "condicion", "departamento", 
+          "fecha_inicio", "fecha_fin", "partido", "legislatura")
+
+str(politicos[, vars], 15)
+```
+
+
+
+
+
+
+
 
 ### Instalación
 
@@ -89,14 +114,6 @@ suppressPackageStartupMessages(library(tidyverse))
 ```
 
 ```{r}
-library(puy)
-
-vars <- c("legislador2", "camara", "condicion", "departamento", 
-          "fecha_inicio", "fecha_fin", "partido", "legislatura")
-
-str(politicos[, vars], 15)
-
-
 
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## legislador más prolifico

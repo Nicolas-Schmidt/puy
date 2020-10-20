@@ -65,6 +65,38 @@ de datos:
   - `departamento`
   - `observaciones`
 
+## ¿Cómo cargar datos?
+
+**Sigiuendo la siguiente estructura:**
+
+  - **Los datos no deben tener tildes y las “ñ” hay que cambiarlas con
+    “n”.**  
+  - **La variable `legislador2` es el nombre del político cargado de
+    esta forma: `APELLIDO, Nombre`**
+  - **¿Se pueden agregar variables?, SI OBVIO\!**
+
+<!-- end list -->
+
+``` r
+library(puy)
+
+# estas son las variables que van en la base actualmente
+
+vars <- c("legislador2", "camara", "condicion", "departamento", 
+          "fecha_inicio", "fecha_fin", "partido", "legislatura")
+
+str(politicos[, vars], 15)
+#> 'data.frame':    6771 obs. of  8 variables:
+#>  $ legislador2 : chr  "ABADIE SANTOS, Horacio" "ABADIE SANTOS, Horacio" "ABDALA, Washington" "ABDALA, Washington" ...
+#>  $ camara      : chr  "Diputados" "Diputados" "Diputados" "Diputados" ...
+#>  $ condicion   : chr  "Titular" "Titular" "Titular" "Titular" ...
+#>  $ departamento: chr  "Montevideo" "Tacuarembo" "Montevideo" "Montevideo" ...
+#>  $ fecha_inicio: chr  "18 de mayo de 1934" "2 de julio de 1934" "15 de febrero de 1995" "15 de febrero de 2000" ...
+#>  $ fecha_fin   : chr  "1 de julio de 1934" "24 de noviembre de 1936" "14 de febrero de 2000" "14 de febrero de 2005" ...
+#>  $ partido     : chr  "Partido Colorado" "Partido Colorado" "Partido Colorado" "Partido Colorado" ...
+#>  $ legislatura : num  32 32 44 45 46 30 29 30 20 23 ...
+```
+
 ### Instalación
 
 ``` r
@@ -80,23 +112,6 @@ de datos:
 </summary>
 
 ``` r
-library(puy)
-
-vars <- c("legislador2", "camara", "condicion", "departamento", 
-          "fecha_inicio", "fecha_fin", "partido", "legislatura")
-
-str(politicos[, vars], 15)
-#> 'data.frame':    6771 obs. of  8 variables:
-#>  $ legislador2 : chr  "ABADIE SANTOS, Horacio" "ABADIE SANTOS, Horacio" "ABDALA, Washington" "ABDALA, Washington" ...
-#>  $ camara      : chr  "Diputados" "Diputados" "Diputados" "Diputados" ...
-#>  $ condicion   : chr  "Titular" "Titular" "Titular" "Titular" ...
-#>  $ departamento: chr  "Montevideo" "Tacuarembo" "Montevideo" "Montevideo" ...
-#>  $ fecha_inicio: chr  "18 de mayo de 1934" "2 de julio de 1934" "15 de febrero de 1995" "15 de febrero de 2000" ...
-#>  $ fecha_fin   : chr  "1 de julio de 1934" "24 de noviembre de 1936" "14 de febrero de 2000" "14 de febrero de 2005" ...
-#>  $ partido     : chr  "Partido Colorado" "Partido Colorado" "Partido Colorado" "Partido Colorado" ...
-#>  $ legislatura : num  32 32 44 45 46 30 29 30 20 23 ...
-
-
 
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## legislador más prolifico
