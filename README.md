@@ -9,6 +9,8 @@ UMAD<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>.*
 
 <!-- badges: start -->
 
+[![CRAN
+status](https://www.r-pkg.org/badges/version/puy)](https://CRAN.R-project.org/package=puy)
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![](https://img.shields.io/badge/devel%20version-0.1.0-orange.svg)](https://github.com/Nicolas-Schmidt/puy)
