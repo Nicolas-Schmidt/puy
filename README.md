@@ -69,8 +69,6 @@ de datos:
 
 **Sigiuendo la siguiente estructura:**
 
-  - **Los datos no deben tener tildes y las “ñ” hay que cambiarlas con
-    “n”.**  
   - **La variable `legislador2` es el nombre del político cargado de
     esta forma: `APELLIDO, Nombre`**
   - **¿Se pueden agregar variables?, SI OBVIO\!, por ejemplo, si esta
