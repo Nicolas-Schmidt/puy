@@ -102,7 +102,7 @@ str(politicos[, vars], 15)
 
 ``` r
 ## Versión en desarrollo
-# source("https://install-github.me/Nicolas-Schmidt/puy")
+remotes::install_github(repo = "https://github.com/Nicolas-Schmidt/puy")
 ```
 
 ### Ejemplos de color
