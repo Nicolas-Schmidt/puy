@@ -31,7 +31,7 @@ políticos que ocuparon alguna cartera ministerial.
 | ----------- | ------------------------ | ----------- | --------------------------------- | ---------------------- | ---------------- |
 | Schmidt     | Poder Legislativo        | 1830 - 2020 | 1830 - 2005: :heavy\_check\_mark: | 2006 - 2020: :warning: | 92% :arrow\_up:  |
 | Schmidt     | Municipios               | 2010 - 2020 | 2010 - 2015: :heavy\_check\_mark: | 2020 - 2020: :warning: | 66% :arrow\_up:  |
-| Schmidt     | Corte Electoral          | 1985 - 2020 | 1985 - 2020: :x:                  | 1985 - 2020: :warning: | 0% :arrow\_down: |
+| Schmidt     | Corte Electoral          | 1985 - 2020 | 1985 - 2020: :heavy\_check\_mark: | 2005 - 2010: :warning: | 85% :arrow\_up:  |
 | Cardarello  | Ejecutivo departamental  | 1830 - 2020 | 1830 - 2020: :x:                  | 1830 - 2020: :warning: | 0% :arrow\_down: |
 | Castiglia   | Gabinetes Ministeriales  | 1830 - 2020 | 1830 - 2020: :x:                  | 1830 - 2020: :warning: | 0% :arrow\_down: |
 | Carneiro    | Directores OPP           | 196..- 2020 | 196..- 2020: :x:                  | 196..- 2020: :warning: | 0% :arrow\_down: |
