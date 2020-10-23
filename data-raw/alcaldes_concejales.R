@@ -21,6 +21,11 @@ concejales          <- tidyr::separate(concejales, 'partido', into = c("partido"
 concejales$partido  <- stringr::str_squish(concejales$partido)
 concejales$fraccion <- stringr::str_squish(concejales$fraccion)
 
+concejales[concejales$partido %in% c("PFA", "FA"), "partido"] <- "Partido Frente Amplio"
+concejales[concejales$partido == "PN" , "partido"] <- "Partido Nacional"
+concejales[concejales$partido == "PC" , "partido"] <- "Partido Colorado"
+concejales[concejales$partido == "P. de la CONC.", "partido"] <- "Partido de la Concertacion"
+
 # nombre
 nombres_ac <- function(x){
     xn <- stringr::str_extract(x, "[A-z]+([A-Z ]+\\. |\\s)")
@@ -30,3 +35,5 @@ nombres_ac <- function(x){
 }
 
 concejales$nombre <- nombres_ac(concejales$politico_st)
+
+

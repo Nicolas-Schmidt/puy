@@ -30,7 +30,7 @@ políticos que ocuparon alguna cartera ministerial.
 | Responsable | Datos                    | Periodo     | Avance                            | Pendiente              | Status           |
 | ----------- | ------------------------ | ----------- | --------------------------------- | ---------------------- | ---------------- |
 | Schmidt     | Poder Legislativo        | 1830 - 2020 | 1830 - 2005: :heavy\_check\_mark: | 2006 - 2020: :warning: | 92% :arrow\_up:  |
-| Schmidt     | Municipios               | 2010 - 2020 | 2010 - 2020: :x:                  | 2010 - 2020: :warning: | 0% :arrow\_down: |
+| Schmidt     | Municipios               | 2010 - 2020 | 2010 - 2015: :heavy\_check\_mark: | 2020 - 2020: :warning: | 66% :arrow\_up:  |
 | Schmidt     | Corte Electoral          | 1985 - 2020 | 1985 - 2020: :x:                  | 1985 - 2020: :warning: | 0% :arrow\_down: |
 | Cardarello  | Ejecutivo departamental  | 1830 - 2020 | 1830 - 2020: :x:                  | 1830 - 2020: :warning: | 0% :arrow\_down: |
 | Castiglia   | Gabinetes Ministeriales  | 1830 - 2020 | 1830 - 2020: :x:                  | 1830 - 2020: :warning: | 0% :arrow\_down: |
@@ -305,6 +305,17 @@ legislaturas
 ``` r
 url_speech <- "https://parlamento.gub.uy/documentosyleyes/documentos/diario-de-sesion/senadores/2094/IMG/0?width=800&height=600&hl=en_US1&iframe=true&rel=nofollow" 
 floor_speech <- speech::speech_build(file = url_speech, compiler = TRUE) 
+#> PDF error: Invalid XRef entry 131
+#> PDF error: xref num 131 not found but needed, try to reconstruct<0a>
+#> PDF error: Invalid XRef entry 131
+#> PDF error: Invalid XRef entry 133
+#> PDF error: Top-level pages object is wrong type (null)
+#> PDF error: Invalid XRef entry 131
+#> PDF error: xref num 131 not found but needed, try to reconstruct<0a>
+#> PDF error: Invalid XRef entry 131
+#> PDF error: Invalid XRef entry 133
+#> PDF error: Top-level pages object is wrong type (null)
+#> PDF error: Top-level pages object is wrong type (null)
 
 str(floor_speech)
 #> tibble (S3: tbl_df/tbl/data.frame/puy)

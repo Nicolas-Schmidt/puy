@@ -34,7 +34,7 @@ Este paquete de R contiene varios conjuntos de datos relativos a carreras polít
 | Responsable  | Datos                   | Periodo     | Avance                         | Pendiente              | Status                 |
 | -------------| ----------------------- |  -----------| -------------------------------|------------------------|------------------------|
 | Schmidt      | Poder Legislativo       | 1830 - 2020 | 1830 - 2005: :heavy_check_mark:| 2006 - 2020: :warning: | 92% :arrow_up:         |
-| Schmidt      | Municipios              | 2010 - 2020 | 2010 - 2020: :x:               | 2010 - 2020: :warning: | 0%  :arrow_down:       |
+| Schmidt      | Municipios              | 2010 - 2020 | 2010 - 2015: :heavy_check_mark:| 2020 - 2020: :warning: | 66% :arrow_up:         |
 | Schmidt      | Corte Electoral         | 1985 - 2020 | 1985 - 2020: :x:               | 1985 - 2020: :warning: | 0%  :arrow_down:       |
 | Cardarello   | Ejecutivo departamental | 1830 - 2020 | 1830 - 2020: :x:               | 1830 - 2020: :warning: | 0%  :arrow_down:       |
 | Castiglia    | Gabinetes Ministeriales | 1830 - 2020 | 1830 - 2020: :x:               | 1830 - 2020: :warning: | 0%  :arrow_down:       |
