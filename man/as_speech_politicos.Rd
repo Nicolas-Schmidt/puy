@@ -4,7 +4,10 @@
 \alias{as_speech_politicos}
 \title{Adapta base de datos depliticos para pegar con speech}
 \usage{
-as_speech_politicos()
+as_speech_politicos(floor_speech)
+}
+\arguments{
+\item{floor_speech}{diario de sesion en formato data.frame del paquete \code{speech}.}
 }
 \value{
 data.frame

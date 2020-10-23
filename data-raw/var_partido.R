@@ -343,12 +343,10 @@ l[l$partido == "RepresentÃ³ al Partido Colorado (40) ____ RepresentÃ³ al Par
 l[l$partido == "RepresentÃ³ al Partido Nuevo Espacio (45) ____ RepresentÃ³ al Partido Independiente (46)" & l$legislatura == 44, "partido"] <- "Partido Nuevo Espacio" ## MANUAL
 l[l$partido == "RepresentÃ³ al Partido Nuevo Espacio (45) ____ RepresentÃ³ al Partido Independiente (46)" & l$legislatura == 45, "partido"] <- "Partido Nuevo Espacio"
 l[l$partido == "RepresentÃ³ al Partido Nuevo Espacio (45) ____ RepresentÃ³ al Partido Independiente (46)" & l$legislatura == 46, "partido"] <- "Partido Independiente"
-
 l[l$partido == "RepresentÃ³ al Partido Colorado (19,20,21,22,23,24,25,26,27, 32 y 33) ____ RepresentÃ³ al Partido Colorado Radical (29 y 30)" & l$legislatura == 46, "partido"] <- "Partido Independiente"
 l[l$partido == "RepresentÃ³ al Partido Colorado (19,20,21,22,23,24,25,26,27, 32 y 33) ____ RepresentÃ³ al Partido Colorado Radical (29 y 30)" & l$legislatura == 46, "partido"] <- "Partido Independiente"
-
 l[l$partido == "Partido Socialista del Uruguay", "partido"] <- "Partido Socialista"
-
+l[l$partido == "Partido Democrata Cristiano" & l$legislatura %in% c(41, 42), "partido"] <- "Partido Frente Amplio"
 
 
 

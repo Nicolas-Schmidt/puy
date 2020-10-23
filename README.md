@@ -95,7 +95,7 @@ str(politicos[, vars], 15)
 #>  $ fecha_inicio: chr  "18 de mayo de 1934" "2 de julio de 1934" "15 de febrero de 1995" "15 de febrero de 2000" ...
 #>  $ fecha_fin   : chr  "1 de julio de 1934" "24 de noviembre de 1936" "14 de febrero de 2000" "14 de febrero de 2005" ...
 #>  $ partido     : chr  "Partido Colorado" "Partido Colorado" "Partido Colorado" "Partido Colorado" ...
-#>  $ legislatura : num  32 32 44 45 46 30 29 30 20 23 ...
+#>  $ legislatura : chr  "32" "32" "44" "45" ...
 ```
 
 ### Instalación
@@ -165,10 +165,9 @@ set
 set2 <-  do.call(rbind, politicos2[lengths(lapply(politicos2, function(x){unique(x$partido)})) == 3])
 rownames(set2) <- NULL
 unique(set2$legislador2)
-#>  [1] "ALONSO, Nelson"         "ARISMENDI, Rodney"      "BATALLA, Hugo"         
-#>  [4] "ERRO, Enrique"          "FAU, Yamandu"           "MIERES, Pablo"         
-#>  [7] "PRANDO, Carlos Maria"   "PRIETO, Baltasar"       "ROBALLO, Alba"         
-#> [10] "RODRIGUEZ, Enrique"     "SANTAMARINA, Eden Melo"
+#> [1] "ALONSO, Nelson"         "ARISMENDI, Rodney"      "BATALLA, Hugo"         
+#> [4] "ERRO, Enrique"          "FAU, Yamandu"           "PRANDO, Carlos Maria"  
+#> [7] "PRIETO, Baltasar"       "RODRIGUEZ, Enrique"     "SANTAMARINA, Eden Melo"
 
 
 print(set2 %>% select(-legislatura, -camara) %>% distinct())
@@ -180,7 +179,7 @@ print(set2 %>% select(-legislatura, -camara) %>% distinct())
 #> 5       ARISMENDI, Rodney     Frente Izquierda de Liberacion
 #> 6       ARISMENDI, Rodney              Partido Frente Amplio
 #> 7           BATALLA, Hugo                   Partido Colorado
-#> 8           BATALLA, Hugo        Partido Democrata Cristiano
+#> 8           BATALLA, Hugo              Partido Frente Amplio
 #> 9           BATALLA, Hugo Partido Por el Gobierno del Pueblo
 #> 10          ERRO, Enrique                   Partido Nacional
 #> 11          ERRO, Enrique              Partido Union Popular
@@ -188,30 +187,24 @@ print(set2 %>% select(-legislatura, -camara) %>% distinct())
 #> 13           FAU, Yamandu              Partido Frente Amplio
 #> 14           FAU, Yamandu Partido por el Gobierno del Pueblo
 #> 15           FAU, Yamandu                   Partido Colorado
-#> 16          MIERES, Pablo              Partido Frente Amplio
-#> 17          MIERES, Pablo Partido Por el Gobierno del Pueblo
-#> 18          MIERES, Pablo              Partido Nuevo Espacio
-#> 19   PRANDO, Carlos Maria                   Partido Colorado
-#> 20   PRANDO, Carlos Maria    Partido Colorado General Rivera
-#> 21   PRANDO, Carlos Maria Partido por la Tradicion Coloradal
-#> 22       PRIETO, Baltasar              Partido Frente Amplio
-#> 23       PRIETO, Baltasar Partido Por el Gobierno del Pueblo
-#> 24       PRIETO, Baltasar                   Partido Colorado
-#> 25          ROBALLO, Alba                   Partido Colorado
-#> 26          ROBALLO, Alba        Partido Democrata Cristiano
-#> 27          ROBALLO, Alba              Partido Frente Amplio
-#> 28     RODRIGUEZ, Enrique      Partido Comunista del Uruguay
-#> 29     RODRIGUEZ, Enrique     Frente Izquierda de Liberacion
-#> 30     RODRIGUEZ, Enrique              Partido Frente Amplio
-#> 31 SANTAMARINA, Eden Melo              Partido Frente Amplio
-#> 32 SANTAMARINA, Eden Melo Partido Por el Gobierno del Pueblo
-#> 33 SANTAMARINA, Eden Melo                   Partido Colorado
+#> 16   PRANDO, Carlos Maria                   Partido Colorado
+#> 17   PRANDO, Carlos Maria    Partido Colorado General Rivera
+#> 18   PRANDO, Carlos Maria Partido por la Tradicion Coloradal
+#> 19       PRIETO, Baltasar              Partido Frente Amplio
+#> 20       PRIETO, Baltasar Partido Por el Gobierno del Pueblo
+#> 21       PRIETO, Baltasar                   Partido Colorado
+#> 22     RODRIGUEZ, Enrique      Partido Comunista del Uruguay
+#> 23     RODRIGUEZ, Enrique     Frente Izquierda de Liberacion
+#> 24     RODRIGUEZ, Enrique              Partido Frente Amplio
+#> 25 SANTAMARINA, Eden Melo              Partido Frente Amplio
+#> 26 SANTAMARINA, Eden Melo Partido Por el Gobierno del Pueblo
+#> 27 SANTAMARINA, Eden Melo                   Partido Colorado
 
 # global
 table(sapply(politicos2, function(x){length(unique(x$partido))}))
 #> 
 #>    1    2    3 
-#> 2576   56   11
+#> 2578   57    9
 
 
 
@@ -305,17 +298,6 @@ legislaturas
 ``` r
 url_speech <- "https://parlamento.gub.uy/documentosyleyes/documentos/diario-de-sesion/senadores/2094/IMG/0?width=800&height=600&hl=en_US1&iframe=true&rel=nofollow" 
 floor_speech <- speech::speech_build(file = url_speech, compiler = TRUE) 
-#> PDF error: Invalid XRef entry 131
-#> PDF error: xref num 131 not found but needed, try to reconstruct<0a>
-#> PDF error: Invalid XRef entry 131
-#> PDF error: Invalid XRef entry 133
-#> PDF error: Top-level pages object is wrong type (null)
-#> PDF error: Invalid XRef entry 131
-#> PDF error: xref num 131 not found but needed, try to reconstruct<0a>
-#> PDF error: Invalid XRef entry 131
-#> PDF error: Invalid XRef entry 133
-#> PDF error: Top-level pages object is wrong type (null)
-#> PDF error: Top-level pages object is wrong type (null)
 
 str(floor_speech)
 #> tibble (S3: tbl_df/tbl/data.frame/puy)
@@ -331,18 +313,18 @@ str(floor_speech)
 ## add party and complete name
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-floor_speech <- left_join(floor_speech, as_speech_politicos(), by = c("legislator", "legislature"))
+floor_speech_party <- as_speech_politicos(floor_speech)
     
-str(floor_speech)
-#> tibble (S3: tbl_df/tbl/data.frame/puy)
-#>  $ legislator   : chr [1:23] "ARISMENDI" "ATCHUGARRY" "ATCHUGARRY" "BERGSTEIN" ...
-#>  $ legislature  : num [1:23] 44 44 44 44 44 44 44 44 44 44 ...
-#>  $ chamber      : chr [1:23] "CAMARA DE SENADORES" "CAMARA DE SENADORES" "CAMARA DE SENADORES" "CAMARA DE SENADORES" ...
-#>  $ date         : Date[1:23], format: "1999-09-15" "1999-09-15" ...
-#>  $ id           : chr [1:23] "0?width=800&height=600&hl=en_US1&iframe=true&rel=nofollow" "0?width=800&height=600&hl=en_US1&iframe=true&rel=nofollow" "0?width=800&height=600&hl=en_US1&iframe=true&rel=nofollow" "0?width=800&height=600&hl=en_US1&iframe=true&rel=nofollow" ...
-#>  $ speech       : chr [1:23] "SEÑORA ARISMENDI. Pido la palabra para una moción de orden. CAMARA DE SENADORES C.S.28115 de Setiembre de 1999 "| __truncated__ "SEÑOR ATCHUGARRY. Pido la palabra para fundar el voto. SEÑOR ATCHUGARRY. En el mismo sentido que se ha hecho ex"| __truncated__ "SEÑOR ATCHUGARRY. Pido la palabra para fundar el voto. SEÑOR ATCHUGARRY. En el mismo sentido que se ha hecho ex"| __truncated__ "SEÑOR BERGSTEIN. Pido la palabra para referirme a la moción. SEÑOR BERGSTEIN. La moción que acaba de presentar "| __truncated__ ...
-#>  $ legislator_nc: chr [1:23] "ARISMENDI, Marina" "ATCHUGARRY, Alejandro" "ATCHUGARRY, Alejandro" "BERGSTEIN, Nahum" ...
-#>  $ party        : chr [1:23] "Partido Frente Amplio" "Partido Colorado" "Partido Colorado" "Partido Colorado" ...
+str(floor_speech_party)
+#> tibble [19 x 8] (S3: tbl_df/tbl/data.frame)
+#>  $ legislator   : chr [1:19] "ARISMENDI" "ATCHUGARRY" "ATCHUGARRY" "BERGSTEIN" ...
+#>  $ legislature  : num [1:19] 44 44 44 44 44 44 44 44 44 44 ...
+#>  $ chamber      : chr [1:19] "CAMARA DE SENADORES" "CAMARA DE SENADORES" "CAMARA DE SENADORES" "CAMARA DE SENADORES" ...
+#>  $ date         : Date[1:19], format: "1999-09-15" "1999-09-15" ...
+#>  $ id           : chr [1:19] "0?width=800&height=600&hl=en_US1&iframe=true&rel=nofollow" "0?width=800&height=600&hl=en_US1&iframe=true&rel=nofollow" "0?width=800&height=600&hl=en_US1&iframe=true&rel=nofollow" "0?width=800&height=600&hl=en_US1&iframe=true&rel=nofollow" ...
+#>  $ speech       : chr [1:19] "SEÑORA ARISMENDI. Pido la palabra para una moción de orden. CAMARA DE SENADORES C.S.28115 de Setiembre de 1999 "| __truncated__ "SEÑOR ATCHUGARRY. Pido la palabra para fundar el voto. SEÑOR ATCHUGARRY. En el mismo sentido que se ha hecho ex"| __truncated__ "SEÑOR ATCHUGARRY. Pido la palabra para fundar el voto. SEÑOR ATCHUGARRY. En el mismo sentido que se ha hecho ex"| __truncated__ "SEÑOR BERGSTEIN. Pido la palabra para referirme a la moción. SEÑOR BERGSTEIN. La moción que acaba de presentar "| __truncated__ ...
+#>  $ legislator_nc: chr [1:19] "ARISMENDI, Marina" "ATCHUGARRY, Alejandro" "ATCHUGARRY, Alejandro" "BERGSTEIN, Nahum" ...
+#>  $ party        : chr [1:19] "Partido Frente Amplio" "Partido Colorado" "Partido Colorado" "Partido Colorado" ...
 ```
 
 </details>

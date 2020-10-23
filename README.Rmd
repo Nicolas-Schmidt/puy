@@ -194,9 +194,9 @@ str(floor_speech)
 ## add party and complete name
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-floor_speech <- left_join(floor_speech, as_speech_politicos(), by = c("legislator", "legislature"))
+floor_speech_party <- as_speech_politicos(floor_speech)
     
-str(floor_speech)
+str(floor_speech_party)
 
 
 ```
