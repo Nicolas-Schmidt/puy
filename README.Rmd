@@ -134,7 +134,6 @@ rownames(set) <- NULL
 legis <- unique(set$legislatura)
 cat("\nLegislaturas:\n", " numero  : ", legis, "\n", " cantidad: ", length(legis))
 
-
 set
 
 

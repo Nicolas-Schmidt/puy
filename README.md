@@ -136,7 +136,6 @@ cat("\nLegislaturas:\n", " numero  : ", legis, "\n", " cantidad: ", length(legis
 #>   numero  :  19 20 21 22 23 24 25 26 27 28 29 30 32 33 
 #>   cantidad:  14
 
-
 set
 #>       legislador2 legislatura                  partido    camara
 #> 1  ESPALTER, Jose          19         Partido Colorado Diputados
