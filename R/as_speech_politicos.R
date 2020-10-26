@@ -3,7 +3,10 @@
 #' @param floor_speech diario de sesion en formato data.frame del paquete \code{speech}.
 #' @return data.frame
 #' @examples
-#' as_speech_politicos()
+#' library(speech)
+#' url <- "http://bit.ly/35AUVF4"
+#' text <- speech::speech_build(file = url)
+#' as_speech_politicos(floor_speech = text)
 #' @export
 
 as_speech_politicos <- function(floor_speech){

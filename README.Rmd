@@ -193,7 +193,7 @@ str(floor_speech)
 ## add party and complete name
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-floor_speech_party <- as_speech_politicos(floor_speech)
+floor_speech_party <- puy::as_speech_politicos(floor_speech)
     
 str(floor_speech_party)
 

@@ -16,5 +16,8 @@ data.frame
 Adapta base de datos depliticos para pegar con speech
 }
 \examples{
-as_speech_politicos()
+library(speech)
+url <- "http://bit.ly/35AUVF4"
+text <- speech::speech_build(file = url)
+as_speech_politicos(floor_speech = text)
 }

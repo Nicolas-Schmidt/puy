@@ -36,4 +36,6 @@ Imports:
     data.table, 
     stringr,
     tibble
+Suggests:
+    speech
 RoxygenNote: 7.1.0

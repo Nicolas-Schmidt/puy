@@ -12,4 +12,4 @@
 #' @format data.frame con ... filas y ... columnas.
 #' @details La unidad de analisis de esta base de datos es...
 #'
-'politicos'
+NULL
