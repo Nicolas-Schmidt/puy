@@ -1,6 +1,4 @@
 
-
-
 library(tabulizer)
 library(tidyverse)
 file <- "C:\\Users\\usuario\\Desktop\\R_packages\\speech\\ParlamentariosUruguayos.pdf"
