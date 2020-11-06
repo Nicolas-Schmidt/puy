@@ -36,4 +36,4 @@ nombres_ac <- function(x){
 
 concejales$nombre <- nombres_ac(concejales$politico_st)
 
-
+# check
