@@ -2,7 +2,6 @@
 library(tabulizer)
 library(tidyverse)
 file <- "C:\\Users\\usuario\\Desktop\\R_packages\\speech\\ParlamentariosUruguayos.pdf"
-
 # tabla de periodos de legislaturas
 tabla_legis <- extract_tables(file, pages = 96)
 tabla_legis <- tabla_legis[[1]]
