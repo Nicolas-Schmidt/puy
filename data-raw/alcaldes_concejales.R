@@ -16,6 +16,8 @@ concejales <- rio::import("data-raw/bases_limpias/alcaldes_concejales.xlsx")
 ## "partido"
 ## "fraccion"
 
+
+
 # partido y fraccion - hoja
 concejales          <- tidyr::separate(concejales, 'partido', into = c("partido", "fraccion"), sep = "-")
 concejales$partido  <- stringr::str_squish(concejales$partido)
