@@ -8,6 +8,7 @@
 #'    \item{fin}{Fecha de cierre de la legislatura}
 #'    \item{dias}{Cantidad de dias que estuvo abierta la legislatura.}
 #' }
+#'
 #' @docType data
 #' @keywords datasets
 #' @name legislaturas
