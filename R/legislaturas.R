@@ -14,6 +14,6 @@
 #' @name legislaturas
 #' @usage data(politicos)
 #' @format data.frame con 46 filas y 4. columnas.
-#' @details La unidad de analisis de esta base de datos es...
+#' @details La unidad de analisis de esta base de datos es..
 #'
 'legislaturas'
