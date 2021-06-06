@@ -43,6 +43,8 @@ text
 #>  9 PEREYRA             48 COMISION ~ 2019-09-17 35AU~ SEÑORA PEREYRA. Con~     0
 #> 10 TOURNE              48 COMISION ~ 2019-09-17 35AU~ SEÑORA TOURNE. Voy ~     0
 #> 11 VIERA               48 COMISION ~ 2019-09-17 35AU~ SEÑOR VIERA. Voto p~     1
+
+
 text <- speech::speech_legis_replace(tidy_speech = text, old = "GOI", new = "GONI")
 text
 #> # A tibble: 11 x 7
@@ -59,6 +61,7 @@ text
 #>  9 PEREYRA             48 COMISION ~ 2019-09-17 35AU~ SEÑORA PEREYRA. Con~     0
 #> 10 TOURNE              48 COMISION ~ 2019-09-17 35AU~ SEÑORA TOURNE. Voy ~     0
 #> 11 VIERA               48 COMISION ~ 2019-09-17 35AU~ SEÑOR VIERA. Voto p~     1
+
 floor_speech <- as_speech_politicos(speech = text)
 floor_speech
 #> # A tibble: 11 x 11
@@ -91,6 +94,22 @@ str(floor_speech)
 #>  $ party      : chr [1:11] "Frente Amplio" "Frente Amplio" "Frente Amplio" "Frente Amplio" ...
 #>  $ party_acron: chr [1:11] "FA" "FA" "FA" "FA" ...
 #>  $ indicator  : int [1:11] 1 2 3 1 1 1 1 1 1 1 ...
+
+floor_speech[c(1,2,7:11)]
+#> # A tibble: 11 x 7
+#>    legislator legislature   sex legislator2      party     party_acron indicator
+#>    <chr>            <dbl> <dbl> <chr>            <chr>     <chr>           <int>
+#>  1 ASTI                48     1 ASTI, Alfredo    Frente A~ FA                  1
+#>  2 GONI                48     1 GONI ROMERO, Ro~ Frente A~ FA                  2
+#>  3 LAZO                48     0 LAZO, Sandra     Frente A~ FA                  3
+#>  4 MAHIA               48     1 MAHIA, Jose Car~ Frente A~ FA                  1
+#>  5 PEREYRA             48     0 PEREYRA, Susana  Frente A~ FA                  1
+#>  6 TOURNE              48     0 TOURNE, Daisy    Frente A~ FA                  1
+#>  7 BORDABERRY          48     1 BORDABERRY, Ped~ Partido ~ PC                  1
+#>  8 VIERA               48     1 VIERA, Tabare    Partido ~ PC                  1
+#>  9 ABDALA              48     1 ABDALA, Pablo    Partido ~ PN                  1
+#> 10 AVIAGA              48     0 AVIAGA, Carol    Partido ~ PN                  1
+#> 11 MERONI              48     1 <NA>             <NA>      <NA>               NA
 ```
 
 #### Notas

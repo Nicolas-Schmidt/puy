@@ -37,13 +37,20 @@ library(puy)
 url <- "http://bit.ly/35AUVF4"
 text <- speech::speech_build(file = url, compiler = TRUE)
 text
+
+
 text <- speech::speech_legis_replace(tidy_speech = text, old = "GOI", new = "GONI")
 text
+
 floor_speech <- as_speech_politicos(speech = text)
 floor_speech
 
 
 str(floor_speech)
+
+floor_speech[c(1,2,7:11)]
+
+
 ```
 
 

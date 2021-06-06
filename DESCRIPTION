@@ -2,7 +2,7 @@ Package: puy
 Type: Package
 Title: Politicos Urugayos
 Version: 0.1.0
-Author: Nicolas Schmidt [aut, cre], Antonio Cardarello [aut], Alfonso Castiglia [aut]
+Author: Nicolas Schmidt [aut, cre], Antonio Cardarello [ctb], Alfonso Castiglia [ctb], Fabricio Carneiro [ctb], Diego Lujan [ctb], UMAD [dtc]
 Authors@R: c(person(given = "Nicolas", 
                     family = "Schmidt", 
                     role = c("aut", "cre"), 
@@ -10,20 +10,23 @@ Authors@R: c(person(given = "Nicolas",
                     comment = c(ORCID = "0000-0001-5083-5792")),
              person(given = "Antonio",
                     family = "Cardarello",
-                    role = c("aut")),
+                    role = c("ctb")),
              person(given = "Alfonso",
                     family = "Castiglia",
-                    role = c("aut")), 
+                    role = c("actb")), 
              person(given = "Fabricio",
                     family = "Carneiro",
-                    role = c("aut")),
+                    role = c("ctb")),
+             person(given = "Diego",
+                    family = "Lujan",
+                    role = c("ctb")),      
              person(family = "Unidad de Metodos y Acceso a Datos (UMAD)",
                     role = c("dtc"))
                     )
 Maintainer: Nicolas Schmidt <nschmidt@cienciassociales.edu.uy>
 Description: Contiene una base de datos original de politicos uruguayos desde 1830. 
     Especificamente, cubre politicos que ocuparon cargos: Presidente, Ministro, 
-    Senador, Diputado o Intendente.
+    Senador, Diputado, Intendente y Alcaldes.
 License: GPL-2
 Encoding: UTF-8
 LazyData: true
