@@ -20,191 +20,31 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 
 [![CRAN status](https://www.r-pkg.org/badges/version/puy)](https://CRAN.R-project.org/package=puy)
-[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![Project Status: Active â€“ The project has reached a stable, usable
+state and is being actively
+developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+[![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-green.svg)](https://lifecycle.r-lib.org/articles/stages.html)
 `r badger::badge_devel("Nicolas-Schmidt/puy", "orange")`
 <!-- badges: end -->
 
 ### Descripción
 
-Este paquete de R contiene varios conjuntos de datos relativos a carreras políticas en Uruguay. La base de datos principal contiene la totalidad de los cargos que fueron ocupados en el parlamento nacional (Cámara de Diputados y Cámara de Senadores) de 1830 a 2005. Adicionalmente, y para el mismo periodo están los nombres de los políticos que ocuparon alguna cartera ministerial.
-
-
-##### Responsables
-
-| Responsable  | Datos                   | Periodo     | Avance                         | Pendiente              | Status                 |
-| -------------| ----------------------- |  -----------| -------------------------------|------------------------|------------------------|
-| Schmidt      | Poder Legislativo       | 1830 - 2020 | 1830 - 2005: :heavy_check_mark:| 2006 - 2020: :warning: | 92% :arrow_up:         |
-| Schmidt      | Municipios              | 2010 - 2020 | 2010 - 2015: :heavy_check_mark:| 2020 - 2020: :warning: | 66% :arrow_up:         |
-| Schmidt      | Corte Electoral         | 1985 - 2020 | 1985 - 2020: :heavy_check_mark:| 2005 - 2010: :warning: | 85% :arrow_up:         |
-| Cardarello   | Ejecutivo departamental | 1830 - 2020 | 1830 - 2020: :x:               | 1830 - 2020: :warning: | 0%  :arrow_down:       |
-| Castiglia    | Gabinetes Ministeriales | 1830 - 2020 | 1830 - 2020: :x:               | 1830 - 2020: :warning: | 0%  :arrow_down:       |
-| Carneiro     | Directores OPP          | 196..- 2020 | 196..- 2020: :x:               | 196..- 2020: :warning: | 0%  :arrow_down:       |    
-| Carneiro     | Presidencia y Vice      | 1830 - 2020 | 1830 - 2020: :x:               | 1830 - 2020: :warning: | 0%  :arrow_down:       |          
-| Carneiro     | BROU                    | 1896 - 2020 | 1896 - 2020: :x:               | 1896 - 2020: :warning: | 0%  :arrow_down:       | 
-| Carneiro     | Banco Central           | 1967 - 2020 | 1967 - 2020: :x:               | 1967 - 2020: :warning: | 0%  :arrow_down:       | 
-| Luján        | Candidaturas y Pre. Can.| 1830 - 2020 | 1830 - 2020: :x:               | 1830 - 2020: :warning: | 0%  :arrow_down:       | 
-| ASIGNAR      | Entes publicos          |     -       | -                              | -                      | -                      | 
-
-**Juntas Militares?** Para hacer la trayectoria de civiles que iniciaron en politica y se volveron gorilas... Alberto Demicheli recuerdo es el facho, estuvo con Terra y luego en el 70 y algo
-
-
-
-En carpeta `data-raw/viejo_banco` estan las bases que estaban en banco de datos:
-
-- Autoridades Economicas (opp, brou, bc)
-- Consejo de Estado 1973-1985
-- Gabinetes 1943-2014
-- Presidentes Uruguayos
-- Entes publicos 1985-2014
-
-##### Estructura de los datos (Instrucciones)
-
-- `nombre`
-- `cargo`
-- `condicion`
-- `legislatura`
-- `partrido`
-- `fraccion`
-- `fecha_inicio`
-- `fecha_fin`
-- `departamento`
-- `observaciones`
-
-
-## ¿Cómo cargar datos?
-
-**Sigiuendo la siguiente estructura:**  
-
-* **La variable `legislador2` es el nombre del político cargado de esta forma: `APELLIDO, Nombre`** 
-* **¿Se pueden agregar variables?, SI OBVIO!, por ejemplo, si esta disponible la fracción hay que cargarla**
+## Ejemplo
 
 ```{r}
+library(speech)
 library(puy)
+url <- "http://bit.ly/35AUVF4"
+text <- speech::speech_build(file = url, compiler = TRUE)
+text
+text <- speech::speech_legis_replace(tidy_speech = text, old = "GOI", new = "GONI")
+text
+floor_speech <- as_speech_politicos(speech = text)
+floor_speech
 
-# estas son las variables que van en la base actualmente
-
-vars <- c("legislador2", "camara", "condicion", "departamento", 
-          "fecha_inicio", "fecha_fin", "partido", "legislatura")
-
-str(politicos[, vars], 15)
-```
-
-
-
-
-
-
-
-
-### Instalación
-
-``` r
-## Versión en desarrollo
-remotes::install_github(repo = "https://github.com/Nicolas-Schmidt/puy")
-```
-
-
-### Ejemplos de color
-
-<details>
-  <summary><b><a style="cursor: pointer;">Click here to expand </a></b> </summary>
-
-```{r, echo = FALSE}
-#load("data/politicos.rda")
-suppressPackageStartupMessages(library(tidyverse))
-```
-
-```{r}
-
-## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-## legislador más prolifico
-## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-politicos2 <-
-    politicos %>% 
-    select(legislador2, legislatura, partido, camara) %>% 
-    filter(partido != "") %>% 
-    distinct() %>% 
-    na.omit() %>% 
-    split(.$legislador2)
-    
-set <- politicos2[[which.max(lapply(politicos2, nrow))]]
-rownames(set) <- NULL
-
-legis <- unique(set$legislatura)
-cat("\nLegislaturas:\n", " numero  : ", legis, "\n", " cantidad: ", length(legis))
-
-set
-
-
-## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-## legislador más party-volat
-## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-set2 <-  do.call(rbind, politicos2[lengths(lapply(politicos2, function(x){unique(x$partido)})) == 3])
-rownames(set2) <- NULL
-unique(set2$legislador2)
-
-
-print(set2 %>% select(-legislatura, -camara) %>% distinct())
-
-# global
-table(sapply(politicos2, function(x){length(unique(x$partido))}))
-
-
-
-## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-## Frecuencia de nombres
-## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-puy_nombres()
-
-
-
-## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-## Legislaturas
-## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-legislaturas
-
-```
-
-</details>
-<p> </p>
-
-
-
-
-
-### Ejemplo con `speech`
-
-<details>
-  <summary><b><a style="cursor: pointer;">Click here to expand </a></b> </summary>
-
-```{r}
-url_speech <- "https://parlamento.gub.uy/documentosyleyes/documentos/diario-de-sesion/senadores/2094/IMG/0?width=800&height=600&hl=en_US1&iframe=true&rel=nofollow" 
-floor_speech <- speech::speech_build(file = url_speech, compiler = TRUE) 
 
 str(floor_speech)
-
-
-## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-## add party and complete name
-## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-floor_speech_party <- puy::as_speech_politicos(floor_speech)
-    
-str(floor_speech_party)
-
-
 ```
-
-
-
-</details>
-<p> </p>
-
 
 
 
