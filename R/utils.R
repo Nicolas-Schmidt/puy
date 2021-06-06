@@ -1,6 +1,6 @@
 #' @importFrom magrittr %>%
 #' @importFrom tibble as_tibble
-
+#' @import Boreluy
 
 
 vars <- c("politicos", "legislador2","party", "legislator",
