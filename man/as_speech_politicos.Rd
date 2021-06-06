@@ -4,10 +4,10 @@
 \alias{as_speech_politicos}
 \title{Adapta base de datos depliticos para pegar con speech}
 \usage{
-as_speech_politicos(floor_speech)
+as_speech_politicos(speech)
 }
 \arguments{
-\item{floor_speech}{diario de sesion en formato data.frame del paquete \code{speech}.}
+\item{speech}{diario de sesion en formato data.frame del paquete \code{speech}.}
 }
 \value{
 data.frame
@@ -18,6 +18,7 @@ Adapta base de datos depliticos para pegar con speech
 \examples{
 library(speech)
 url <- "http://bit.ly/35AUVF4"
-text <- speech::speech_build(file = url)
-as_speech_politicos(floor_speech = text)
+text <- speech::speech_build(file = url, compiler = TRUE)
+text <- speech::speech_legis_replace(tidy_speech = text, old = "GOI", new = "GOÃ‘I")
+floor_speech <- as_speech_politicos(speech = text)
 }

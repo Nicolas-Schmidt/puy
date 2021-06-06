@@ -21,6 +21,6 @@ Contiene las fechas en las que estuvieron abiertas las legislaturas desde 1830 a
    \item{dias}{Cantidad de dias que estuvo abierta la legislatura.}
 }
 
-La unidad de analisis de esta base de datos es...
+La unidad de analisis de esta base de datos es..
 }
 \keyword{datasets}
