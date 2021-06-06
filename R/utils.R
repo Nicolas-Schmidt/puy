@@ -1,6 +1,8 @@
 #' @importFrom magrittr %>%
 #' @importFrom tibble as_tibble
 
+
+
 vars <- c("politicos", "legislador2","party", "legislator",
           "partido", "legislator_nc", "legislature", "legislatura")
 
