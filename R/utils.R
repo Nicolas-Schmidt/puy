@@ -1,10 +1,9 @@
 #' @importFrom magrittr %>%
 #' @importFrom tibble as_tibble
-#' @import Boreluy
 
 
 vars <- c("politicos", "legislador2","party", "legislator",
-          "partido", "legislator_nc", "legislature", "legislatura")
+          "partido", "legislator_nc", "legislature", "legislatura", "Partido", "Sigla", "partidos_uy")
 
 if(getRversion() >= "2.15.1"){
     utils::globalVariables(c('.', vars))
