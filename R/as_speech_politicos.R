@@ -23,13 +23,12 @@ as_speech_politicos <- function(speech){
     b3          <- b2
     b2$camara   <- "COMISION PERMANENTE"
     B           <- rbind(b1, b2, b3)
-
     match1 <- list()
-    for(i in 1:6){match1[[i]] <- step(B, dat, i)[,8:9]}
-    voi <- base::Reduce(function(...) cbind(...), match1 )
-    dat$legislator2 <- apply(voi[, seq(1,12, 2)], 1, aux)
-    dat$party <- apply(voi[, seq(2,12, 2)], 1, aux)
-    dat$indicator <- apply(voi[, seq(1,12, 2)], 1, aux2)
+    for(i in 1:6){match1[[i]] <- step(B, dat, i)[,c(8:9)]}
+    voi <- base::Reduce(function(...) cbind(...), match1)
+    dat$legislator2 <- apply(voi[, seq(1,ncol(voi), 2)], 1, aux)
+    dat$party       <- apply(voi[, seq(2,ncol(voi), 2)], 1, aux)
+    dat$indicator   <- apply(voi[, seq(1,ncol(voi), 2)], 1, aux2)
     invisible(dat)
 
 }
