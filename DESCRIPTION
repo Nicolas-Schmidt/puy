@@ -34,7 +34,6 @@ Depends:
     R (>= 3.6.0)
 URL: https://github.com/Nicolas-Schmidt/puy
 Imports:
-    Boreluy,
     magrittr,
     stringr,
     tibble
