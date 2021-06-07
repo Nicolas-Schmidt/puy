@@ -49,7 +49,7 @@ as_speech_politicos <- function(speech){
     dat$legislator2 <- apply(voi[, seq(1,ncol(voi), 2)], 1, aux)
     dat$party       <- apply(voi[, seq(2,ncol(voi), 2)], 1, aux)
     dat$indicator   <- apply(voi[, seq(1,ncol(voi), 2)], 1, aux2)
-    invisible(dat)
+    invisible(acron(dat))
 
 }
 
