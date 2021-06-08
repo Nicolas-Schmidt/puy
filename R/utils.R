@@ -42,7 +42,7 @@ aux2 <- function(x){ifelse(length(unique(x)) == 1 && is.na(unique(x)), NA, which
 
 
 acron <- function(x){
-    x. <- merge(x, Boreluy:::pol()[, c("Partido", "Sigla")], by.x = "party",by.y = "Partido", all.x = TRUE)
+    x. <- merge(x, Boreluy::partidos_uy[, c("Partido", "Sigla")], by.x = "party",by.y = "Partido", all.x = TRUE)
     names(x.)[11] <- "party_acron"
     x.[, c(2:9, 1, 11, 10)] %>% tibble::as_tibble()
     }

@@ -34,7 +34,7 @@
 as_speech_politicos <- function(speech){
 
     dat <- speech
-    # acá hay que filtrar la base de politicos solo de legisladores
+    politicos   <- subset(politicos, subset = politicos$cargo %in% c("Diputados", "Senado"))
     b1          <- politicos
     b1$apellido <- stringr::str_extract(b1$politico, pattern = "[A-Z. ]{2,}")
     b1$camara   <- ifelse(b1$cargo == "Senado", "CAMARA DE SENADORES", ifelse(b1$cargo == "Diputados", "CAMARA DE REPRESENTANTES", NA))
