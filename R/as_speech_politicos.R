@@ -24,10 +24,10 @@
 #'     utilizarlos no va a ser posible ninguno de los match posibles que se describen para la variable \code{indicator}.
 #' @examples
 #' \donttest{
-#' library(speech)
-#' url <- "http://bit.ly/35AUVF4"
-#' text <- speech::speech_build(file = url, compiler = TRUE)
-#' floor_speech <- as_speech_politicos(speech = text)
+#' #library(speech)
+#' #url <- "http://bit.ly/35AUVF4"
+#' #text <- speech::speech_build(file = url, compiler = TRUE)
+#' #floor_speech <- as_speech_politicos(speech = text)
 #' }
 #' @export
 

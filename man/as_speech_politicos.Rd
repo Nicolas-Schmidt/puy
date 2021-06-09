@@ -38,8 +38,10 @@ Cuando se va a hacer el merge y se hacen correcciones a mano con \code{speech::s
     utilizarlos no va a ser posible ninguno de los match posibles que se describen para la variable \code{indicator}.
 }
 \examples{
-library(speech)
-url <- "http://bit.ly/35AUVF4"
-text <- speech::speech_build(file = url, compiler = TRUE)
-floor_speech <- as_speech_politicos(speech = text)
+\donttest{
+#library(speech)
+#url <- "http://bit.ly/35AUVF4"
+#text <- speech::speech_build(file = url, compiler = TRUE)
+#floor_speech <- as_speech_politicos(speech = text)
+}
 }

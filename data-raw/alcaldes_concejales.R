@@ -3,7 +3,7 @@
 ## concejales y alcaldes!
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-concejales <- rio::import("data-raw/bases_limpias/alcaldes_concejales.xlsx")
+concejales <- rio::import("data-raw/bases_limpias/alcaldes.xlsx")
 
 ## "politico"     ---> con tilde
 ## "politico_st"  ---> sin tilde
@@ -19,7 +19,7 @@ concejales <- rio::import("data-raw/bases_limpias/alcaldes_concejales.xlsx")
 # partido y fraccion - hoja
 concejales          <- tidyr::separate(concejales, 'partido', into = c("partido", "fraccion"), sep = "-")
 concejales$partido  <- stringr::str_squish(concejales$partido)
-concejales$fraccion <- stringr::str_squish(concejales$fraccion)
+#concejales$fraccion <- stringr::str_squish(concejales$fraccion)
 
 concejales[concejales$partido %in% c("PFA", "FA"), "partido"] <- "Partido Frente Amplio"
 concejales[concejales$partido == "PN" , "partido"] <- "Partido Nacional"
@@ -34,5 +34,5 @@ nombres_ac <- function(x){
     return(stringr::str_squish(paste(xa, xn, sep = ", ")))
 }
 
-concejales$nombre <- nombres_ac(concejales$politico_st)
+concejales$politico <- nombres_ac(concejales$politico)
 
