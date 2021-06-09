@@ -26,7 +26,6 @@
 #' library(speech)
 #' url <- "http://bit.ly/35AUVF4"
 #' text <- speech::speech_build(file = url, compiler = TRUE)
-#' text <- speech::speech_legis_replace(tidy_speech = text, old = "GOI", new = "GONI")
 #' floor_speech <- as_speech_politicos(speech = text)
 #' @export
 
@@ -49,7 +48,8 @@ as_speech_politicos <- function(speech){
     dat$legislator2 <- apply(voi[, seq(1,ncol(voi), 2)], 1, aux)
     dat$party       <- apply(voi[, seq(2,ncol(voi), 2)], 1, aux)
     dat$indicator   <- apply(voi[, seq(1,ncol(voi), 2)], 1, aux2)
-    invisible(acron(dat))
+    dat <- acron(dat)
+    invisible(dat[order(dat$legislator),])
 
 }
 

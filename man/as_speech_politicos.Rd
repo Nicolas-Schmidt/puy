@@ -41,6 +41,5 @@ Cuando se va a hacer el merge y se hacen correcciones a mano con \code{speech::s
 library(speech)
 url <- "http://bit.ly/35AUVF4"
 text <- speech::speech_build(file = url, compiler = TRUE)
-text <- speech::speech_legis_replace(tidy_speech = text, old = "GOI", new = "GONI")
 floor_speech <- as_speech_politicos(speech = text)
 }
