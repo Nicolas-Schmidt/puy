@@ -21,6 +21,8 @@ Contiene el periodo y el cargo que ocupo un politico uruguayo desde 1830 hasta 2
    \item{fecha_fin}{Fecha de fin en la que finaliza la gestion en el cargo.}
    \item{legislatura}{Legislatura en la que ocupa el cargo. Esta variable es para los legisladores unicamente.}
    \item{cargo}{Tipo de cargo.}
+   \item{status}{Si es Titula, Suplente, Nominal...}
+   \item{circunscripcion}{Distrito al que pertenece el legislador.}
    \item{sexo}{Sexo}
 }
 

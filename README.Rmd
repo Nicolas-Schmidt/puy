@@ -30,6 +30,55 @@ developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.re
 
 ### Descripción
 
+Contiene un conjunto de datos original de politicos uruguayos que ocuparon diversos cargos publicos: Presidentes, ministros, legisladores, alcaldes, concejales, ministros de corte electoral. Esta base de datos permite seguir la trayectoria de un politico a lo largo de su carrera y los distintos cargos que fue ocupando. Asimismo, es de gran utilidad para tener la identificacion partidaria de los politicos en el tiempo para poder empalmar con otros conjuntos de datos en donde la unidad es el politico. El ejemplo inmediato de esto ultimo es la base de datos que se genera a partir de los diarios de sesion del parlamento con el paquete speech.
+
+#### Conjuntos de datos
+
+
+#### `politicos`
+
+| Variable          | Descripción                                                                                |
+| ----------------- | ------------------------------------------------------------------------------------------ |
+| `politico`        | Partido al que pertenece el politico en el cargo.                                          |
+| `partido`         | Partido al que pertenece el politico en el cargo.                                          |
+| `fecha_inicio`    | Fecha de inicio en el que comienza la gestión en el cargo.                                 |
+| `fecha_inicio`    | Fecha de fin en la que finaliza la gestión en el cargo.                                    |
+| `legislatura`     | Legislatura en la que ocupa el cargo. Esta variable es para los legisladores unicamente.   | 
+| `cargo`           | Tipo de cargo.                                                                             |
+| `status`          | Si es Titula, Suplente, Nominal...                                                         |
+| `circunscripcion` | Distrito al que pertenece el legislador.                                                   |
+| `sexo`            | Sexo.                                                                                      |
+
+
+Actualmente la base cuenta con la siguiente informacion:
+
+| Políticos              | Periodo       |
+| -----------------      | ------------- |
+| Legisladores           | 1830 - 2020   |
+| Ministros              | 1904 - 2020   |
+| Alcaldes y Concejales  | 2010 - 2020   |
+| Corte Electoral        | 1985 - 2020   |
+
+
+#### `legislaturas`
+
+| Variable    | Descripción                                          |
+| ----------- | ---------------------------------------------------- |
+| legislatura | Número de la legislatura.                            |
+| inicio      | Fecha de inicio de la legislatura.                   |
+| fin         | Fecha de cierre de la legislatura                    |
+| dias        | Cantidad de días que estuvo abierta la legislatura.  |
+
+
+
+
+#### Funciones
+
+| Función     | Descripción                                          |
+| ----------- | ---------------------------------------------------- |
+| `as_speeh_puy` |                            |
+
+
 ## Ejemplo
 
 ```{r}
