@@ -1,4 +1,6 @@
 
+# puy 0.1.0.07
+* Se arregla problema de merge de speech con puy en diarios no compilados
 
 # puy 0.1.0.06
 * Se carga la data de alcaldes y concejales
