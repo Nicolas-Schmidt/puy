@@ -1,6 +1,6 @@
 #' @importFrom magrittr %>%
 #' @importFrom tibble as_tibble
-#'
+#' @importFrom speech speech_word_count
 
 
 
@@ -23,9 +23,9 @@ step <- function(x, y, step){
     if(step == 6){x$id <- paste(surname(x$apellido), c(x$legislatura+1), x$camara, x$sexo)} # legislatura posterior y un solo apellido
     y$id <- paste(y$legislator, y$legislature, y$chamber, y$sex)
     out <-
-        merge(y, x[, c("id", "politico", "partido")], by = "id", all.x = TRUE) %>%
-        tibble::as_tibble()
-    names(out)[7:8] <- paste(names(out)[7:8], step, sep = "_")
+        merge(y, x[, c("id", "politico", "partido")], by = "id", all.x = TRUE, sort = FALSE)
+    u <- which(names(out) %in% c("politico", "partido"))
+    names(out)[u] <- paste(names(out)[u], step, sep = "_")
     out
 }
 
@@ -35,16 +35,16 @@ surname <- function(B){
     ubic <- which(lengths(j) > 2)
     j2[ubic] <- B[ubic]
     j2
-
 }
+
 aux <- function(x){ifelse(!is.na(unique(x)[1]), unique(x)[1], ifelse(length(unique(x)) > 1, unique(x)[2], NA))}
 aux2 <- function(x){ifelse(length(unique(x)) == 1 && is.na(unique(x)), NA, which(!is.na(x))[1])}
 
 
 acron <- function(x){
-    x. <- merge(x, partidos_uy[, c("Partido", "Sigla")], by.x = "party",by.y = "Partido", all.x = TRUE)
-    names(x.)[11] <- "party_acron"
-    x.[, c(2:9, 1, 11, 10)] %>% tibble::as_tibble()
+    x. <- merge(x, partidos_uy[, c("Partido", "Sigla")], by.x = "party",by.y = "Partido", all.x = TRUE, sort = FALSE)
+    names(x.)[which(names(x.) == "Sigla")] <- "party_acron"
+    x.[,c(2:8, 10, 1, 12, 11)] %>% tibble::as_tibble()
     }
 
 

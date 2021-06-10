@@ -44,14 +44,39 @@ as_speech_politicos <- function(speech){
     b3          <- b2
     b2$camara   <- "COMISION PERMANENTE"
     B           <- rbind(b1, b2, b3)
+    dat$secuencia <-1:NROW(dat)
     match1 <- list()
-    for(i in 1:6){match1[[i]] <- step(B, dat, i)[,c(8:9)]}
+    for(i in 1:6){match1[[i]] <- step(B, dat, i)[8:10]}
+    match1 <- lapply(match1, function(z){z[order(z$secuencia),]})
+    match1 <- lapply(match1, '[',-1)
     voi <- base::Reduce(function(...) cbind(...), match1)
     dat$legislator2 <- apply(voi[, seq(1,ncol(voi), 2)], 1, aux)
     dat$party       <- apply(voi[, seq(2,ncol(voi), 2)], 1, aux)
     dat$indicator   <- apply(voi[, seq(1,ncol(voi), 2)], 1, aux2)
     dat <- acron(dat)
+    dat$words <- speech::speech_word_count(dat$speech)
     invisible(dat[order(dat$legislator),])
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
