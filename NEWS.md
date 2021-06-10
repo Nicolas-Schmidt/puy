@@ -1,3 +1,6 @@
+# puy 0.1.0.08
+
+* Se arreglaproblema de encoding general delpaquete para hacer merge multicapa.
 
 # puy 0.1.0.07
 * Se arregla problema de merge de speech con puy en diarios no compilados

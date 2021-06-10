@@ -15,7 +15,6 @@ if(getRversion() >= "2.15.1"){
 step <- function(x, y, step){
 
     if(step == 1){x$id <- paste(x$apellido,          x$legislatura,      x$camara, x$sexo)} # match completo
-    #if(step == 2){x$id <- paste(x$apellido,          x$legislatura,                x$sexo)} # sin camara
     if(step == 2){x$id <- paste(surname(x$apellido), x$legislatura,      x$camara, x$sexo)} # un solo apellido
     if(step == 3){x$id <- paste(x$apellido,          c(x$legislatura-1), x$camara, x$sexo)} # legislatura anterior
     if(step == 4){x$id <- paste(x$apellido,          c(x$legislatura+1), x$camara, x$sexo)} # legislatura posterior
@@ -49,7 +48,12 @@ acron <- function(x){
 
 
 
-
+#in_enie <- function(vec){
+#    Encoding(vec) <- "UTF-8"
+#    m <- stringr::str_replace_all(string = vec, pattern = "\u00D1", replacement = "ENIE")
+#    #print(m[stringr::str_which(m, "_enie_")])
+#    return(m)
+#    }
 
 
 
