@@ -92,7 +92,7 @@ floor_speech <- as_speech_politicos(speech = text)
 floor_speech
 
 
-str(floor_speech)
+dplyr::glimpse(floor_speech)
 
 floor_speech[c(1,2,7:11)]
 
