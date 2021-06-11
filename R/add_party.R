@@ -16,7 +16,7 @@
 #'                  \item{5 - Match parcial debil (un solo apellido con la legislatura anterior)}
 #'                  \item{6 - Match parcial debil (un solo apellido con la legislatura posterior)}
 #'                   }
-#'
+#'            \item{\code{words}: cantidad de palabras.}
 #'            }
 #' @details Cuando se va a hacer el merge y se hacen correcciones a mano con \code{speech::speech_legis_replace()} sobre la base de speech
 #'     hay que evitar las 'enies' y los tildes. La base de polílicos cuando se exporta genera las 'enies' y en la variable \code{legislator2}
@@ -27,12 +27,12 @@
 #' #library(speech)
 #' #url <- "http://bit.ly/35AUVF4"
 #' #text <- speech::speech_build(file = url, compiler = TRUE)
-#' #floor_speech <- as_speech_politicos(speech = text)
+#' #floor_speech <- add_party(speech = text)
 #' }
 #' @export
 
 
-as_speech_politicos <- function(speech){
+add_party <- function(speech){
 
     dat <- speech
     politicos   <- subset(politicos, subset = politicos$cargo %in% c("Diputados", "Senado"))
@@ -55,6 +55,7 @@ as_speech_politicos <- function(speech){
     dat$indicator   <- apply(voi[, seq(1,ncol(voi), 2)], 1, aux2)
     dat <- acron(dat)
     dat$words <- speech::speech_word_count(dat$speech)
+    dat <- dat[,sec_]
     invisible(dat[order(dat$legislator),])
 
 }

@@ -1,3 +1,8 @@
+# puy 0.1.0.09
+
+* se cambia nombre de `as_speech_politicos()` a `add_party()`
+* Ahora la salida de add_party es igual en `speech::speech_build(compiler = TRUE)` que en  `speech::speech_build(compiler = FALSE)`
+
 # puy 0.1.0.08
 
 * Se arreglaproblema de encoding general delpaquete para hacer merge multicapa.

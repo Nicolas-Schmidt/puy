@@ -60,18 +60,18 @@ Actualmente la base cuenta con la siguiente informacion:
 
 #### `legislaturas`
 
-| Variable    | Descripción                                         |
-| ----------- | --------------------------------------------------- |
-| legislatura | Número de la legislatura.                           |
-| inicio      | Fecha de inicio de la legislatura.                  |
-| fin         | Fecha de cierre de la legislatura                   |
-| dias        | Cantidad de días que estuvo abierta la legislatura. |
+| Variable      | Descripción                                         |
+| ------------- | --------------------------------------------------- |
+| `legislatura` | Número de la legislatura.                           |
+| `inicio`      | Fecha de inicio de la legislatura.                  |
+| `fin`         | Fecha de cierre de la legislatura                   |
+| `dias`        | Cantidad de días que estuvo abierta la legislatura. |
 
 #### Funciones
 
-| Función        | Descripción |
-| -------------- | ----------- |
-| `as_speeh_puy` |             |
+| Función       | Descripción |
+| ------------- | ----------- |
+| `add_party()` |             |
 
 ## Ejemplo
 
@@ -79,8 +79,8 @@ Actualmente la base cuenta con la siguiente informacion:
 library(speech)
 library(puy)
 url <- "http://bit.ly/35AUVF4"
-text <- speech::speech_build(file = url, compiler = TRUE)
-text
+text1 <- speech::speech_build(file = url, compiler = TRUE)
+text1
 #> # A tibble: 11 x 7
 #>    legislator legislature chamber    date       id    speech                 sex
 #>    <chr>            <dbl> <chr>      <date>     <chr> <chr>                <dbl>
@@ -96,25 +96,7 @@ text
 #> 10 TOURNE              48 COMISION ~ 2019-09-17 35AU~ SEÑORA TOURNE. Voy ~     0
 #> 11 VIERA               48 COMISION ~ 2019-09-17 35AU~ SEÑOR VIERA. Voto p~     1
 
-floor_speech <- as_speech_politicos(speech = text)
-floor_speech
-#> # A tibble: 11 x 12
-#>    legislator legislature chamber  date       id     speech      sex legislator2
-#>    <chr>            <dbl> <chr>    <date>     <chr>  <chr>     <dbl> <chr>      
-#>  1 ABDALA              48 COMISIO~ 2019-09-17 35AUV~ SEÑOR AB~     1 ABDALA, Pa~
-#>  2 ASTI                48 COMISIO~ 2019-09-17 35AUV~ SEÑOR AS~     1 ASTI, Alfr~
-#>  3 AVIAGA              48 COMISIO~ 2019-09-17 35AUV~ SEÑORA A~     0 AVIAGA, Ca~
-#>  4 BORDABERRY          48 COMISIO~ 2019-09-17 35AUV~ SEÑOR BO~     1 BORDABERRY~
-#>  5 GOÑI                48 COMISIO~ 2019-09-17 35AUV~ SEÑOR GO~     1 GOÑI ROMER~
-#>  6 LAZO                48 COMISIO~ 2019-09-17 35AUV~ SEÑORA L~     0 LAZO, Sand~
-#>  7 MAHIA               48 COMISIO~ 2019-09-17 35AUV~ SEÑOR MA~     1 MAHIA, Jos~
-#>  8 MERONI              48 COMISIO~ 2019-09-17 35AUV~ SEÑOR ME~     1 <NA>       
-#>  9 PEREYRA             48 COMISIO~ 2019-09-17 35AUV~ SEÑORA P~     0 PEREYRA, S~
-#> 10 TOURNE              48 COMISIO~ 2019-09-17 35AUV~ SEÑORA T~     0 TOURNE, Da~
-#> 11 VIERA               48 COMISIO~ 2019-09-17 35AUV~ SEÑOR VI~     1 VIERA, Tab~
-#> # ... with 4 more variables: party <chr>, party_acron <chr>, indicator <int>,
-#> #   words <int>
-
+floor_speech <- add_party(speech = text1)
 
 dplyr::glimpse(floor_speech)
 #> Rows: 11
@@ -132,21 +114,59 @@ dplyr::glimpse(floor_speech)
 #> $ indicator   <int> 1, 1, 1, 1, 2, 3, 1, NA, 1, 1, 1
 #> $ words       <int> 400, 46, 107, 963, 100, 103, 128, 12, 12, 111, 8
 
-floor_speech[c(1,2,7:11)]
-#> # A tibble: 11 x 7
-#>    legislator legislature   sex legislator2      party     party_acron indicator
-#>    <chr>            <dbl> <dbl> <chr>            <chr>     <chr>           <int>
-#>  1 ABDALA              48     1 ABDALA, Pablo    Partido ~ PN                  1
-#>  2 ASTI                48     1 ASTI, Alfredo    Frente A~ FA                  1
-#>  3 AVIAGA              48     0 AVIAGA, Carol    Partido ~ PN                  1
-#>  4 BORDABERRY          48     1 BORDABERRY, Ped~ Partido ~ PC                  1
-#>  5 GOÑI                48     1 GOÑI ROMERO, Ro~ Partido ~ PN                  2
-#>  6 LAZO                48     0 LAZO, Sandra     Frente A~ FA                  3
-#>  7 MAHIA               48     1 MAHIA, Jose Car~ Frente A~ FA                  1
-#>  8 MERONI              48     1 <NA>             <NA>      <NA>               NA
-#>  9 PEREYRA             48     0 PEREYRA, Susana  Frente A~ FA                  1
-#> 10 TOURNE              48     0 TOURNE, Daisy    Frente A~ FA                  1
-#> 11 VIERA               48     1 VIERA, Tabare    Partido ~ PC                  1
+floor_speech[c(1,2,7:12)]
+#> # A tibble: 11 x 8
+#>    legislator legislature   sex legislator2   party  party_acron indicator words
+#>    <chr>            <dbl> <dbl> <chr>         <chr>  <chr>           <int> <int>
+#>  1 ABDALA              48     1 ABDALA, Pablo Parti~ PN                  1   400
+#>  2 ASTI                48     1 ASTI, Alfredo Frent~ FA                  1    46
+#>  3 AVIAGA              48     0 AVIAGA, Carol Parti~ PN                  1   107
+#>  4 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1   963
+#>  5 GOÑI                48     1 GOÑI ROMERO,~ Parti~ PN                  2   100
+#>  6 LAZO                48     0 LAZO, Sandra  Frent~ FA                  3   103
+#>  7 MAHIA               48     1 MAHIA, Jose ~ Frent~ FA                  1   128
+#>  8 MERONI              48     1 <NA>          <NA>   <NA>               NA    12
+#>  9 PEREYRA             48     0 PEREYRA, Sus~ Frent~ FA                  1    12
+#> 10 TOURNE              48     0 TOURNE, Daisy Frent~ FA                  1   111
+#> 11 VIERA               48     1 VIERA, Tabare Parti~ PC                  1     8
+
+
+## Diario de sesión NO compilado
+
+text2 <- "http://bit.ly/35AUVF4" %>% 
+    speech::speech_build() %>% 
+    add_party() %>% 
+    #.[c(1,2,7:12)] %>% 
+    print(n = Inf)
+#> # A tibble: 24 x 12
+#>    legislator speech     chamber  date       legislature id      sex legislator2
+#>    <chr>      <chr>      <chr>    <date>           <dbl> <chr> <dbl> <chr>      
+#>  1 ABDALA     SEÑOR ABD~ COMISIO~ 2019-09-17          48 35AU~     1 ABDALA, Pa~
+#>  2 ABDALA     SEÑOR ABD~ COMISIO~ 2019-09-17          48 35AU~     1 ABDALA, Pa~
+#>  3 ABDALA     SEÑOR ABD~ COMISIO~ 2019-09-17          48 35AU~     1 ABDALA, Pa~
+#>  4 ASTI       SEÑOR AST~ COMISIO~ 2019-09-17          48 35AU~     1 ASTI, Alfr~
+#>  5 AVIAGA     SEÑORA AV~ COMISIO~ 2019-09-17          48 35AU~     0 AVIAGA, Ca~
+#>  6 AVIAGA     SEÑORA AV~ COMISIO~ 2019-09-17          48 35AU~     0 AVIAGA, Ca~
+#>  7 AVIAGA     SEÑORA AV~ COMISIO~ 2019-09-17          48 35AU~     0 AVIAGA, Ca~
+#>  8 BORDABERRY SEÑOR BOR~ COMISIO~ 2019-09-17          48 35AU~     1 BORDABERRY~
+#>  9 BORDABERRY SEÑOR BOR~ COMISIO~ 2019-09-17          48 35AU~     1 BORDABERRY~
+#> 10 BORDABERRY SEÑOR BOR~ COMISIO~ 2019-09-17          48 35AU~     1 BORDABERRY~
+#> 11 BORDABERRY SEÑOR BOR~ COMISIO~ 2019-09-17          48 35AU~     1 BORDABERRY~
+#> 12 BORDABERRY SEÑOR BOR~ COMISIO~ 2019-09-17          48 35AU~     1 BORDABERRY~
+#> 13 BORDABERRY SEÑOR BOR~ COMISIO~ 2019-09-17          48 35AU~     1 BORDABERRY~
+#> 14 GOÑI       SEÑOR GOÑ~ COMISIO~ 2019-09-17          48 35AU~     1 GOÑI ROMER~
+#> 15 GOÑI       SEÑOR GOÑ~ COMISIO~ 2019-09-17          48 35AU~     1 GOÑI ROMER~
+#> 16 GOÑI       SEÑOR GOÑ~ COMISIO~ 2019-09-17          48 35AU~     1 GOÑI ROMER~
+#> 17 LAZO       SEÑORA LA~ COMISIO~ 2019-09-17          48 35AU~     0 LAZO, Sand~
+#> 18 MAHIA      SEÑOR MAH~ COMISIO~ 2019-09-17          48 35AU~     1 MAHIA, Jos~
+#> 19 MAHIA      SEÑOR MAH~ COMISIO~ 2019-09-17          48 35AU~     1 MAHIA, Jos~
+#> 20 MAHIA      SEÑOR MAH~ COMISIO~ 2019-09-17          48 35AU~     1 MAHIA, Jos~
+#> 21 MERONI     SEÑOR MER~ COMISIO~ 2019-09-17          48 35AU~     1 <NA>       
+#> 22 PEREYRA    SEÑORA PE~ COMISIO~ 2019-09-17          48 35AU~     0 PEREYRA, S~
+#> 23 TOURNE     SEÑORA TO~ COMISIO~ 2019-09-17          48 35AU~     0 TOURNE, Da~
+#> 24 VIERA      SEÑOR VIE~ COMISIO~ 2019-09-17          48 35AU~     1 VIERA, Tab~
+#> # ... with 4 more variables: party <chr>, party_acron <chr>, indicator <int>,
+#> #   words <int>
 ```
 
 #### Notas

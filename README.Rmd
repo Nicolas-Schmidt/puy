@@ -64,10 +64,10 @@ Actualmente la base cuenta con la siguiente informacion:
 
 | Variable    | Descripción                                          |
 | ----------- | ---------------------------------------------------- |
-| legislatura | Número de la legislatura.                            |
-| inicio      | Fecha de inicio de la legislatura.                   |
-| fin         | Fecha de cierre de la legislatura                    |
-| dias        | Cantidad de días que estuvo abierta la legislatura.  |
+| `legislatura` | Número de la legislatura.                            |
+| `inicio`      | Fecha de inicio de la legislatura.                   |
+| `fin`         | Fecha de cierre de la legislatura                    |
+| `dias`        | Cantidad de días que estuvo abierta la legislatura.  |
 
 
 
@@ -76,7 +76,7 @@ Actualmente la base cuenta con la siguiente informacion:
 
 | Función     | Descripción                                          |
 | ----------- | ---------------------------------------------------- |
-| `as_speeh_puy` |                            |
+| `add_party()`  |                            |
 
 
 ## Ejemplo
@@ -85,17 +85,23 @@ Actualmente la base cuenta con la siguiente informacion:
 library(speech)
 library(puy)
 url <- "http://bit.ly/35AUVF4"
-text <- speech::speech_build(file = url, compiler = TRUE)
-text
+text1 <- speech::speech_build(file = url, compiler = TRUE)
+text1
 
-floor_speech <- as_speech_politicos(speech = text)
-floor_speech
-
+floor_speech <- add_party(speech = text1)
 
 dplyr::glimpse(floor_speech)
 
-floor_speech[c(1,2,7:11)]
+floor_speech[c(1,2,7:12)]
 
+
+## Diario de sesión NO compilado
+
+text2 <- "http://bit.ly/35AUVF4" %>% 
+    speech::speech_build() %>% 
+    add_party() %>% 
+    #.[c(1,2,7:12)] %>% 
+    print(n = Inf)
 
 ```
 

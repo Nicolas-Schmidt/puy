@@ -1,7 +1,7 @@
 Package: puy
 Type: Package
 Title: Politicos Urugayos
-Version: 0.1.0.08
+Version: 0.1.0.09
 Author: Nicolas Schmidt [aut, cre], Antonio Cardarello [ctb], Alfonso Castiglia [ctb], Fabricio Carneiro [ctb], Diego Lujan [ctb], UMAD [dtc]
 Authors@R: c(person(given = "Nicolas", 
                     family = "Schmidt", 
@@ -36,7 +36,6 @@ URL: https://github.com/Nicolas-Schmidt/puy
 Imports:
     magrittr,
     stringr,
-    tibble
-Suggests:
+    tibble,
     speech
 RoxygenNote: 7.1.1

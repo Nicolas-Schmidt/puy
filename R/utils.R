@@ -47,14 +47,7 @@ acron <- function(x){
     }
 
 
-
-#in_enie <- function(vec){
-#    Encoding(vec) <- "UTF-8"
-#    m <- stringr::str_replace_all(string = vec, pattern = "\u00D1", replacement = "ENIE")
-#    #print(m[stringr::str_which(m, "_enie_")])
-#    return(m)
-#    }
-
+sec_ <- c("legislator", "legislature", "chamber", "date","id", "speech", "sex", "legislator2", "party", "party_acron", "indicator", "words")
 
 
 
