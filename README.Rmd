@@ -35,7 +35,7 @@ Contiene un conjunto de datos original de politicos uruguayos que ocuparon diver
 #### Conjuntos de datos
 
 
-#### `politicos`
+### `politicos`
 
 | Variable          | Descripción                                                                                |
 | ----------------- | ------------------------------------------------------------------------------------------ |
@@ -61,7 +61,7 @@ Actualmente la base cuenta con la siguiente informacion:
 | Ministros Corte Electoral     | 1985 - 2020   |
 
 
-#### `legislaturas`
+### `legislaturas`
 
 | Variable    | Descripción                                          |
 | ----------- | ---------------------------------------------------- |

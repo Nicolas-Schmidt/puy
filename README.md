@@ -16,7 +16,7 @@ state and is being actively
 developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![Lifecycle:
 stable](https://img.shields.io/badge/lifecycle-stable-green.svg)](https://lifecycle.r-lib.org/articles/stages.html)
-[![](https://img.shields.io/badge/devel%20version-0.1.0.09-orange.svg)](https://github.com/Nicolas-Schmidt/puy)
+[![](https://img.shields.io/badge/devel%20version-0.1.0.010-orange.svg)](https://github.com/Nicolas-Schmidt/puy)
 [![R-CMD-check](https://github.com/Nicolas-Schmidt/puy/workflows/R-CMD-check/badge.svg)](https://github.com/Nicolas-Schmidt/puy/actions)
 <!-- badges: end -->
 
@@ -35,7 +35,7 @@ paquete speech.
 
 #### Conjuntos de datos
 
-#### `politicos`
+### `politicos`
 
 | Variable          | Descripción                                                                              |
 | ----------------- | ---------------------------------------------------------------------------------------- |
@@ -59,7 +59,7 @@ Actualmente la base cuenta con la siguiente informacion:
 | Alcaldes y Concejales         | 2010 - 2020 |
 | Ministros Corte Electoral     | 1985 - 2020 |
 
-#### `legislaturas`
+### `legislaturas`
 
 | Variable      | Descripción                                         |
 | ------------- | --------------------------------------------------- |
