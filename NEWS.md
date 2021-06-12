@@ -1,19 +1,23 @@
-# puy 0.1.0.09
+# puy 0.1.0.010
+
+* se agrega datos de presidentes y vicepresidnetes
+
+# puy 0.1.0.009
 
 * se cambia nombre de `as_speech_politicos()` a `add_party()`
 * Ahora la salida de add_party es igual en `speech::speech_build(compiler = TRUE)` que en  `speech::speech_build(compiler = FALSE)`
 
-# puy 0.1.0.08
+# puy 0.1.0.008
 
 * Se arreglaproblema de encoding general delpaquete para hacer merge multicapa.
 
-# puy 0.1.0.07
+# puy 0.1.0.007
 * Se arregla problema de merge de speech con puy en diarios no compilados
 
-# puy 0.1.0.06
+# puy 0.1.0.006
 * Se carga la data de alcaldes y concejales
 
-# puy 0.1.0.05
+# puy 0.1.0.005
 * Correccion de as_speech_puy. Orden de salida igual a speech
 * se arregla vinculo con base Boreluy::partidos_uy para merge de acronimo de partidos
 

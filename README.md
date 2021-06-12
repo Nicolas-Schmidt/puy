@@ -4,7 +4,7 @@
 ## puy: políticos uruguayos
 
 *Nicolás Schmidt, Antonio Cardarello, Alfonso Castiglia, Fabricio
-Carneiro, Diego Luján,
+Carneiro, Diego Luján, Felipe Monestier
 UMAD<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>.*
 
 <!-- badges: start -->
@@ -16,7 +16,7 @@ state and is being actively
 developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![Lifecycle:
 stable](https://img.shields.io/badge/lifecycle-stable-green.svg)](https://lifecycle.r-lib.org/articles/stages.html)
-[![](https://img.shields.io/badge/devel%20version-0.1.0.08-orange.svg)](https://github.com/Nicolas-Schmidt/puy)
+[![](https://img.shields.io/badge/devel%20version-0.1.0.09-orange.svg)](https://github.com/Nicolas-Schmidt/puy)
 [![R-CMD-check](https://github.com/Nicolas-Schmidt/puy/workflows/R-CMD-check/badge.svg)](https://github.com/Nicolas-Schmidt/puy/actions)
 <!-- badges: end -->
 
@@ -51,12 +51,13 @@ paquete speech.
 
 Actualmente la base cuenta con la siguiente informacion:
 
-| Políticos             | Periodo     |
-| --------------------- | ----------- |
-| Legisladores          | 1830 - 2020 |
-| Ministros             | 1904 - 2020 |
-| Alcaldes y Concejales | 2010 - 2020 |
-| Corte Electoral       | 1985 - 2020 |
+| Políticos                     | Periodo     |
+| ----------------------------- | ----------- |
+| Presidentes y Vicepresidentes | 1830 - 2020 |
+| Legisladores                  | 1830 - 2020 |
+| Ministros de Estado           | 1904 - 2020 |
+| Alcaldes y Concejales         | 2010 - 2020 |
+| Ministros Corte Electoral     | 1985 - 2020 |
 
 #### `legislaturas`
 
@@ -69,9 +70,9 @@ Actualmente la base cuenta con la siguiente informacion:
 
 #### Funciones
 
-| Función       | Descripción |
-| ------------- | ----------- |
-| `add_party()` |             |
+| Función       | Descripción                                                                                                                                                         |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `add_party()` | Permite agregar la etiqueta partidaria de cada legislador a un diario de sesion en el formato que devuelve la función `speech_build()` del paquete de R `speech()`. |
 
 ## Ejemplo
 
@@ -84,17 +85,17 @@ text1
 #> # A tibble: 11 x 7
 #>    legislator legislature chamber    date       id    speech                 sex
 #>    <chr>            <dbl> <chr>      <date>     <chr> <chr>                <dbl>
-#>  1 ABDALA              48 COMISION ~ 2019-09-17 35AU~ SEÑOR ABDALA. Voto ~     1
-#>  2 ASTI                48 COMISION ~ 2019-09-17 35AU~ SEÑOR ASTI. Obviame~     1
-#>  3 AVIAGA              48 COMISION ~ 2019-09-17 35AU~ SEÑORA AVIAGA. Pido~     0
-#>  4 BORDABERRY          48 COMISION ~ 2019-09-17 35AU~ SEÑOR BORDABERRY. P~     1
-#>  5 GOÑI                48 COMISION ~ 2019-09-17 35AU~ SEÑOR GOÑI. Pido la~     1
-#>  6 LAZO                48 COMISION ~ 2019-09-17 35AU~ SEÑORA LAZO. Voto p~     0
-#>  7 MAHIA               48 COMISION ~ 2019-09-17 35AU~ SEÑOR MAHIA. Pido l~     1
-#>  8 MERONI              48 COMISION ~ 2019-09-17 35AU~ SEÑOR MERONI. Voto,~     1
-#>  9 PEREYRA             48 COMISION ~ 2019-09-17 35AU~ SEÑORA PEREYRA. Con~     0
-#> 10 TOURNE              48 COMISION ~ 2019-09-17 35AU~ SEÑORA TOURNE. Voy ~     0
-#> 11 VIERA               48 COMISION ~ 2019-09-17 35AU~ SEÑOR VIERA. Voto p~     1
+#>  1 ABDALA              48 COMISION ~ NA         35AU~ SEÑOR ABDALA. Voto ~     1
+#>  2 ASTI                48 COMISION ~ NA         35AU~ SEÑOR ASTI. Obviame~     1
+#>  3 AVIAGA              48 COMISION ~ NA         35AU~ SEÑORA AVIAGA. Pido~     0
+#>  4 BORDABERRY          48 COMISION ~ NA         35AU~ SEÑOR BORDABERRY. P~     1
+#>  5 GOÑI                48 COMISION ~ NA         35AU~ SEÑOR GOÑI. Pido la~     1
+#>  6 LAZO                48 COMISION ~ NA         35AU~ SEÑORA LAZO. Voto p~     0
+#>  7 MAHIA               48 COMISION ~ NA         35AU~ SEÑOR MAHIA. Pido l~     1
+#>  8 MERONI              48 COMISION ~ NA         35AU~ SEÑOR MERONI. Voto,~     1
+#>  9 PEREYRA             48 COMISION ~ NA         35AU~ SEÑORA PEREYRA. Con~     0
+#> 10 TOURNE              48 COMISION ~ NA         35AU~ SEÑORA TOURNE. Voy ~     0
+#> 11 VIERA               48 COMISION ~ NA         35AU~ SEÑOR VIERA. Voto p~     1
 
 floor_speech <- add_party(speech = text1)
 
@@ -104,9 +105,9 @@ dplyr::glimpse(floor_speech)
 #> $ legislator  <chr> "ABDALA", "ASTI", "AVIAGA", "BORDABERRY", "GOÑI", "LAZO", ~
 #> $ legislature <dbl> 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48
 #> $ chamber     <chr> "COMISION PERMANENTE", "COMISION PERMANENTE", "COMISION PE~
-#> $ date        <date> 2019-09-17, 2019-09-17, 2019-09-17, 2019-09-17, 2019-09-17~
-#> $ id          <chr> "35AUVF4", "35AUVF4", "35AUVF4", "35AUVF4", "35AUVF4", "3~
-#> $ speech      <chr> "SEÑOR ABDALA. Voto por la señora legisladora Daisy Tourné~
+#> $ date        <date> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA
+#> $ id          <chr> "35AUVF4", "35AUVF4", "35AUVF4", "35AUVF4", "35AUVF4", "35~
+#> $ speech      <chr> "SEÑOR ABDALA. Voto por la señora legisladora Daisy Tourn~
 #> $ sex         <dbl> 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1
 #> $ legislator2 <chr> "ABDALA, Pablo", "ASTI, Alfredo", "AVIAGA, Carol", "BORDAB~
 #> $ party       <chr> "Partido Nacional", "Frente Amplio", "Partido Nacional", "~
@@ -139,32 +140,32 @@ text2 <- "http://bit.ly/35AUVF4" %>%
     #.[c(1,2,7:12)] %>% 
     print(n = Inf)
 #> # A tibble: 24 x 12
-#>    legislator speech     chamber  date       legislature id      sex legislator2
-#>    <chr>      <chr>      <chr>    <date>           <dbl> <chr> <dbl> <chr>      
-#>  1 ABDALA     SEÑOR ABD~ COMISIO~ 2019-09-17          48 35AU~     1 ABDALA, Pa~
-#>  2 ABDALA     SEÑOR ABD~ COMISIO~ 2019-09-17          48 35AU~     1 ABDALA, Pa~
-#>  3 ABDALA     SEÑOR ABD~ COMISIO~ 2019-09-17          48 35AU~     1 ABDALA, Pa~
-#>  4 ASTI       SEÑOR AST~ COMISIO~ 2019-09-17          48 35AU~     1 ASTI, Alfr~
-#>  5 AVIAGA     SEÑORA AV~ COMISIO~ 2019-09-17          48 35AU~     0 AVIAGA, Ca~
-#>  6 AVIAGA     SEÑORA AV~ COMISIO~ 2019-09-17          48 35AU~     0 AVIAGA, Ca~
-#>  7 AVIAGA     SEÑORA AV~ COMISIO~ 2019-09-17          48 35AU~     0 AVIAGA, Ca~
-#>  8 BORDABERRY SEÑOR BOR~ COMISIO~ 2019-09-17          48 35AU~     1 BORDABERRY~
-#>  9 BORDABERRY SEÑOR BOR~ COMISIO~ 2019-09-17          48 35AU~     1 BORDABERRY~
-#> 10 BORDABERRY SEÑOR BOR~ COMISIO~ 2019-09-17          48 35AU~     1 BORDABERRY~
-#> 11 BORDABERRY SEÑOR BOR~ COMISIO~ 2019-09-17          48 35AU~     1 BORDABERRY~
-#> 12 BORDABERRY SEÑOR BOR~ COMISIO~ 2019-09-17          48 35AU~     1 BORDABERRY~
-#> 13 BORDABERRY SEÑOR BOR~ COMISIO~ 2019-09-17          48 35AU~     1 BORDABERRY~
-#> 14 GOÑI       SEÑOR GOÑ~ COMISIO~ 2019-09-17          48 35AU~     1 GOÑI ROMER~
-#> 15 GOÑI       SEÑOR GOÑ~ COMISIO~ 2019-09-17          48 35AU~     1 GOÑI ROMER~
-#> 16 GOÑI       SEÑOR GOÑ~ COMISIO~ 2019-09-17          48 35AU~     1 GOÑI ROMER~
-#> 17 LAZO       SEÑORA LA~ COMISIO~ 2019-09-17          48 35AU~     0 LAZO, Sand~
-#> 18 MAHIA      SEÑOR MAH~ COMISIO~ 2019-09-17          48 35AU~     1 MAHIA, Jos~
-#> 19 MAHIA      SEÑOR MAH~ COMISIO~ 2019-09-17          48 35AU~     1 MAHIA, Jos~
-#> 20 MAHIA      SEÑOR MAH~ COMISIO~ 2019-09-17          48 35AU~     1 MAHIA, Jos~
-#> 21 MERONI     SEÑOR MER~ COMISIO~ 2019-09-17          48 35AU~     1 <NA>       
-#> 22 PEREYRA    SEÑORA PE~ COMISIO~ 2019-09-17          48 35AU~     0 PEREYRA, S~
-#> 23 TOURNE     SEÑORA TO~ COMISIO~ 2019-09-17          48 35AU~     0 TOURNE, Da~
-#> 24 VIERA      SEÑOR VIE~ COMISIO~ 2019-09-17          48 35AU~     1 VIERA, Tab~
+#>    legislator legislature chamber  date       id     speech      sex legislator2
+#>    <chr>            <dbl> <chr>    <date>     <chr>  <chr>     <dbl> <chr>      
+#>  1 ABDALA              48 COMISIO~ 2019-09-17 35AUV~ SEÑOR AB~     1 ABDALA, Pa~
+#>  2 ABDALA              48 COMISIO~ 2019-09-17 35AUV~ SEÑOR AB~     1 ABDALA, Pa~
+#>  3 ABDALA              48 COMISIO~ 2019-09-17 35AUV~ SEÑOR AB~     1 ABDALA, Pa~
+#>  4 ASTI                48 COMISIO~ 2019-09-17 35AUV~ SEÑOR AS~     1 ASTI, Alfr~
+#>  5 AVIAGA              48 COMISIO~ 2019-09-17 35AUV~ SEÑORA A~     0 AVIAGA, Ca~
+#>  6 AVIAGA              48 COMISIO~ 2019-09-17 35AUV~ SEÑORA A~     0 AVIAGA, Ca~
+#>  7 AVIAGA              48 COMISIO~ 2019-09-17 35AUV~ SEÑORA A~     0 AVIAGA, Ca~
+#>  8 BORDABERRY          48 COMISIO~ 2019-09-17 35AUV~ SEÑOR BO~     1 BORDABERRY~
+#>  9 BORDABERRY          48 COMISIO~ 2019-09-17 35AUV~ SEÑOR BO~     1 BORDABERRY~
+#> 10 BORDABERRY          48 COMISIO~ 2019-09-17 35AUV~ SEÑOR BO~     1 BORDABERRY~
+#> 11 BORDABERRY          48 COMISIO~ 2019-09-17 35AUV~ SEÑOR BO~     1 BORDABERRY~
+#> 12 BORDABERRY          48 COMISIO~ 2019-09-17 35AUV~ SEÑOR BO~     1 BORDABERRY~
+#> 13 BORDABERRY          48 COMISIO~ 2019-09-17 35AUV~ SEÑOR BO~     1 BORDABERRY~
+#> 14 GOÑI                48 COMISIO~ 2019-09-17 35AUV~ SEÑOR GO~     1 GOÑI ROMER~
+#> 15 GOÑI                48 COMISIO~ 2019-09-17 35AUV~ SEÑOR GO~     1 GOÑI ROMER~
+#> 16 GOÑI                48 COMISIO~ 2019-09-17 35AUV~ SEÑOR GO~     1 GOÑI ROMER~
+#> 17 LAZO                48 COMISIO~ 2019-09-17 35AUV~ SEÑORA L~     0 LAZO, Sand~
+#> 18 MAHIA               48 COMISIO~ 2019-09-17 35AUV~ SEÑOR MA~     1 MAHIA, Jos~
+#> 19 MAHIA               48 COMISIO~ 2019-09-17 35AUV~ SEÑOR MA~     1 MAHIA, Jos~
+#> 20 MAHIA               48 COMISIO~ 2019-09-17 35AUV~ SEÑOR MA~     1 MAHIA, Jos~
+#> 21 MERONI              48 COMISIO~ 2019-09-17 35AUV~ SEÑOR ME~     1 <NA>       
+#> 22 PEREYRA             48 COMISIO~ 2019-09-17 35AUV~ SEÑORA P~     0 PEREYRA, S~
+#> 23 TOURNE              48 COMISIO~ 2019-09-17 35AUV~ SEÑORA T~     0 TOURNE, Da~
+#> 24 VIERA               48 COMISIO~ 2019-09-17 35AUV~ SEÑOR VI~     1 VIERA, Tab~
 #> # ... with 4 more variables: party <chr>, party_acron <chr>, indicator <int>,
 #> #   words <int>
 ```

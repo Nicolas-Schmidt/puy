@@ -15,7 +15,7 @@ knitr::opts_chunk$set(
 
 ## puy: políticos uruguayos
 
-*Nicolás Schmidt, Antonio Cardarello, Alfonso Castiglia, Fabricio Carneiro, Diego Luján, UMAD<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>.*
+*Nicolás Schmidt, Antonio Cardarello, Alfonso Castiglia, Fabricio Carneiro, Diego Luján, Felipe Monestier UMAD<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>.*
 
 <!-- badges: start -->
 
@@ -52,12 +52,13 @@ Contiene un conjunto de datos original de politicos uruguayos que ocuparon diver
 
 Actualmente la base cuenta con la siguiente informacion:
 
-| Políticos              | Periodo       |
-| -----------------      | ------------- |
-| Legisladores           | 1830 - 2020   |
-| Ministros              | 1904 - 2020   |
-| Alcaldes y Concejales  | 2010 - 2020   |
-| Corte Electoral        | 1985 - 2020   |
+| Políticos                     | Periodo       |
+| ------------------------------| ------------- |
+| Presidentes y Vicepresidentes | 1830 - 2020   |
+| Legisladores                  | 1830 - 2020   |
+| Ministros de Estado           | 1904 - 2020   |
+| Alcaldes y Concejales         | 2010 - 2020   |
+| Ministros Corte Electoral     | 1985 - 2020   |
 
 
 #### `legislaturas`
@@ -74,9 +75,9 @@ Actualmente la base cuenta con la siguiente informacion:
 
 #### Funciones
 
-| Función     | Descripción                                          |
-| ----------- | ---------------------------------------------------- |
-| `add_party()`  |                            |
+| Función        | Descripción                                          |
+| -------------- | ---------------------------------------------------- |
+| `add_party()`  | Permite agregar la etiqueta partidaria de cada legislador a un diario de sesion en el formato que devuelve la función `speech_build()` del paquete de R `speech()`.|
 
 
 ## Ejemplo
