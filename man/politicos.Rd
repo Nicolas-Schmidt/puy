@@ -28,4 +28,7 @@ Contiene el periodo y el cargo que ocupo un politico uruguayo desde 1830 hasta 2
 
 ...
 }
+\references{
+\insertRef{fabregat1946}{puy}
+}
 \keyword{datasets}

@@ -20,4 +20,8 @@
 #' @format data.frame con ... filas y 7 columnas.
 #' @details ...
 #'
+#' @references
+#' \insertRef{fabregat1946}{puy}
+#'
+#'
 NULL

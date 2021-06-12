@@ -1,7 +1,7 @@
 #' @importFrom magrittr %>%
 #' @importFrom tibble as_tibble
 #' @importFrom speech speech_word_count
-
+#' @importFrom Rdpack reprompt
 
 
 vars <- c("politicos", "legislador2","party", "legislator",

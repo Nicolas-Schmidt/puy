@@ -2,7 +2,7 @@ Package: puy
 Type: Package
 Title: Politicos Urugayos
 Version: 0.1.0.010
-Author: Nicolas Schmidt [aut, cre], Antonio Cardarello [ctb], Alfonso Castiglia [ctb], Fabricio Carneiro [ctb], Diego Lujan [ctb], UMAD [dtc]
+Author: Nicolas Schmidt [aut, cre], Antonio Cardarello [ctb], Alfonso Castiglia [ctb], Fabricio Carneiro [ctb], Diego Lujan [ctb], Felipe Monestier [ctb], UMAD [dtc]
 Authors@R: c(person(given = "Nicolas", 
                     family = "Schmidt", 
                     role = c("aut", "cre"), 
@@ -37,5 +37,7 @@ Imports:
     magrittr,
     stringr,
     tibble,
-    speech
+    speech,
+    Rdpack
 RoxygenNote: 7.1.1
+RdMacros: Rdpack
