@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-## `puy`: políticos uruguayos <img src='man/figures/logo.png' align="right" height="180" />
+## `puy`: políticos uruguayos <img src='man/figures/logo1.png' align="right" height="180" />
 
 *Nicolás Schmidt, Antonio Cardarello, Alfonso Castiglia, Fabricio
 Carneiro, Diego Luján, Felipe Monestier
