@@ -79,6 +79,7 @@ Actualmente la base cuenta con la siguiente informacion:
 ``` r
 library(speech)
 library(puy)
+
 url <- "http://bit.ly/35AUVF4"
 text1 <- speech::speech_build(file = url, compiler = TRUE)
 text1
@@ -131,43 +132,42 @@ floor_speech[c(1,2,7:12)]
 #> 10 TOURNE              48     0 TOURNE, Daisy Frent~ FA                  1   111
 #> 11 VIERA               48     1 VIERA, Tabare Parti~ PC                  1     8
 
-
+## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## Diario de sesión NO compilado
+## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-text2 <- "http://bit.ly/35AUVF4" %>% 
-    speech::speech_build() %>% 
-    add_party() %>% 
-    #.[c(1,2,7:12)] %>% 
-    print(n = Inf)
-#> # A tibble: 24 x 12
-#>    legislator legislature chamber  date       id     speech      sex legislator2
-#>    <chr>            <dbl> <chr>    <date>     <chr>  <chr>     <dbl> <chr>      
-#>  1 ABDALA              48 COMISIO~ 2019-09-17 35AUV~ SEÑOR AB~     1 ABDALA, Pa~
-#>  2 ABDALA              48 COMISIO~ 2019-09-17 35AUV~ SEÑOR AB~     1 ABDALA, Pa~
-#>  3 ABDALA              48 COMISIO~ 2019-09-17 35AUV~ SEÑOR AB~     1 ABDALA, Pa~
-#>  4 ASTI                48 COMISIO~ 2019-09-17 35AUV~ SEÑOR AS~     1 ASTI, Alfr~
-#>  5 AVIAGA              48 COMISIO~ 2019-09-17 35AUV~ SEÑORA A~     0 AVIAGA, Ca~
-#>  6 AVIAGA              48 COMISIO~ 2019-09-17 35AUV~ SEÑORA A~     0 AVIAGA, Ca~
-#>  7 AVIAGA              48 COMISIO~ 2019-09-17 35AUV~ SEÑORA A~     0 AVIAGA, Ca~
-#>  8 BORDABERRY          48 COMISIO~ 2019-09-17 35AUV~ SEÑOR BO~     1 BORDABERRY~
-#>  9 BORDABERRY          48 COMISIO~ 2019-09-17 35AUV~ SEÑOR BO~     1 BORDABERRY~
-#> 10 BORDABERRY          48 COMISIO~ 2019-09-17 35AUV~ SEÑOR BO~     1 BORDABERRY~
-#> 11 BORDABERRY          48 COMISIO~ 2019-09-17 35AUV~ SEÑOR BO~     1 BORDABERRY~
-#> 12 BORDABERRY          48 COMISIO~ 2019-09-17 35AUV~ SEÑOR BO~     1 BORDABERRY~
-#> 13 BORDABERRY          48 COMISIO~ 2019-09-17 35AUV~ SEÑOR BO~     1 BORDABERRY~
-#> 14 GOÑI                48 COMISIO~ 2019-09-17 35AUV~ SEÑOR GO~     1 GOÑI ROMER~
-#> 15 GOÑI                48 COMISIO~ 2019-09-17 35AUV~ SEÑOR GO~     1 GOÑI ROMER~
-#> 16 GOÑI                48 COMISIO~ 2019-09-17 35AUV~ SEÑOR GO~     1 GOÑI ROMER~
-#> 17 LAZO                48 COMISIO~ 2019-09-17 35AUV~ SEÑORA L~     0 LAZO, Sand~
-#> 18 MAHIA               48 COMISIO~ 2019-09-17 35AUV~ SEÑOR MA~     1 MAHIA, Jos~
-#> 19 MAHIA               48 COMISIO~ 2019-09-17 35AUV~ SEÑOR MA~     1 MAHIA, Jos~
-#> 20 MAHIA               48 COMISIO~ 2019-09-17 35AUV~ SEÑOR MA~     1 MAHIA, Jos~
-#> 21 MERONI              48 COMISIO~ 2019-09-17 35AUV~ SEÑOR ME~     1 <NA>       
-#> 22 PEREYRA             48 COMISIO~ 2019-09-17 35AUV~ SEÑORA P~     0 PEREYRA, S~
-#> 23 TOURNE              48 COMISIO~ 2019-09-17 35AUV~ SEÑORA T~     0 TOURNE, Da~
-#> 24 VIERA               48 COMISIO~ 2019-09-17 35AUV~ SEÑOR VI~     1 VIERA, Tab~
-#> # ... with 4 more variables: party <chr>, party_acron <chr>, indicator <int>,
-#> #   words <int>
+url %>% 
+  speech::speech_build() %>% 
+  puy::add_party() %>% 
+  subset(select = c(1,2,7:12)) %>% 
+  print(n = Inf)
+#> # A tibble: 24 x 8
+#>    legislator legislature   sex legislator2   party  party_acron indicator words
+#>    <chr>            <dbl> <dbl> <chr>         <chr>  <chr>           <int> <int>
+#>  1 ABDALA              48     1 ABDALA, Pablo Parti~ PN                  1   311
+#>  2 ABDALA              48     1 ABDALA, Pablo Parti~ PN                  1    10
+#>  3 ABDALA              48     1 ABDALA, Pablo Parti~ PN                  1    79
+#>  4 ASTI                48     1 ASTI, Alfredo Frent~ FA                  1    46
+#>  5 AVIAGA              48     0 AVIAGA, Carol Parti~ PN                  1     5
+#>  6 AVIAGA              48     0 AVIAGA, Carol Parti~ PN                  1     9
+#>  7 AVIAGA              48     0 AVIAGA, Carol Parti~ PN                  1    93
+#>  8 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1     5
+#>  9 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1   241
+#> 10 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1   113
+#> 11 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1   578
+#> 12 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1    16
+#> 13 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1    10
+#> 14 GOÑI                48     1 GOÑI ROMERO,~ Parti~ PN                  2     5
+#> 15 GOÑI                48     1 GOÑI ROMERO,~ Parti~ PN                  2    89
+#> 16 GOÑI                48     1 GOÑI ROMERO,~ Parti~ PN                  2     6
+#> 17 LAZO                48     0 LAZO, Sandra  Frent~ FA                  3   103
+#> 18 MAHIA               48     1 MAHIA, Jose ~ Frent~ FA                  1     5
+#> 19 MAHIA               48     1 MAHIA, Jose ~ Frent~ FA                  1    16
+#> 20 MAHIA               48     1 MAHIA, Jose ~ Frent~ FA                  1   107
+#> 21 MERONI              48     1 <NA>          <NA>   <NA>               NA    12
+#> 22 PEREYRA             48     0 PEREYRA, Sus~ Frent~ FA                  1    12
+#> 23 TOURNE              48     0 TOURNE, Daisy Frent~ FA                  1   111
+#> 24 VIERA               48     1 VIERA, Tabare Parti~ PC                  1     8
 ```
 
 #### Notas

@@ -86,6 +86,7 @@ Actualmente la base cuenta con la siguiente informacion:
 ```{r}
 library(speech)
 library(puy)
+
 url <- "http://bit.ly/35AUVF4"
 text1 <- speech::speech_build(file = url, compiler = TRUE)
 text1
@@ -96,14 +97,16 @@ dplyr::glimpse(floor_speech)
 
 floor_speech[c(1,2,7:12)]
 
-
+## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## Diario de sesión NO compilado
+## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-text2 <- "http://bit.ly/35AUVF4" %>% 
-    speech::speech_build() %>% 
-    add_party() %>% 
-    #.[c(1,2,7:12)] %>% 
-    print(n = Inf)
+url %>% 
+  speech::speech_build() %>% 
+  puy::add_party() %>% 
+  subset(select = c(1,2,7:12)) %>% 
+  print(n = Inf)
+
 
 ```
 
