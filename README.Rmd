@@ -38,7 +38,7 @@ El manual del paquete se puede encontrar [__aquí__](https://github.com/Nicolas-
 #### Conjuntos de datos
 
 
-### `politicos`
+##### `politicos`
 
 | Variable          | Descripción                                                                                |
 | ----------------- | ------------------------------------------------------------------------------------------ |
@@ -64,7 +64,7 @@ Actualmente la base cuenta con la siguiente informacion:
 | Ministros Corte Electoral     | 1985 - 2020   |
 
 
-### `legislaturas`
+##### `legislaturas`
 
 | Variable    | Descripción                                          |
 | ----------- | ---------------------------------------------------- |
@@ -81,7 +81,7 @@ Actualmente la base cuenta con la siguiente informacion:
 | Función        | Descripción                                          |
 | -------------- | ---------------------------------------------------- |
 | `politico()`   | Permite buscar politicos en la base `puy::politicos` |
-| `add_party()`  | Permite agregar la etiqueta partidaria de cada legislador a un diario de sesion en el formato que devuelve la función `speech_build()` del paquete de R `speech()`.|
+| `add_party()`  | Permite agregar la etiqueta partidaria de cada legislador a un diario de sesion en el formato que devuelve la función [`speech_build()`](https://nicolas-schmidt.github.io/speech/reference/speech_build.html) del paquete de R [`speech()`](https://nicolas-schmidt.github.io/speech/).|
 
 
 ## Ejemplos
@@ -118,7 +118,7 @@ floor_speech[c(1,2,7:12)]
 url %>% 
   speech::speech_build() %>% 
   puy::add_party() %>% 
-  subset(select = c(1,2,7:12)) %>% 
+  subset(select = c(1,2,7:12)) %>% # se seleccionan variables que se agregan con add_party()
   print(n = Inf)
 
 

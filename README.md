@@ -38,7 +38,7 @@ El manual del paquete se puede encontrar
 
 #### Conjuntos de datos
 
-### `politicos`
+##### `politicos`
 
 | Variable          | Descripción                                                                              |
 | ----------------- | ---------------------------------------------------------------------------------------- |
@@ -62,7 +62,7 @@ Actualmente la base cuenta con la siguiente informacion:
 | Alcaldes y Concejales         | 2010 - 2020 |
 | Ministros Corte Electoral     | 1985 - 2020 |
 
-### `legislaturas`
+##### `legislaturas`
 
 | Variable      | Descripción                                         |
 | ------------- | --------------------------------------------------- |
@@ -73,10 +73,10 @@ Actualmente la base cuenta con la siguiente informacion:
 
 #### Funciones
 
-| Función       | Descripción                                                                                                                                                         |
-| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `politico()`  | Permite buscar politicos en la base `puy::politicos`                                                                                                                |
-| `add_party()` | Permite agregar la etiqueta partidaria de cada legislador a un diario de sesion en el formato que devuelve la función `speech_build()` del paquete de R `speech()`. |
+| Función       | Descripción                                                                                                                                                                                                                                                                              |
+| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `politico()`  | Permite buscar politicos en la base `puy::politicos`                                                                                                                                                                                                                                     |
+| `add_party()` | Permite agregar la etiqueta partidaria de cada legislador a un diario de sesion en el formato que devuelve la función [`speech_build()`](https://nicolas-schmidt.github.io/speech/reference/speech_build.html) del paquete de R [`speech()`](https://nicolas-schmidt.github.io/speech/). |
 
 ## Ejemplos
 
@@ -193,7 +193,7 @@ floor_speech[c(1,2,7:12)]
 url %>% 
   speech::speech_build() %>% 
   puy::add_party() %>% 
-  subset(select = c(1,2,7:12)) %>% 
+  subset(select = c(1,2,7:12)) %>% # se seleccionan variables que se agregan con add_party()
   print(n = Inf)
 #> # A tibble: 24 x 8
 #>    legislator legislature   sex legislator2   party  party_acron indicator words
