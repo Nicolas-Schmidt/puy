@@ -16,7 +16,7 @@ state and is being actively
 developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![Lifecycle:
 stable](https://img.shields.io/badge/lifecycle-stable-green.svg)](https://lifecycle.r-lib.org/articles/stages.html)
-[![](https://img.shields.io/badge/devel%20version-0.1.0.010-orange.svg)](https://github.com/Nicolas-Schmidt/puy)
+[![](https://img.shields.io/badge/devel%20version-0.1.0.011-orange.svg)](https://github.com/Nicolas-Schmidt/puy)
 [![R-CMD-check](https://github.com/Nicolas-Schmidt/puy/workflows/R-CMD-check/badge.svg)](https://github.com/Nicolas-Schmidt/puy/actions)
 <!-- badges: end -->
 
@@ -33,6 +33,9 @@ el politico. El ejemplo inmediato de esto ultimo es la base de datos que
 se genera a partir de los diarios de sesion del parlamento con el
 paquete speech.
 
+El manual del paquete se puede encontrar
+[**aquí**](https://github.com/Nicolas-Schmidt/puy/blob/master/man/figures/Manual_puy.pdf).
+
 #### Conjuntos de datos
 
 ### `politicos`
@@ -45,7 +48,7 @@ paquete speech.
 | `fecha_inicio`    | Fecha de fin en la que finaliza la gestión en el cargo.                                  |
 | `legislatura`     | Legislatura en la que ocupa el cargo. Esta variable es para los legisladores unicamente. |
 | `cargo`           | Tipo de cargo.                                                                           |
-| `status`          | Si es Titula, Suplente, Nominal…                                                         |
+| `status`          | Si es Titular, Suplente, Nominal…                                                        |
 | `circunscripcion` | Distrito al que pertenece el legislador.                                                 |
 | `sexo`            | Sexo.                                                                                    |
 
@@ -72,13 +75,64 @@ Actualmente la base cuenta con la siguiente informacion:
 
 | Función       | Descripción                                                                                                                                                         |
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `politico()`  | Permite buscar politicos en la base `puy::politicos`                                                                                                                |
 | `add_party()` | Permite agregar la etiqueta partidaria de cada legislador a un diario de sesion en el formato que devuelve la función `speech_build()` del paquete de R `speech()`. |
 
-## Ejemplo
+## Ejemplos
+
+``` r
+library(puy)
+
+politico(nombre = "Mujica")
+#> 
+#>  Los politicos encontrados con ese nombre son: 
+#> 
+#>  MUJICA CORDANO, Jose
+#>  MUJICA, Asdrubal R.
+#>  MUJICA, Gonzalo
+#>  MUJICA, Jorge
+#> 
+#> # A tibble: 13 x 9
+#>    politico    partido   fecha_inicio fecha_fin  legislatura cargo        status
+#>    <chr>       <chr>     <date>       <date>           <dbl> <chr>        <chr> 
+#>  1 MUJICA COR~ Frente A~ 1995-02-15   2000-02-14          44 Diputados    Titul~
+#>  2 MUJICA COR~ Frente A~ 2000-02-15   2005-02-14          45 Senado       Titul~
+#>  3 MUJICA COR~ Frente A~ 2005-02-15   NA                  46 Senado       Titul~
+#>  4 MUJICA, Go~ Frente A~ 2005-02-15   NA                  46 Diputados    Titul~
+#>  5 MUJICA, Go~ Frente A~ 2015-02-15   NA                  48 Diputados    Titul~
+#>  6 MUJICA COR~ Frente A~ 2015-02-15   NA                  48 Senado       Titul~
+#>  7 MUJICA, Go~ Frente A~ 2010-02-15   NA                  47 Diputados    Titul~
+#>  8 MUJICA COR~ Frente A~ 2020-02-15   NA                  49 Senado       Titul~
+#>  9 MUJICA, Go~ Partido ~ 2020-02-15   NA                  49 Diputados    Titul~
+#> 10 MUJICA COR~ Frente A~ 2005-03-01   2005-03-01          NA Ministro Ga~ <NA>  
+#> 11 MUJICA, Jo~ Partido ~ 2015-03-01   NA                  NA Concejal     Titul~
+#> 12 MUJICA, As~ Partido ~ 2015-03-01   NA                  NA Concejal     Titul~
+#> 13 MUJICA COR~ Frente A~ 2010-03-01   2015-03-01          NA Presidente ~ Titul~
+#> # ... with 2 more variables: circunscripcion <chr>, sexo <dbl>
+
+politico(nombre = "Mujica Cordano")
+#> 
+#>  El politico encontrado con ese nombre es: 
+#> 
+#>  MUJICA CORDANO, Jose
+#> 
+#> # A tibble: 7 x 9
+#>   politico    partido   fecha_inicio fecha_fin  legislatura cargo         status
+#>   <chr>       <chr>     <date>       <date>           <dbl> <chr>         <chr> 
+#> 1 MUJICA COR~ Frente A~ 1995-02-15   2000-02-14          44 Diputados     Titul~
+#> 2 MUJICA COR~ Frente A~ 2000-02-15   2005-02-14          45 Senado        Titul~
+#> 3 MUJICA COR~ Frente A~ 2005-02-15   NA                  46 Senado        Titul~
+#> 4 MUJICA COR~ Frente A~ 2015-02-15   NA                  48 Senado        Titul~
+#> 5 MUJICA COR~ Frente A~ 2020-02-15   NA                  49 Senado        Titul~
+#> 6 MUJICA COR~ Frente A~ 2005-03-01   2005-03-01          NA Ministro Gan~ <NA>  
+#> 7 MUJICA COR~ Frente A~ 2010-03-01   2015-03-01          NA Presidente d~ Titul~
+#> # ... with 2 more variables: circunscripcion <chr>, sexo <dbl>
+```
+
+##### Ejemplo con `speech::speech_build()`
 
 ``` r
 library(speech)
-library(puy)
 
 url <- "http://bit.ly/35AUVF4"
 text1 <- speech::speech_build(file = url, compiler = TRUE)

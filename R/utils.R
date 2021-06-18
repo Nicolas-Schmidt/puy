@@ -51,4 +51,28 @@ sec_ <- c("legislator", "legislature", "chamber", "date","id", "speech", "sex", 
 
 
 
+out.cat <- function(out){
+    proto <- sort(unique(out$politico))
+    pol <- paste0(c("", proto), "\n")
+    cat("\n", can(proto), "\n")
+    cat(pol, "\n\n")
+}
+
+
+can <- function(x){
+
+    if(length(x) == 0){
+        "No se encontraron politicos con ese nombre..."
+
+    }else{
+        ifelse(length(x) == 1,
+           "El politico encontrado con ese nombre es:",
+           "Los politicos encontrados con ese nombre son:")
+    }
+}
+
+
+
+
+
 

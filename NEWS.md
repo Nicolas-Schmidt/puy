@@ -1,3 +1,8 @@
+
+# puy 0.1.0.011
+
+* se agrega funcion para buscar politicos: `politicos()` y se unifica formato de variable `fecha_inicio` y `fecha_fin`
+
 # puy 0.1.0.010
 
 * se agrega datos de presidentes y vicepresidnetes
