@@ -104,7 +104,7 @@ politico(nombre = "Mujica")
 #>  7 MUJICA, Go~ Frente A~ 2010-02-15   NA                  47 Diputados    Titul~
 #>  8 MUJICA COR~ Frente A~ 2020-02-15   NA                  49 Senado       Titul~
 #>  9 MUJICA, Go~ Partido ~ 2020-02-15   NA                  49 Diputados    Titul~
-#> 10 MUJICA COR~ Frente A~ 2005-03-01   2005-03-01          NA Ministro Ga~ <NA>  
+#> 10 MUJICA COR~ Frente A~ 2005-03-01   2008-03-03          NA Ministro Ga~ Titul~
 #> 11 MUJICA, Jo~ Partido ~ 2015-03-01   NA                  NA Concejal     Titul~
 #> 12 MUJICA, As~ Partido ~ 2015-03-01   NA                  NA Concejal     Titul~
 #> 13 MUJICA COR~ Frente A~ 2010-03-01   2015-03-01          NA Presidente ~ Titul~
@@ -124,7 +124,7 @@ politico(nombre = "Mujica Cordano")
 #> 3 MUJICA COR~ Frente A~ 2005-02-15   NA                  46 Senado        Titul~
 #> 4 MUJICA COR~ Frente A~ 2015-02-15   NA                  48 Senado        Titul~
 #> 5 MUJICA COR~ Frente A~ 2020-02-15   NA                  49 Senado        Titul~
-#> 6 MUJICA COR~ Frente A~ 2005-03-01   2005-03-01          NA Ministro Gan~ <NA>  
+#> 6 MUJICA COR~ Frente A~ 2005-03-01   2008-03-03          NA Ministro Gan~ Titul~
 #> 7 MUJICA COR~ Frente A~ 2010-03-01   2015-03-01          NA Presidente d~ Titul~
 #> # ... with 2 more variables: circunscripcion <chr>, sexo <dbl>
 ```
