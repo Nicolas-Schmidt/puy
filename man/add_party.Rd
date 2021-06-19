@@ -2,7 +2,7 @@
 % Please edit documentation in R/add_party.R
 \name{add_party}
 \alias{add_party}
-\title{Adapta base de datos de pliticos uruguayos para pegar con base de datos generada por \code{speech::speech_build()}.}
+\title{Agrega etiqueta partidaria a la base de datos generada por \code{speech::speech_build()}.}
 \usage{
 add_party(speech)
 }
@@ -10,11 +10,11 @@ add_party(speech)
 \item{speech}{diario de sesion en formato data.frame del paquete \code{speech}.}
 }
 \value{
-data.frame de entrada al que se le agregan 4 variables:
+data.frame de entrada al que se le agregan 5 variables:
      \itemize{
-            \item{\code{legislator2}: Nombre completo del legislador/a}
-            \item{\code{party}: Partido politico al que pertenece el legislador/a en ese momento}
-            \item{\code{party_acron}: sigla de partido politico al que pertenece el legislador/a en ese momento}
+            \item{\code{legislator2}: Nombre completo del legislador/a en el formato 'APELLIDO, Nombre'}
+            \item{\code{party}: Partido politico al que pertenece el legislador/a en ese momento (legislatura)}
+            \item{\code{party_acron}: Sigla de partido politico al que pertenece el legislador/a en ese momento}
             \item{\code{indicator}: un indicador de calidad del merge entre el diario de sesion y la base de politicos. Puede asumir los siguientres valores:}
                  \itemize{
                  \item{1 - Match perfecto (nombre del legislador/a, legislatura, camara y sexo)}
@@ -28,14 +28,17 @@ data.frame de entrada al que se le agregan 4 variables:
            }
 }
 \description{
-Adapta base de datos de pliticos para pegar con speech. Es relevante para tener la filiacion partidaria de los
-    legisladores y poder hacer analisis con el corte partidario.
+Adapta base de datos de politicos para pegar con \code{speech} (compilacion de diarios de sesion del parlamento de formato PDF
+    a \code{data.frame}). Es particularmente relevante para tener la filiacion partidaria de los legisladores y de ese modo poder hacer analisis
+    de contenido o de posicionamiento ideologico (e.g. text scaling) con el corte partidario.
 }
 \details{
 Cuando se va a hacer el merge y se hacen correcciones a mano con \code{speech::speech_legis_replace()} sobre la base de speech
-    hay que evitar las 'enies' y los tildes. La base de polílicos cuando se exporta genera las 'enies' y en la variable \code{legislator2}
-    que se genera con esta funcion las enies van a aparecer pero el proceso de unios de bases no utiliza esos caracteres por lo que si decide
-    utilizarlos no va a ser posible ninguno de los match posibles que se describen para la variable \code{indicator}.
+    hay que evitar los tildes. Tenga en cuenta que en muchos diarios de sesion no se pone el apellido completo del legisaldor o legisladora,
+    si en la misma sesion hay dos legisladores del mismo sexo con el mismo apellido se van a cargar los dos y va a duplicar los los valores de
+    las demas variables. Por esta razon es necesario que se hagan controles manuales sobre el match. En el testeo de este posible problema los errores
+    de este tipo fueron realmente minimos. Para esos casos recuerde que puede editar el nombre del legislador con funciones nativas de R o con
+    \code{speech::speech_legis_replace()}.
 }
 \examples{
 \donttest{

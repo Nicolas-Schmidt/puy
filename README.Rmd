@@ -90,9 +90,9 @@ Actualmente la base cuenta con la siguiente informacion:
 ```{r}
 library(puy)
 
-politico(nombre = "Mujica")
+politico(apellido = "Mujica")
 
-politico(nombre = "Mujica Cordano")
+politico(apellido = "Mujica Cordano")
 
 ```
 

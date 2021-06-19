@@ -11,16 +11,16 @@ data.frame con 46 filas y 4. columnas.
 data(politicos)
 }
 \description{
-Contiene las fechas en las que estuvieron abiertas las legislaturas desde 1830 a 2020.
+Contiene las legislaturas desde 1830 a 2020 y el periodo de tiempo en formato \code{Date}.
 }
 \details{
 \describe{
    \item{legislatura}{Numero de la legislatura}
    \item{inicio}{Fecha de inicio de la legislatura.}
    \item{fin}{Fecha de cierre de la legislatura}
-   \item{dias}{Cantidad de dias que estuvo abierta la legislatura.}
+   \item{dias}{Cantidad de dias de la legislatura.}
 }
 
-La unidad de analisis de esta base de datos es..
+La unidad de analisis de esta base de datos es la legislatura.
 }
 \keyword{datasets}

@@ -1,12 +1,12 @@
 #' legislaturas
 #'
-#' Contiene las fechas en las que estuvieron abiertas las legislaturas desde 1830 a 2020.
+#' Contiene las legislaturas desde 1830 a 2020 y el periodo de tiempo en formato \code{Date}.
 #'
 #'\describe{
 #'    \item{legislatura}{Numero de la legislatura}
 #'    \item{inicio}{Fecha de inicio de la legislatura.}
 #'    \item{fin}{Fecha de cierre de la legislatura}
-#'    \item{dias}{Cantidad de dias que estuvo abierta la legislatura.}
+#'    \item{dias}{Cantidad de dias de la legislatura.}
 #' }
 #'
 #' @docType data
@@ -14,6 +14,6 @@
 #' @name legislaturas
 #' @usage data(politicos)
 #' @format data.frame con 46 filas y 4. columnas.
-#' @details La unidad de analisis de esta base de datos es..
+#' @details La unidad de analisis de esta base de datos es la legislatura.
 #'
 'legislaturas'

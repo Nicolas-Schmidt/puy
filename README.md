@@ -83,7 +83,7 @@ Actualmente la base cuenta con la siguiente informacion:
 ``` r
 library(puy)
 
-politico(nombre = "Mujica")
+politico(apellido = "Mujica")
 #> 
 #>  Los politicos encontrados con ese nombre son: 
 #> 
@@ -110,7 +110,7 @@ politico(nombre = "Mujica")
 #> 13 MUJICA COR~ Frente A~ 2010-03-01   2015-03-01          NA Presidente ~ Titul~
 #> # ... with 2 more variables: circunscripcion <chr>, sexo <dbl>
 
-politico(nombre = "Mujica Cordano")
+politico(apellido = "Mujica Cordano")
 #> 
 #>  El politico encontrado con ese nombre es: 
 #> 
