@@ -166,64 +166,6 @@ legis_W <- politico(nombre = "W")
 #> 
 ```
 
-##### Exploración de base de datos `puy::politicos`
-
-¿Cuántas mujeres ocuparon cargos políticos?
-
-``` r
-politicos %>% 
-    select(politico, legislatura, cargo, sexo) %>% 
-    unique() %>% 
-    mutate(cargo = ifelse(str_detect(cargo, "^Ministro"), "Ministro", cargo)) %>%
-    group_by(cargo) %>% 
-    summarise(Hombres = sum(sexo), 
-              Mujeres = n() - sum(sexo),
-              Prop_mujeres = paste0(round(Mujeres / n() *100), "%")) %>% 
-    print(n = Inf)
-#> # A tibble: 13 x 4
-#>    cargo                                       Hombres Mujeres Prop_mujeres
-#>    <chr>                                         <dbl>   <dbl> <chr>       
-#>  1 Alcalde                                         134      29 18%         
-#>  2 Concejal                                        595     142 19%         
-#>  3 Diputados                                      5327     145 3%          
-#>  4 Miembro del Consejo Nacional de Gobierno         35       0 0%          
-#>  5 Miembro del Triunvirato                           3       0 0%          
-#>  6 Ministro                                        524      17 3%          
-#>  7 Presidente Corte Electoral                        4       0 0%          
-#>  8 Presidente de la República                       51       0 0%          
-#>  9 Presidente del Consejo Nacional de Gobierno      13       0 0%          
-#> 10 Secretario Corte Electoral                        3       3 50%         
-#> 11 Senado                                         1624      53 3%          
-#> 12 Vicepresidente Corte Electoral                    4       0 0%          
-#> 13 Vicepresidente de la República                   16       2 11%
-```
-
-¿En qué legislatura las mujeres ocuparon más cargos legislativos?
-
-``` r
-legis_mujeres <- 
-    politicos %>% 
-    filter(cargo %in% c("Diputados", "Senado")) %>% 
-    select(politico, cargo, legislatura, sexo) %>% 
-    distinct() %>% 
-    group_by(legislatura) %>% 
-    summarise(Hombres = round(sum(sexo)/length(sexo) * 100), 
-              Mujeres = round(100 - Hombres)) %>% 
-    merge(., legislaturas[, c("legislatura", "periodo")], by = "legislatura") %>% 
-    select(4,2,3) %>% 
-    pivot_longer(cols = 2:3, names_to = "Sexo", values_to = "Porcentaje")
-
-
-ggplot(data = legis_mujeres, aes(x = periodo , y = Porcentaje, fill = Sexo)) + 
-    geom_bar(stat = "identity") +
-    scale_fill_manual(values = c("#FDDDA0", "purple")) +
-    theme_minimal() +
-    guides(x = guide_axis(angle = 60)) +
-    labs(x = "", y = "")
-```
-
-<img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
-
 ##### Ejemplo con `speech::speech_build()`
 
 ``` r
@@ -319,6 +261,64 @@ url %>%
 #> 24 VIERA               48     1 VIERA, Tabare Parti~ PC                  1     8
 ```
 
+##### Exploración de base de datos `puy::politicos`
+
+¿Cuántas mujeres ocuparon cargos políticos?
+
+``` r
+politicos %>% 
+    select(politico, legislatura, cargo, sexo) %>% 
+    unique() %>% 
+    mutate(cargo = ifelse(str_detect(cargo, "^Ministro"), "Ministro", cargo)) %>%
+    group_by(cargo) %>% 
+    summarise(Hombres = sum(sexo), 
+              Mujeres = n() - sum(sexo),
+              Prop_mujeres = paste0(round(Mujeres / n() *100), "%")) %>% 
+    print(n = Inf)
+#> # A tibble: 13 x 4
+#>    cargo                                       Hombres Mujeres Prop_mujeres
+#>    <chr>                                         <dbl>   <dbl> <chr>       
+#>  1 Alcalde                                         134      29 18%         
+#>  2 Concejal                                        595     142 19%         
+#>  3 Diputados                                      5327     145 3%          
+#>  4 Miembro del Consejo Nacional de Gobierno         35       0 0%          
+#>  5 Miembro del Triunvirato                           3       0 0%          
+#>  6 Ministro                                        524      17 3%          
+#>  7 Presidente Corte Electoral                        4       0 0%          
+#>  8 Presidente de la República                       51       0 0%          
+#>  9 Presidente del Consejo Nacional de Gobierno      13       0 0%          
+#> 10 Secretario Corte Electoral                        3       3 50%         
+#> 11 Senado                                         1624      53 3%          
+#> 12 Vicepresidente Corte Electoral                    4       0 0%          
+#> 13 Vicepresidente de la República                   16       2 11%
+```
+
+¿En qué legislatura las mujeres ocuparon más cargos legislativos?
+
+``` r
+legis_mujeres <- 
+    politicos %>% 
+    filter(cargo %in% c("Diputados", "Senado")) %>% 
+    select(politico, cargo, legislatura, sexo) %>% 
+    distinct() %>% 
+    group_by(legislatura) %>% 
+    summarise(Hombres = round(sum(sexo)/length(sexo) * 100), 
+              Mujeres = round(100 - Hombres)) %>% 
+    merge(., legislaturas[, c("legislatura", "periodo")], by = "legislatura") %>% 
+    select(4,2,3) %>% 
+    pivot_longer(cols = 2:3, names_to = "Sexo", values_to = "Porcentaje")
+
+
+ggplot(data = legis_mujeres, aes(x = periodo , y = Porcentaje, fill = Sexo)) + 
+    geom_bar(stat = "identity") +
+    scale_fill_manual(values = c("#FDDDA0", "purple")) +
+    theme_minimal() +
+    guides(x = guide_axis(angle = 60)) +
+    labs(x = "", y = "")
+```
+
+<img src="man/figures/README-unnamed-chunk-6-1.png" width="100%" />
+
 #### Notas
 
 -----
@@ -327,7 +327,7 @@ url %>%
 Datos, Facultad de Ciencias Sociales, Universidad de la República
 (UMAD-FCS-UdelaR)
 
-<sup><a id="fn.2" href="#fnr.2">2</a></sup> Foto extraida de “Crónica
-General del Uruguay”, Washington Reyes Abadie, Andrés Vázquez Romero,
-Banda Oriental, Montevideo, Uruguay,2000, p.399. La diagramación del
+<sup><a id="fn.2" href="#fnr.2">2</a></sup> Foto extraida de *“Crónica
+General del Uruguay”*, Washington Reyes Abadie, Andrés Vázquez Romero,
+Banda Oriental, Montevideo, Uruguay, 2000, p.399. La diagramación del
 logo es obra de Nadia Repetto (<narepetto@gmail.com>)

@@ -109,6 +109,34 @@ legis_W <- politico(nombre = "W")
 
 ```
 
+##### Ejemplo con `speech::speech_build()`
+
+```{r}
+library(speech)
+
+url <- "http://bit.ly/35AUVF4"
+text1 <- speech::speech_build(file = url, compiler = TRUE)
+text1
+
+floor_speech <- add_party(speech = text1)
+
+dplyr::glimpse(floor_speech)
+
+floor_speech[c(1,2,7:12)]
+
+## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## Diario de sesión NO compilado
+## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+url %>% 
+  speech::speech_build() %>% 
+  puy::add_party() %>% 
+  subset(select = c(1,2,7:12)) %>% # se seleccionan variables que se agregan con add_party()
+  print(n = Inf)
+
+
+```
+
 ```{r, echo = F, message=FALSE}
 library(tidyverse)
 ```
@@ -162,33 +190,14 @@ ggplot(data = legis_mujeres, aes(x = periodo , y = Porcentaje, fill = Sexo)) +
 
 
 
-##### Ejemplo con `speech::speech_build()`
-
-```{r}
-library(speech)
-
-url <- "http://bit.ly/35AUVF4"
-text1 <- speech::speech_build(file = url, compiler = TRUE)
-text1
-
-floor_speech <- add_party(speech = text1)
-
-dplyr::glimpse(floor_speech)
-
-floor_speech[c(1,2,7:12)]
-
-## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-## Diario de sesión NO compilado
-## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-url %>% 
-  speech::speech_build() %>% 
-  puy::add_party() %>% 
-  subset(select = c(1,2,7:12)) %>% # se seleccionan variables que se agregan con add_party()
-  print(n = Inf)
 
 
-```
+
+
+
+
+
+
 
 
 ```{r, echo = FALSE, message = FALSE}
@@ -215,7 +224,7 @@ manual()
 ---
 <sup><a id="fn.1" href="#fnr.1">1</a></sup> Unidad de Métodos y Acceso a Datos, Facultad de Ciencias Sociales, Universidad de la República (UMAD-FCS-UdelaR)
 
-<sup><a id="fn.2" href="#fnr.2">2</a></sup> Foto extraida de "Crónica General del Uruguay", Washington Reyes Abadie, Andrés Vázquez Romero, Banda Oriental, Montevideo, Uruguay,2000, p.399. La diagramación del logo es obra de Nadia Repetto (narepetto@gmail.com)
+<sup><a id="fn.2" href="#fnr.2">2</a></sup> Foto extraida de _"Crónica General del Uruguay"_, Washington Reyes Abadie, Andrés Vázquez Romero, Banda Oriental, Montevideo, Uruguay, 2000, p.399. La diagramación del logo es obra de Nadia Repetto (narepetto@gmail.com)
 
 
 
