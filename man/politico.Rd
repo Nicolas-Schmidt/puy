@@ -4,10 +4,10 @@
 \alias{politico}
 \title{Busqueda rapida de politrcios por el nombre}
 \usage{
-politico(apellido = character())
+politico(nombre = character())
 }
 \arguments{
-\item{apellido}{nombre del politico}
+\item{nombre}{nombre del politico}
 }
 \value{
 data.frame
@@ -17,13 +17,16 @@ Permite hacer una busqueda rapida de politico en la base de datos \code{puy::pol
 }
 \details{
 La busqueda implementa una expresion regular que busca en la base de politicos a aquellos legisladores y legisladoras
-    que comienzan con el valor ingresado en \code{apellido}. Es importante tener presente que los nombres de los politicos en la base
+    que comienzan con el valor ingresado en \code{nombre}. Es importante tener presente que los nombres de los politicos en la base
     tienen la siguiente estructura: 'APELLIDO, Nombre'. No es necesario respetar el uso de mayusculas o minusculas pero si
     la secuencia del nombre tal cual esta en la base para obtener un resultado satisfactorio. Por ejemplo, si quiere buscar a Tabare Vazques
     y utiliza \code{politico(nombre = "Tabare Vazquez")} no va a obtener resultados como si hiciera: \code{politico(nombre = "Vazquez")} o
     \code{politico(nombre = "Vazquez, Tabare")}.
 }
 \examples{
-politico(apellido = "Mujica")
-politico(apellido = "Mujica Cordano")
+politico(nombre = "Mujica")
+politico(nombre = "Mujica Cordano")
+
+politico(nombre = "LarraÃ±aga")
+politico(nombre = "L") # todos los politicos en los que el primer apellido comienza con la letra 'L'
 }

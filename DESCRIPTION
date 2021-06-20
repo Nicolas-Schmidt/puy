@@ -19,14 +19,23 @@ Authors@R: c(person(given = "Nicolas",
                     role = c("ctb")),
              person(given = "Diego",
                     family = "Lujan",
-                    role = c("ctb")),      
+                    role = c("ctb")),    
+             person(given = "Felipe",
+                    family = "Monestier",
+                    role = c("ctb")),
              person(family = "Unidad de Metodos y Acceso a Datos (UMAD)",
                     role = c("dtc"))
                     )
 Maintainer: Nicolas Schmidt <nschmidt@cienciassociales.edu.uy>
-Description: Contiene una base de datos original de politicos uruguayos desde 1830 hasta 2020. 
-    Especificamente, cubre politicos que ocuparon cargos de: Presidente, Vicepresidente, Ministro, 
-    Senador, Diputado, Intendente, Alcalde, Concejal Municipal, Ministro de Corte Electoral.
+Description: Contiene un conjunto de datos original de politicos uruguayos que 
+    ocuparon diversos cargos publicos: Presidentes, Vicepresidentes, Ministros, Senadores, Diputados, 
+    Intendentes, Alcaldes, Concejales municipales, Ministros de Corte Electoral entre otros. 
+    Esta base de datos permite seguir la trayectoria de un politico a lo largo de su carrera y los 
+    distintos cargos que fue ocupando. Asimismo, es de gran utilidad para tener la identificacion 
+    partidaria de los politicos en el tiempo para poder empalmar con otros conjuntos de datos en donde 
+    la unidad de analisis sea el politico. El ejemplo inmediato de esto ultimo es la base de 
+    datos que se genera a partir de los diarios de sesion del parlamento con el paquete 
+    speech.
 License: GPL-2
 Encoding: UTF-8
 LazyData: true

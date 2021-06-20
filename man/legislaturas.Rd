@@ -19,6 +19,7 @@ Contiene las legislaturas desde 1830 a 2020 y el periodo de tiempo en formato \c
    \item{inicio}{Fecha de inicio de la legislatura.}
    \item{fin}{Fecha de cierre de la legislatura}
    \item{dias}{Cantidad de dias de la legislatura.}
+   \item{periodo}{Anios de la legislatura 'yyyy-yyyy'}
 }
 
 La unidad de analisis de esta base de datos es la legislatura.

@@ -22,35 +22,43 @@ stable](https://img.shields.io/badge/lifecycle-stable-green.svg)](https://lifecy
 
 ### Descripción
 
-Contiene un conjunto de datos original de politicos uruguayos que
-ocuparon diversos cargos publicos: Presidentes, ministros, legisladores,
-alcaldes, concejales, ministros de corte electoral. Esta base de datos
-permite seguir la trayectoria de un politico a lo largo de su carrera y
-los distintos cargos que fue ocupando. Asimismo, es de gran utilidad
-para tener la identificacion partidaria de los politicos en el tiempo
-para poder empalmar con otros conjuntos de datos en donde la unidad es
-el politico. El ejemplo inmediato de esto ultimo es la base de datos que
-se genera a partir de los diarios de sesion del parlamento con el
-paquete speech.
+Contiene un conjunto de datos original de políticos uruguayos que
+ocuparon diversos cargos públicos: Presidentes, Ministros, Senadores,
+Diputados, Alcaldes, Concejales Municipales, Ministros de Corte
+Electoral entre otros. Esta base de datos permite seguir la trayectoria
+de un político a lo largo de su carrera y los distintos cargos que fue
+ocupando. Asimismo, es de gran utilidad para tener la identificación
+partidaria de los políticos en el tiempo para poder empalmar con otros
+conjuntos de datos en donde la unidad de análisis sea el político. El
+ejemplo inmediato de esto ultimo es la base de datos que se genera a
+partir de los diarios de sesión del parlamento con el paquete
+[`speech()`](https://nicolas-schmidt.github.io/speech/).
 
 El manual del paquete se puede encontrar
 [**aquí**](https://github.com/Nicolas-Schmidt/puy/blob/master/man/figures/Manual_puy.pdf).
+
+> La foto del logo es José Batlle y Ordóñez hablando desde la plataforma
+> del vagón de un tren durante una gira política en el departamento de
+> Treinta y Tres en
+> 1919<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>.
+
+## Contenido del paquete
 
 #### Conjuntos de datos
 
 ##### `politicos`
 
-| Variable          | Descripción                                                                              |
-| ----------------- | ---------------------------------------------------------------------------------------- |
-| `politico`        | Partido al que pertenece el politico en el cargo.                                        |
-| `partido`         | Partido al que pertenece el politico en el cargo.                                        |
-| `fecha_inicio`    | Fecha de inicio en el que comienza la gestión en el cargo.                               |
-| `fecha_inicio`    | Fecha de fin en la que finaliza la gestión en el cargo.                                  |
-| `legislatura`     | Legislatura en la que ocupa el cargo. Esta variable es para los legisladores unicamente. |
-| `cargo`           | Tipo de cargo.                                                                           |
-| `status`          | Si es Titular, Suplente, Nominal…                                                        |
-| `circunscripcion` | Distrito al que pertenece el legislador.                                                 |
-| `sexo`            | Sexo.                                                                                    |
+| Variable          | Descripción                                                                                                                                                                 |
+| ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `politico`        | Partido al que pertenece el político en el cargo.                                                                                                                           |
+| `partido`         | Partido al que pertenece el político en el cargo.                                                                                                                           |
+| `fecha_inicio`    | Fecha de inicio en el que comienza la gestión en el cargo.                                                                                                                  |
+| `fecha_inicio`    | Fecha de fin en la que finaliza la gestión en el cargo.                                                                                                                     |
+| `legislatura`     | Legislatura en la que ocupa el cargo el político. Esta variable es para los cargos que tienen secuencia legislativa (Legisladores, Ministros, Precidente, Vicepresidente…). |
+| `cargo`           | Tipo de cargo.                                                                                                                                                              |
+| `status`          | Si es Titular, Suplente, Nominal…                                                                                                                                           |
+| `circunscripcion` | Distrito al que pertenece el legislador (esto aplica a los Diputados).                                                                                                      |
+| `sexo`            | Sexo.                                                                                                                                                                       |
 
 Actualmente la base cuenta con la siguiente informacion:
 
@@ -70,20 +78,21 @@ Actualmente la base cuenta con la siguiente informacion:
 | `inicio`      | Fecha de inicio de la legislatura.                  |
 | `fin`         | Fecha de cierre de la legislatura                   |
 | `dias`        | Cantidad de días que estuvo abierta la legislatura. |
+| `periodo`     | Años de la legislatura, ejemplo: 2005-2010          |
 
 #### Funciones
 
 | Función       | Descripción                                                                                                                                                                                                                                                                              |
 | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `politico()`  | Permite buscar politicos en la base `puy::politicos`                                                                                                                                                                                                                                     |
-| `add_party()` | Permite agregar la etiqueta partidaria de cada legislador a un diario de sesion en el formato que devuelve la función [`speech_build()`](https://nicolas-schmidt.github.io/speech/reference/speech_build.html) del paquete de R [`speech()`](https://nicolas-schmidt.github.io/speech/). |
+| `politico()`  | Permite buscar políticos en la base `puy::politicos`.                                                                                                                                                                                                                                    |
+| `add_party()` | Permite agregar la etiqueta partidaria de cada legislador a un diario de sesión en el formato que devuelve la función [`speech_build()`](https://nicolas-schmidt.github.io/speech/reference/speech_build.html) del paquete de R [`speech()`](https://nicolas-schmidt.github.io/speech/). |
 
 ## Ejemplos
 
 ``` r
 library(puy)
 
-politico(apellido = "Mujica")
+politico(nombre = "Mujica")
 #> 
 #>  Los politicos encontrados con ese nombre son: 
 #> 
@@ -110,7 +119,7 @@ politico(apellido = "Mujica")
 #> 13 MUJICA COR~ Frente A~ 2010-03-01   2015-03-01          NA Presidente ~ Titul~
 #> # ... with 2 more variables: circunscripcion <chr>, sexo <dbl>
 
-politico(apellido = "Mujica Cordano")
+politico(nombre = "Mujica Cordano")
 #> 
 #>  El politico encontrado con ese nombre es: 
 #> 
@@ -127,7 +136,93 @@ politico(apellido = "Mujica Cordano")
 #> 6 MUJICA COR~ Frente A~ 2005-03-01   2008-03-03          NA Ministro Gan~ Titul~
 #> 7 MUJICA COR~ Frente A~ 2010-03-01   2015-03-01          NA Presidente d~ Titul~
 #> # ... with 2 more variables: circunscripcion <chr>, sexo <dbl>
+
+politico("roballo")
+#> 
+#>  El politico encontrado con ese nombre es: 
+#> 
+#>  ROBALLO, Alba
+#> 
+#> # A tibble: 6 x 9
+#>   politico   partido    fecha_inicio fecha_fin  legislatura cargo         status
+#>   <chr>      <chr>      <date>       <date>           <dbl> <chr>         <chr> 
+#> 1 ROBALLO, ~ Partido C~ NA           NA                  38 Senado        Titul~
+#> 2 ROBALLO, ~ Partido C~ NA           NA                  39 Senado        Titul~
+#> 3 ROBALLO, ~ Partido C~ NA           NA                  40 Senado        Titul~
+#> 4 ROBALLO, ~ Frente Am~ NA           NA                  41 Senado        Suple~
+#> 5 ROBALLO, ~ Frente Am~ NA           NA                  43 Senado        Suple~
+#> 6 ROBALLO, ~ Partido C~ 1968-05-03   1968-06-13          NA Ministro Edu~ Titul~
+#> # ... with 2 more variables: circunscripcion <chr>, sexo <dbl>
+
+# Legisladores que tienen apellido iniciado por la letra 'W'
+legis_W <- politico(nombre = "W")
+#> 
+#>  Los politicos encontrados con ese nombre son: 
+#> 
+#>  WETTSTEIN, Carlos
+#>  WILLIMAN, Claudio
+#>  WILLIMAN, Jose Claudio
+#>  WILSON, Arturo
+#> 
 ```
+
+##### Exploración de base de datos `puy::politicos`
+
+¿Cuántas mujeres ocuparon cargos políticos?
+
+``` r
+politicos %>% 
+    select(politico, legislatura, cargo, sexo) %>% 
+    unique() %>% 
+    mutate(cargo = ifelse(str_detect(cargo, "^Ministro"), "Ministro", cargo)) %>%
+    group_by(cargo) %>% 
+    summarise(Hombres = sum(sexo), 
+              Mujeres = n() - sum(sexo),
+              Prop_mujeres = paste0(round(Mujeres / n() *100), "%")) %>% 
+    print(n = Inf)
+#> # A tibble: 13 x 4
+#>    cargo                                       Hombres Mujeres Prop_mujeres
+#>    <chr>                                         <dbl>   <dbl> <chr>       
+#>  1 Alcalde                                         134      29 18%         
+#>  2 Concejal                                        595     142 19%         
+#>  3 Diputados                                      5327     145 3%          
+#>  4 Miembro del Consejo Nacional de Gobierno         35       0 0%          
+#>  5 Miembro del Triunvirato                           3       0 0%          
+#>  6 Ministro                                        524      17 3%          
+#>  7 Presidente Corte Electoral                        4       0 0%          
+#>  8 Presidente de la República                       51       0 0%          
+#>  9 Presidente del Consejo Nacional de Gobierno      13       0 0%          
+#> 10 Secretario Corte Electoral                        3       3 50%         
+#> 11 Senado                                         1624      53 3%          
+#> 12 Vicepresidente Corte Electoral                    4       0 0%          
+#> 13 Vicepresidente de la República                   16       2 11%
+```
+
+¿En qué legislatura las mujeres ocuparon más cargos legislativos?
+
+``` r
+legis_mujeres <- 
+    politicos %>% 
+    filter(cargo %in% c("Diputados", "Senado")) %>% 
+    select(politico, cargo, legislatura, sexo) %>% 
+    distinct() %>% 
+    group_by(legislatura) %>% 
+    summarise(Hombres = round(sum(sexo)/length(sexo) * 100), 
+              Mujeres = round(100 - Hombres)) %>% 
+    merge(., legislaturas[, c("legislatura", "periodo")], by = "legislatura") %>% 
+    select(4,2,3) %>% 
+    pivot_longer(cols = 2:3, names_to = "Sexo", values_to = "Porcentaje")
+
+
+ggplot(data = legis_mujeres, aes(x = periodo , y = Porcentaje, fill = Sexo)) + 
+    geom_bar(stat = "identity") +
+    scale_fill_manual(values = c("#FDDDA0", "purple")) +
+    theme_minimal() +
+    guides(x = guide_axis(angle = 60)) +
+    labs(x = "", y = "")
+```
+
+<img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
 
 ##### Ejemplo con `speech::speech_build()`
 
@@ -231,3 +326,8 @@ url %>%
 <sup><a id="fn.1" href="#fnr.1">1</a></sup> Unidad de Métodos y Acceso a
 Datos, Facultad de Ciencias Sociales, Universidad de la República
 (UMAD-FCS-UdelaR)
+
+<sup><a id="fn.2" href="#fnr.2">2</a></sup> Foto extraida de “Crónica
+General del Uruguay”, Washington Reyes Abadie, Andrés Vázquez Romero,
+Banda Oriental, Montevideo, Uruguay,2000, p.399. La diagramación del
+logo es obra de Nadia Repetto (<narepetto@gmail.com>)

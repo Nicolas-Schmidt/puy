@@ -7,6 +7,7 @@
 #'    \item{inicio}{Fecha de inicio de la legislatura.}
 #'    \item{fin}{Fecha de cierre de la legislatura}
 #'    \item{dias}{Cantidad de dias de la legislatura.}
+#'    \item{periodo}{Anios de la legislatura 'yyyy-yyyy'}
 #' }
 #'
 #' @docType data
