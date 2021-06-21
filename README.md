@@ -16,7 +16,7 @@ state and is being actively
 developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![Lifecycle:
 stable](https://img.shields.io/badge/lifecycle-stable-green.svg)](https://lifecycle.r-lib.org/articles/stages.html)
-[![](https://img.shields.io/badge/devel%20version-0.1.0.011-orange.svg)](https://github.com/Nicolas-Schmidt/puy)
+[![](https://img.shields.io/badge/devel%20version-0.1.0.012-orange.svg)](https://github.com/Nicolas-Schmidt/puy)
 [![R-CMD-check](https://github.com/Nicolas-Schmidt/puy/workflows/R-CMD-check/badge.svg)](https://github.com/Nicolas-Schmidt/puy/actions)
 <!-- badges: end -->
 
@@ -154,15 +154,30 @@ politico("roballo")
 #> 6 ROBALLO, ~ Partido C~ 1968-05-03   1968-06-13          NA Ministro Edu~ Titul~
 #> # ... with 2 more variables: circunscripcion <chr>, sexo <dbl>
 
+## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Legisladores que tienen apellido iniciado por la letra 'W'
+## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 legis_W <- politico(nombre = "W")
 #> 
-#>  Los politicos encontrados con ese nombre son: 
+#>  Los politicos encontrados con apellidoiniciado en 'W' son: 
 #> 
 #>  WETTSTEIN, Carlos
 #>  WILLIMAN, Claudio
 #>  WILLIMAN, Jose Claudio
 #>  WILSON, Arturo
+#> 
+
+
+## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# legisladores que tienen la expresion lacalle en alguna parte del nombre
+## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+lacalle <- politico(nombre = "lacalle", contiene = TRUE)
+#> 
+#>  Los politicos encontrados con ese nombre son: 
+#> 
+#>  LACALLE HERRERA, Luis Alberto
+#>  LACALLE POU, Luis Alberto
+#>  POU DE LACALLE, Julia
 #> 
 ```
 

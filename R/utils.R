@@ -51,25 +51,49 @@ sec_ <- c("legislator", "legislature", "chamber", "date","id", "speech", "sex", 
 
 
 
-out.cat <- function(out){
+out.cat <- function(out, name, contiene){
     proto <- sort(unique(out$politico))
     pol <- paste0(c("", proto), "\n")
-    cat("\n", can(proto), "\n")
+    cat("\n", can(x = proto, name = name, contiene = contiene), "\n")
     cat(pol, "\n\n")
 }
 
 
-can <- function(x){
-
+can <- function(x, name, contiene){
     if(length(x) == 0){
         "No se encontraron politicos con ese nombre..."
-
-    }else{
-        ifelse(length(x) == 1,
-           "El politico encontrado con ese nombre es:",
-           "Los politicos encontrados con ese nombre son:")
+    } else {
+        if(nchar(paste(name, collapse = ""))  == 1){
+            paste0("Los politicos encontrados con apellido", ifelse(contiene, " que contiene la letra '", "iniciado en '"), toupper(name) ,"' son:")
+        } else {
+            ifelse(length(x) == 1,
+                   "El politico encontrado con ese nombre es:",
+                   "Los politicos encontrados con ese nombre son:")
+        }
     }
 }
+
+
+
+buscar <- function(dat, nombre, contiene){
+
+    nombre <- tolower(nombre) %>% chartr("\u00e1\u00e9\u00ed\u00f3\u00fa","aeiou", .)
+    if(!contiene){nombre <- paste0("^", nombre)}
+    u <- list()
+    for(i in 1:length(nombre)){
+        if(contiene){
+            u[[i]] <- which(stringr::str_detect(string = dat, pattern = nombre[i]))
+        }else{
+            u[[i]] <- stringr::str_which(string = dat, pattern = nombre[i])
+        }
+    }
+    politicos[unique(unlist(u)),]
+}
+
+
+
+
+
 
 
 

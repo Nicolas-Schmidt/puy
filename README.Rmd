@@ -103,8 +103,16 @@ politico(nombre = "Mujica Cordano")
 
 politico("roballo")
 
+## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Legisladores que tienen apellido iniciado por la letra 'W'
+## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 legis_W <- politico(nombre = "W")
+
+
+## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# legisladores que tienen la expresion lacalle en alguna parte del nombre
+## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+lacalle <- politico(nombre = "lacalle", contiene = TRUE)
 
 
 ```

@@ -4,10 +4,14 @@
 \alias{politico}
 \title{Busqueda rapida de politrcios por el nombre}
 \usage{
-politico(nombre = character())
+politico(nombre = character(), contiene = FALSE)
 }
 \arguments{
 \item{nombre}{nombre del politico}
+
+\item{contiene}{valor logico que indica si se desea buscar el valor ingresado en \code{nombre} como parte del apellido o del
+nombre de un politico. Por defecto es \code{FALSE}, esto quiere decir que la busqueda que se inicia por defeto es por inicio
+de los caracteres ingresado en \code{nombre}.}
 }
 \value{
 data.frame
@@ -29,4 +33,8 @@ politico(nombre = "Mujica Cordano")
 
 politico(nombre = "LarraÃ±aga")
 politico(nombre = "L") # todos los politicos en los que el primer apellido comienza con la letra 'L'
+
+politico(nombre = "Lacalle")
+politico(nombre = "Lacalle", contiene = TRUE)
+
 }
