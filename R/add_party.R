@@ -38,10 +38,10 @@
 add_party <- function(speech){
 
     dat <- speech
-    politicos   <- subset(politicos, subset = politicos$cargo %in% c("Diputados", "Senado"))
+    politicos   <- subset(politicos, subset = politicos$cargo %in% c("Diputado", "Senador"))
     b1          <- politicos
     b1$apellido <- stringr::str_extract(b1$politico, pattern = "[A-Z\u00D1. ]{2,}")
-    b1$camara   <- ifelse(b1$cargo == "Senado", "CAMARA DE SENADORES", ifelse(b1$cargo == "Diputados", "CAMARA DE REPRESENTANTES", NA))
+    b1$camara   <- ifelse(b1$cargo == "Senador", "CAMARA DE SENADORES", ifelse(b1$cargo == "Diputado", "CAMARA DE REPRESENTANTES", NA))
     b2          <- b1
     b2$camara   <- "ASAMBLEA GENERAL"
     b3          <- b2

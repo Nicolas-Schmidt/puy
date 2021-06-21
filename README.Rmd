@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 ## `puy`: políticos uruguayos <img src='man/figures/logo.png' align="right" height="180" />
 
 
-*Nicolás Schmidt, Antonio Cardarello, Alfonso Castiglia, Fabricio Carneiro, Diego Luján, Felipe Monestier UMAD<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>.*
+*Nicolás Schmidt, Antonio Cardarello, Alfonso Castiglia, Fabricio Carneiro, Diego Luján, Felipe Monestier, UMAD<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>.*
 
 <!-- badges: start -->
 
@@ -37,7 +37,7 @@ El manual del paquete se puede encontrar [__aquí__](https://github.com/Nicolas-
 
 
 
-> La foto del logo es José Batlle y Ordóñez hablando desde la plataforma del vagón de un tren durante una gira política en el departamento de Treinta y Tres en 1919<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>.
+> En la foto del logo aparece José Batlle y Ordóñez hablando desde la plataforma del vagón de un tren durante una gira política en el departamento de Treinta y Tres en 1919<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>.
 
 ## Contenido del paquete
 
@@ -168,9 +168,11 @@ politicos %>%
 ¿En qué legislatura las mujeres ocuparon más cargos legislativos?
 
 ```{r, fig.width=12, fig.height=4}
+library(tidyverse)
+
 legis_mujeres <- 
     politicos %>% 
-    filter(cargo %in% c("Diputados", "Senado")) %>% 
+    filter(cargo %in% c("Diputado", "Senador")) %>% 
     select(politico, cargo, legislatura, sexo) %>% 
     distinct() %>% 
     group_by(legislatura) %>% 

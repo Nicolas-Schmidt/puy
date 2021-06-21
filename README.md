@@ -4,7 +4,7 @@
 ## `puy`: políticos uruguayos <img src='man/figures/logo.png' align="right" height="180" />
 
 *Nicolás Schmidt, Antonio Cardarello, Alfonso Castiglia, Fabricio
-Carneiro, Diego Luján, Felipe Monestier
+Carneiro, Diego Luján, Felipe Monestier,
 UMAD<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>.*
 
 <!-- badges: start -->
@@ -37,9 +37,9 @@ partir de los diarios de sesión del parlamento con el paquete
 El manual del paquete se puede encontrar
 [**aquí**](https://github.com/Nicolas-Schmidt/puy/blob/master/man/figures/Manual_puy.pdf).
 
-> La foto del logo es José Batlle y Ordóñez hablando desde la plataforma
-> del vagón de un tren durante una gira política en el departamento de
-> Treinta y Tres en
+> En la foto del logo aparece José Batlle y Ordóñez hablando desde la
+> plataforma del vagón de un tren durante una gira política en el
+> departamento de Treinta y Tres en
 > 1919<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>.
 
 ## Contenido del paquete
@@ -104,15 +104,15 @@ politico(nombre = "Mujica")
 #> # A tibble: 13 x 9
 #>    politico    partido   fecha_inicio fecha_fin  legislatura cargo        status
 #>    <chr>       <chr>     <date>       <date>           <dbl> <chr>        <chr> 
-#>  1 MUJICA COR~ Frente A~ 1995-02-15   2000-02-14          44 Diputados    Titul~
-#>  2 MUJICA COR~ Frente A~ 2000-02-15   2005-02-14          45 Senado       Titul~
-#>  3 MUJICA COR~ Frente A~ 2005-02-15   NA                  46 Senado       Titul~
-#>  4 MUJICA, Go~ Frente A~ 2005-02-15   NA                  46 Diputados    Titul~
-#>  5 MUJICA, Go~ Frente A~ 2015-02-15   NA                  48 Diputados    Titul~
-#>  6 MUJICA COR~ Frente A~ 2015-02-15   NA                  48 Senado       Titul~
-#>  7 MUJICA, Go~ Frente A~ 2010-02-15   NA                  47 Diputados    Titul~
-#>  8 MUJICA COR~ Frente A~ 2020-02-15   NA                  49 Senado       Titul~
-#>  9 MUJICA, Go~ Partido ~ 2020-02-15   NA                  49 Diputados    Titul~
+#>  1 MUJICA COR~ Frente A~ 1995-02-15   2000-02-14          44 Diputado     Titul~
+#>  2 MUJICA COR~ Frente A~ 2000-02-15   2005-02-14          45 Senador      Titul~
+#>  3 MUJICA COR~ Frente A~ 2005-02-15   NA                  46 Senador      Titul~
+#>  4 MUJICA, Go~ Frente A~ 2005-02-15   NA                  46 Diputado     Titul~
+#>  5 MUJICA, Go~ Frente A~ 2015-02-15   NA                  48 Diputado     Titul~
+#>  6 MUJICA COR~ Frente A~ 2015-02-15   NA                  48 Senador      Titul~
+#>  7 MUJICA, Go~ Frente A~ 2010-02-15   NA                  47 Diputado     Titul~
+#>  8 MUJICA COR~ Frente A~ 2020-02-15   NA                  49 Senador      Titul~
+#>  9 MUJICA, Go~ Partido ~ 2020-02-15   NA                  49 Diputado     Titul~
 #> 10 MUJICA COR~ Frente A~ 2005-03-01   2008-03-03          NA Ministro Ga~ Titul~
 #> 11 MUJICA, Jo~ Partido ~ 2015-03-01   NA                  NA Concejal     Titul~
 #> 12 MUJICA, As~ Partido ~ 2015-03-01   NA                  NA Concejal     Titul~
@@ -128,11 +128,11 @@ politico(nombre = "Mujica Cordano")
 #> # A tibble: 7 x 9
 #>   politico    partido   fecha_inicio fecha_fin  legislatura cargo         status
 #>   <chr>       <chr>     <date>       <date>           <dbl> <chr>         <chr> 
-#> 1 MUJICA COR~ Frente A~ 1995-02-15   2000-02-14          44 Diputados     Titul~
-#> 2 MUJICA COR~ Frente A~ 2000-02-15   2005-02-14          45 Senado        Titul~
-#> 3 MUJICA COR~ Frente A~ 2005-02-15   NA                  46 Senado        Titul~
-#> 4 MUJICA COR~ Frente A~ 2015-02-15   NA                  48 Senado        Titul~
-#> 5 MUJICA COR~ Frente A~ 2020-02-15   NA                  49 Senado        Titul~
+#> 1 MUJICA COR~ Frente A~ 1995-02-15   2000-02-14          44 Diputado      Titul~
+#> 2 MUJICA COR~ Frente A~ 2000-02-15   2005-02-14          45 Senador       Titul~
+#> 3 MUJICA COR~ Frente A~ 2005-02-15   NA                  46 Senador       Titul~
+#> 4 MUJICA COR~ Frente A~ 2015-02-15   NA                  48 Senador       Titul~
+#> 5 MUJICA COR~ Frente A~ 2020-02-15   NA                  49 Senador       Titul~
 #> 6 MUJICA COR~ Frente A~ 2005-03-01   2008-03-03          NA Ministro Gan~ Titul~
 #> 7 MUJICA COR~ Frente A~ 2010-03-01   2015-03-01          NA Presidente d~ Titul~
 #> # ... with 2 more variables: circunscripcion <chr>, sexo <dbl>
@@ -146,11 +146,11 @@ politico("roballo")
 #> # A tibble: 6 x 9
 #>   politico   partido    fecha_inicio fecha_fin  legislatura cargo         status
 #>   <chr>      <chr>      <date>       <date>           <dbl> <chr>         <chr> 
-#> 1 ROBALLO, ~ Partido C~ NA           NA                  38 Senado        Titul~
-#> 2 ROBALLO, ~ Partido C~ NA           NA                  39 Senado        Titul~
-#> 3 ROBALLO, ~ Partido C~ NA           NA                  40 Senado        Titul~
-#> 4 ROBALLO, ~ Frente Am~ NA           NA                  41 Senado        Suple~
-#> 5 ROBALLO, ~ Frente Am~ NA           NA                  43 Senado        Suple~
+#> 1 ROBALLO, ~ Partido C~ NA           NA                  38 Senador       Titul~
+#> 2 ROBALLO, ~ Partido C~ NA           NA                  39 Senador       Titul~
+#> 3 ROBALLO, ~ Partido C~ NA           NA                  40 Senador       Titul~
+#> 4 ROBALLO, ~ Frente Am~ NA           NA                  41 Senador       Suple~
+#> 5 ROBALLO, ~ Frente Am~ NA           NA                  43 Senador       Suple~
 #> 6 ROBALLO, ~ Partido C~ 1968-05-03   1968-06-13          NA Ministro Edu~ Titul~
 #> # ... with 2 more variables: circunscripcion <chr>, sexo <dbl>
 
@@ -295,25 +295,27 @@ politicos %>%
 #>    <chr>                                         <dbl>   <dbl> <chr>       
 #>  1 Alcalde                                         134      29 18%         
 #>  2 Concejal                                        595     142 19%         
-#>  3 Diputados                                      5327     145 3%          
+#>  3 Diputado                                       5327     145 3%          
 #>  4 Miembro del Consejo Nacional de Gobierno         35       0 0%          
 #>  5 Miembro del Triunvirato                           3       0 0%          
 #>  6 Ministro                                        524      17 3%          
 #>  7 Presidente Corte Electoral                        4       0 0%          
-#>  8 Presidente de la República                       51       0 0%          
+#>  8 Presidente de la Republica                       51       0 0%          
 #>  9 Presidente del Consejo Nacional de Gobierno      13       0 0%          
 #> 10 Secretario Corte Electoral                        3       3 50%         
-#> 11 Senado                                         1624      53 3%          
+#> 11 Senador                                        1624      53 3%          
 #> 12 Vicepresidente Corte Electoral                    4       0 0%          
-#> 13 Vicepresidente de la República                   16       2 11%
+#> 13 Vicepresidente de la Republica                   16       2 11%
 ```
 
 ¿En qué legislatura las mujeres ocuparon más cargos legislativos?
 
 ``` r
+library(tidyverse)
+
 legis_mujeres <- 
     politicos %>% 
-    filter(cargo %in% c("Diputados", "Senado")) %>% 
+    filter(cargo %in% c("Diputado", "Senador")) %>% 
     select(politico, cargo, legislatura, sexo) %>% 
     distinct() %>% 
     group_by(legislatura) %>% 
