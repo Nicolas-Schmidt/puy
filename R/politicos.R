@@ -1,7 +1,16 @@
 #' politicos
 #'
-#' Contiene el periodo y el cargo que ocupo un politico uruguayo desde 1830 hasta 2020.
+#' Conjunto de datos de politicos uruguayos que ocuparon cargos politicos entre 1830 y 2020. Incluye datos de:
+#'    \itemize{
+#'             \item{Presidentes y Vicepresidentes: 1830 - 2020}
+#'             \item{Legisladores (Diputados y Senadores): 1830 - 2020}
+#'             \item{Ministros de Estado: 1904 - 2020}
+#'             \item{Alcaldes y Concejales: 2010 - 2020}
+#'             \item{Ministros Corte Electoral: 1830 - 2020}
+#'             \item{Candidato Presidente y Vicepresidente: 1958 - 2020}
+#'             }
 #'
+#'    Las variables que tiene este conjunto de datos son:
 #'\describe{
 #'    \item{politico}{Nombre completo del politico en el formato: 'APELLIDO, Nombre'}
 #'    \item{partido}{Partido al que pertenece el politico en el cargo.}
@@ -19,7 +28,7 @@
 #' @usage data(politicos)
 #' @format data.frame con ... filas y 7 columnas.
 #' @details En las variables \code{fecha_inicio} y \code{fecha_fin} cuando se tiene solo el anio por convencion se le marca la fecha "1 de marzo de ...". La fuente principal de datos de legisladores es el texto: 'Parlamentarios Uruguayos 1830-2005' que fue digitalizado.
-#'
+#'          Se incorporo a la base los datos de candidaturas presidenciales y de precandidaturas presidenciales (elecciones internas) a los efectos de tener informacion mas precisa sobre las carreras politicas. Estos politicos son la unica excepcion en la base que en esas instancias no ocuparon ningun cargo sino que se postularon.
 #'
 #'
 #' @references

@@ -53,7 +53,7 @@ El manual del paquete se puede encontrar [__aquí__](https://github.com/Nicolas-
 | `partido`         | Partido al que pertenece el político en el cargo.                                          |
 | `fecha_inicio`    | Fecha de inicio en el que comienza la gestión en el cargo.                                 |
 | `fecha_inicio`    | Fecha de fin en la que finaliza la gestión en el cargo.                                    |
-| `legislatura`     | Legislatura en la que ocupa el cargo el político. Esta variable es para los cargos que tienen secuencia legislativa (Legisladores, Ministros, Precidente, Vicepresidente...).   | 
+| `legislatura`     | Legislatura en la que ocupa el cargo el político. Esta variable es para los cargos que tienen secuencia legislativa (Legisladores, Ministros, Presidente, Vicepresidente...).   | 
 | `cargo`           | Tipo de cargo.                                                                             |
 | `status`          | Si es Titular, Suplente, Nominal...                                                        |
 | `circunscripcion` | Distrito al que pertenece el legislador (esto aplica a los Diputados).                     |
@@ -62,13 +62,14 @@ El manual del paquete se puede encontrar [__aquí__](https://github.com/Nicolas-
 
 Actualmente la base cuenta con la siguiente informacion:
 
-| Políticos                     | Periodo       |
-| ------------------------------| ------------- |
-| Presidentes y Vicepresidentes | 1830 - 2020   |
-| Legisladores                  | 1830 - 2020   |
-| Ministros de Estado           | 1904 - 2020   |
-| Alcaldes y Concejales         | 2010 - 2020   |
-| Ministros Corte Electoral     | 1985 - 2020   |
+| Políticos                                | Periodo       |
+| -----------------------------------------| ------------- |
+| Presidentes y Vicepresidentes            | 1830 - 2020   |
+| Legisladores                             | 1830 - 2020   |
+| Ministros de Estado                      | 1904 - 2020   |
+| Alcaldes y Concejales                    | 2010 - 2020   |
+| Ministros Corte Electoral                | 1985 - 2020   |
+| Candidato Presidente y Vicepresidente<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup>  | 1958 - 2020   |
 
 
 ##### `legislaturas`
@@ -235,6 +236,8 @@ manual()
 <sup><a id="fn.1" href="#fnr.1">1</a></sup> Unidad de Métodos y Acceso a Datos, Facultad de Ciencias Sociales, Universidad de la República (UMAD-FCS-UdelaR)
 
 <sup><a id="fn.2" href="#fnr.2">2</a></sup> Foto extraida de _"Crónica General del Uruguay"_, Washington Reyes Abadie, Andrés Vázquez Romero, Banda Oriental, Montevideo, Uruguay, 2000, p.399. La diagramación del logo es obra de Nadia Repetto (narepetto@gmail.com)
+
+<sup><a id="fn.3" href="#fnr.3">3</a></sup> Se incorporó a la base los datos de candidaturas presidenciales y de precandidaturas presidenciales (elecciones internas) a los efectos de tener información más precisa sobre las carreras políticas. Estos políticos son la única excepción en la base que en esas instancias no ocuparon ningún cargo sino que se postularon.
 
 
 

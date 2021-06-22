@@ -1,3 +1,7 @@
+# puy 0.1.0.013
+
+* se carga datos de candidaturas y precandidaturas a ejecutivo nacional
+
 # puy 0.1.0.012
 
 * se mejora la funcion `politicos()`, ahora permite ingresar mas de un nombre y el argumento contiene que hace posible una busqueda mas apmplia al buscar match en todo el nombre y no matcha de inicio de cadena de caracteres

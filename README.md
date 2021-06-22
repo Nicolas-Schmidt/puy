@@ -16,7 +16,7 @@ state and is being actively
 developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![Lifecycle:
 stable](https://img.shields.io/badge/lifecycle-stable-green.svg)](https://lifecycle.r-lib.org/articles/stages.html)
-[![](https://img.shields.io/badge/devel%20version-0.1.0.012-orange.svg)](https://github.com/Nicolas-Schmidt/puy)
+[![](https://img.shields.io/badge/devel%20version-0.1.0.013-orange.svg)](https://github.com/Nicolas-Schmidt/puy)
 [![R-CMD-check](https://github.com/Nicolas-Schmidt/puy/workflows/R-CMD-check/badge.svg)](https://github.com/Nicolas-Schmidt/puy/actions)
 <!-- badges: end -->
 
@@ -54,7 +54,7 @@ El manual del paquete se puede encontrar
 | `partido`         | Partido al que pertenece el político en el cargo.                                                                                                                           |
 | `fecha_inicio`    | Fecha de inicio en el que comienza la gestión en el cargo.                                                                                                                  |
 | `fecha_inicio`    | Fecha de fin en la que finaliza la gestión en el cargo.                                                                                                                     |
-| `legislatura`     | Legislatura en la que ocupa el cargo el político. Esta variable es para los cargos que tienen secuencia legislativa (Legisladores, Ministros, Precidente, Vicepresidente…). |
+| `legislatura`     | Legislatura en la que ocupa el cargo el político. Esta variable es para los cargos que tienen secuencia legislativa (Legisladores, Ministros, Presidente, Vicepresidente…). |
 | `cargo`           | Tipo de cargo.                                                                                                                                                              |
 | `status`          | Si es Titular, Suplente, Nominal…                                                                                                                                           |
 | `circunscripcion` | Distrito al que pertenece el legislador (esto aplica a los Diputados).                                                                                                      |
@@ -62,13 +62,14 @@ El manual del paquete se puede encontrar
 
 Actualmente la base cuenta con la siguiente informacion:
 
-| Políticos                     | Periodo     |
-| ----------------------------- | ----------- |
-| Presidentes y Vicepresidentes | 1830 - 2020 |
-| Legisladores                  | 1830 - 2020 |
-| Ministros de Estado           | 1904 - 2020 |
-| Alcaldes y Concejales         | 2010 - 2020 |
-| Ministros Corte Electoral     | 1985 - 2020 |
+| Políticos                                                                                        | Periodo     |
+| ------------------------------------------------------------------------------------------------ | ----------- |
+| Presidentes y Vicepresidentes                                                                    | 1830 - 2020 |
+| Legisladores                                                                                     | 1830 - 2020 |
+| Ministros de Estado                                                                              | 1904 - 2020 |
+| Alcaldes y Concejales                                                                            | 2010 - 2020 |
+| Ministros Corte Electoral                                                                        | 1985 - 2020 |
+| Candidato Presidente y Vicepresidente<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup> | 1958 - 2020 |
 
 ##### `legislaturas`
 
@@ -100,8 +101,9 @@ politico(nombre = "Mujica")
 #>  MUJICA, Asdrubal R.
 #>  MUJICA, Gonzalo
 #>  MUJICA, Jorge
+#>  MUJICA, Jose
 #> 
-#> # A tibble: 13 x 9
+#> # A tibble: 15 x 9
 #>    politico    partido   fecha_inicio fecha_fin  legislatura cargo        status
 #>    <chr>       <chr>     <date>       <date>           <dbl> <chr>        <chr> 
 #>  1 MUJICA COR~ Frente A~ 1995-02-15   2000-02-14          44 Diputado     Titul~
@@ -117,6 +119,8 @@ politico(nombre = "Mujica")
 #> 11 MUJICA, Jo~ Partido ~ 2015-03-01   NA                  NA Concejal     Titul~
 #> 12 MUJICA, As~ Partido ~ 2015-03-01   NA                  NA Concejal     Titul~
 #> 13 MUJICA COR~ Frente A~ 2010-03-01   2015-03-01          NA Presidente ~ Titul~
+#> 14 MUJICA, Jo~ Frente A~ 2009-10-25   2009-10-25          NA Candidato P~ <NA>  
+#> 15 MUJICA, Jo~ Frente A~ 2009-06-28   2009-06-28          NA Candidato P~ <NA>  
 #> # ... with 2 more variables: circunscripcion <chr>, sexo <dbl>
 
 politico(nombre = "Mujica Cordano")
@@ -290,22 +294,26 @@ politicos %>%
               Mujeres = n() - sum(sexo),
               Prop_mujeres = paste0(round(Mujeres / n() *100), "%")) %>% 
     print(n = Inf)
-#> # A tibble: 13 x 4
+#> # A tibble: 17 x 4
 #>    cargo                                       Hombres Mujeres Prop_mujeres
 #>    <chr>                                         <dbl>   <dbl> <chr>       
 #>  1 Alcalde                                         134      29 18%         
-#>  2 Concejal                                        595     142 19%         
-#>  3 Diputado                                       5327     145 3%          
-#>  4 Miembro del Consejo Nacional de Gobierno         35       0 0%          
-#>  5 Miembro del Triunvirato                           3       0 0%          
-#>  6 Ministro                                        524      17 3%          
-#>  7 Presidente Corte Electoral                        4       0 0%          
-#>  8 Presidente de la Republica                       51       0 0%          
-#>  9 Presidente del Consejo Nacional de Gobierno      13       0 0%          
-#> 10 Secretario Corte Electoral                        3       3 50%         
-#> 11 Senador                                        1624      53 3%          
-#> 12 Vicepresidente Corte Electoral                    4       0 0%          
-#> 13 Vicepresidente de la Republica                   16       2 11%
+#>  2 Candidato Consejo Nacional de Gobierno          163       4 2%          
+#>  3 Candidato Precandidato Presidente                68       4 6%          
+#>  4 Candidato Presidente                             74       2 3%          
+#>  5 Candidato Vicepresidente                         84      15 15%         
+#>  6 Concejal                                        595     142 19%         
+#>  7 Diputado                                       5327     145 3%          
+#>  8 Miembro del Consejo Nacional de Gobierno         35       0 0%          
+#>  9 Miembro del Triunvirato                           3       0 0%          
+#> 10 Ministro                                        524      17 3%          
+#> 11 Presidente Corte Electoral                        4       0 0%          
+#> 12 Presidente de la Republica                       51       0 0%          
+#> 13 Presidente del Consejo Nacional de Gobierno      13       0 0%          
+#> 14 Secretario Corte Electoral                        3       3 50%         
+#> 15 Senador                                        1624      53 3%          
+#> 16 Vicepresidente Corte Electoral                    4       0 0%          
+#> 17 Vicepresidente de la Republica                   16       2 11%
 ```
 
 ¿En qué legislatura las mujeres ocuparon más cargos legislativos?
@@ -348,3 +356,10 @@ Datos, Facultad de Ciencias Sociales, Universidad de la República
 General del Uruguay”*, Washington Reyes Abadie, Andrés Vázquez Romero,
 Banda Oriental, Montevideo, Uruguay, 2000, p.399. La diagramación del
 logo es obra de Nadia Repetto (<narepetto@gmail.com>)
+
+<sup><a id="fn.3" href="#fnr.3">3</a></sup> Se incorporó a la base los
+datos de candidaturas presidenciales y de precandidaturas presidenciales
+(elecciones internas) a los efectos de tener información más precisa
+sobre las carreras políticas. Estos políticos son la única excepción en
+la base que en esas instancias no ocuparon ningún cargo sino que se
+postularon.
