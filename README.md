@@ -3,8 +3,8 @@
 
 ## `puy`: políticos uruguayos <img src='man/figures/logo.png' align="right" height="180" />
 
-*Nicolás Schmidt, Antonio Cardarello, Alfonso Castiglia, Fabricio
-Carneiro, Diego Luján, Felipe Monestier,
+*Nicolás Schmidt, Antonio Cardarello, Fabricio Carneiro, Diego Luján,
+Felipe Monestier, Alfonso Castiglia,
 UMAD<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>.*
 
 <!-- badges: start -->
