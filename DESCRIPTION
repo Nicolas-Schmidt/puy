@@ -28,8 +28,7 @@ Authors@R: c(person(given = "Nicolas",
                     )
 Maintainer: Nicolas Schmidt <nschmidt@cienciassociales.edu.uy>
 Description: Contiene un conjunto de datos original de politicos uruguayos que 
-    ocuparon diversos cargos publicos: Presidentes, Vicepresidentes, Ministros, Senadores, Diputados, 
-    Intendentes, Alcaldes, Concejales municipales, Ministros de Corte Electoral entre otros. 
+    ocuparon diversos cargos publicos: Presidentes, Vicepresidentes, Ministros, Senadores, Diputados, Intendentes, Alcaldes, Concejales municipales, Ministros de Corte Electoral entre otros. 
     Esta base de datos permite seguir la trayectoria de un politico a lo largo de su carrera y los 
     distintos cargos que fue ocupando. Asimismo, es de gran utilidad para tener la identificacion 
     partidaria de los politicos en el tiempo para poder empalmar con otros conjuntos de datos en donde 
