@@ -5,7 +5,7 @@
 \alias{politicos}
 \title{politicos}
 \format{
-data.frame con ... filas y 7 columnas.
+data.frame con 10315 filas y 9 columnas.
 }
 \usage{
 data(politicos)
@@ -16,6 +16,7 @@ Conjunto de datos de politicos uruguayos que ocuparon cargos politicos entre 183
             \item{Presidentes y Vicepresidentes: 1830 - 2020}
             \item{Legisladores (Diputados y Senadores): 1830 - 2020}
             \item{Ministros de Estado: 1904 - 2020}
+            \item{Intendentes: 1925 - 2020}
             \item{Alcaldes y Concejales: 2010 - 2020}
             \item{Ministros Corte Electoral: 1830 - 2020}
             \item{Candidato Presidente y Vicepresidente: 1958 - 2020}
@@ -46,5 +47,7 @@ En las variables \code{fecha_inicio} y \code{fecha_fin} cuando se tiene solo el 
 \insertRef{musso}{puy}
 
 \insertRef{oddone}{puy}
+
+\insertRef{departamental}{puy}
 }
 \keyword{datasets}

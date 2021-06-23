@@ -5,6 +5,7 @@
 #'             \item{Presidentes y Vicepresidentes: 1830 - 2020}
 #'             \item{Legisladores (Diputados y Senadores): 1830 - 2020}
 #'             \item{Ministros de Estado: 1904 - 2020}
+#'             \item{Intendentes: 1925 - 2020}
 #'             \item{Alcaldes y Concejales: 2010 - 2020}
 #'             \item{Ministros Corte Electoral: 1830 - 2020}
 #'             \item{Candidato Presidente y Vicepresidente: 1958 - 2020}
@@ -26,7 +27,7 @@
 #' @keywords datasets
 #' @name politicos
 #' @usage data(politicos)
-#' @format data.frame con ... filas y 7 columnas.
+#' @format data.frame con 10315 filas y 9 columnas.
 #' @details En las variables \code{fecha_inicio} y \code{fecha_fin} cuando se tiene solo el anio por convencion se le marca la fecha "1 de marzo de ...". La fuente principal de datos de legisladores es el texto: 'Parlamentarios Uruguayos 1830-2005' que fue digitalizado.
 #'          Se incorporo a la base los datos de candidaturas presidenciales y de precandidaturas presidenciales (elecciones internas) a los efectos de tener informacion mas precisa sobre las carreras politicas. Estos politicos son la unica excepcion en la base que en esas instancias no ocuparon ningun cargo sino que se postularon.
 #'
@@ -39,4 +40,7 @@
 #' \insertRef{musso}{puy}
 #'
 #' \insertRef{oddone}{puy}
+#'
+#' \insertRef{departamental}{puy}
+#'
 NULL

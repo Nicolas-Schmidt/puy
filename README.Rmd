@@ -67,10 +67,10 @@ Actualmente la base cuenta con la siguiente informacion:
 | Presidentes y Vicepresidentes            | 1830 - 2020   |
 | Legisladores                             | 1830 - 2020   |
 | Ministros de Estado                      | 1904 - 2020   |
-| Alcaldes y Concejales                    | 2010 - 2020   |
-| Ministros Corte Electoral                | 1985 - 2020   |
+| Intendentes                              | 1925 - 2020   |
 | Candidato Presidente y Vicepresidente<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup>  | 1958 - 2020   |
-
+| Ministros Corte Electoral                | 1985 - 2020   |
+| Alcaldes y Concejales                    | 2010 - 2020   |
 
 ##### `legislaturas`
 
@@ -88,7 +88,7 @@ Actualmente la base cuenta con la siguiente informacion:
 
 | Función        | Descripción                                          |
 | -------------- | ---------------------------------------------------- |
-| `politico()`   | Permite buscar políticos en la base `puy::politicos`.|
+| `buscar_puy()`   | Permite buscar políticos en la base `puy::politicos`.|
 | `add_party()`  | Permite agregar la etiqueta partidaria de cada legislador a un diario de sesión en el formato que devuelve la función [`speech_build()`](https://nicolas-schmidt.github.io/speech/reference/speech_build.html) del paquete de R [`speech()`](https://nicolas-schmidt.github.io/speech/).|
 
 
@@ -98,22 +98,22 @@ Actualmente la base cuenta con la siguiente informacion:
 ```{r}
 library(puy)
 
-politico(nombre = "Mujica")
+buscar_puy(nombre = "Mujica")
 
-politico(nombre = "Mujica Cordano")
+buscar_puy(nombre = "Mujica Cordano")
 
-politico("roballo")
+buscar_puy("roballo")
 
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Legisladores que tienen apellido iniciado por la letra 'W'
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-legis_W <- politico(nombre = "W")
+legis_W <- buscar_puy(nombre = "W")
 
 
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # legisladores que tienen la expresion lacalle en alguna parte del nombre
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-lacalle <- politico(nombre = "lacalle", contiene = TRUE)
+lacalle <- buscar_puy(nombre = "lacalle", contiene = TRUE)
 
 
 ```

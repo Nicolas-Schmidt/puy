@@ -9,22 +9,23 @@
 #'     que comienzan con el valor ingresado en \code{nombre}. Es importante tener presente que los nombres de los politicos en la base
 #'     tienen la siguiente estructura: 'APELLIDO, Nombre'. No es necesario respetar el uso de mayusculas o minusculas pero si
 #'     la secuencia del nombre tal cual esta en la base para obtener un resultado satisfactorio. Por ejemplo, si quiere buscar a Tabare Vazques
-#'     y utiliza \code{politico(nombre = "Tabare Vazquez")} no va a obtener resultados como si hiciera: \code{politico(nombre = "Vazquez")} o
-#'     \code{politico(nombre = "Vazquez, Tabare")}.
+#'     y utiliza \code{buscar_puy(nombre = "Tabare Vazquez")} no va a obtener resultados como si hiciera: \code{buscar_puy(nombre = "Vazquez")} o
+#'     \code{buscar_puy(nombre = "Vazquez, Tabare")}.
 #'
 #' @examples
-#' politico(nombre = "Mujica")
-#' politico(nombre = "Mujica Cordano")
+#' buscar_puy(nombre = "Mujica")
+#' buscar_puy(nombre = "Mujica Cordano")
 #'
-#' politico(nombre = "Larrañaga")
-#' politico(nombre = "L") # todos los politicos en los que el primer apellido comienza con la letra 'L'
+#' buscar_puy(nombre = "Larrañaga")
+#' # todos los politicos en los que el primer apellido comienza con la letra 'L'
+#' buscar_puy(nombre = "L")
 #'
-#' politico(nombre = "Lacalle")
-#' politico(nombre = "Lacalle", contiene = TRUE)
+#' buscar_puy(nombre = "Lacalle")
+#' buscar_puy(nombre = "Lacalle", contiene = TRUE)
 #'
 #' @export
 
-politico <- function(nombre = character(), contiene = FALSE){
+buscar_puy <- function(nombre = character(), contiene = FALSE){
     dat <- politicos
     dat$pol <- tolower(dat$politico)
     out <- buscar(dat = dat$pol, nombre = nombre, contiene = contiene)

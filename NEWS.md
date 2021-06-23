@@ -1,3 +1,7 @@
+# puy 0.1.0.014
+
+* se carga datos intendentes
+
 # puy 0.1.0.013
 
 * se carga datos de candidaturas y precandidaturas a ejecutivo nacional

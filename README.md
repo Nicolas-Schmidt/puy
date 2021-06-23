@@ -16,7 +16,7 @@ state and is being actively
 developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![Lifecycle:
 stable](https://img.shields.io/badge/lifecycle-stable-green.svg)](https://lifecycle.r-lib.org/articles/stages.html)
-[![](https://img.shields.io/badge/devel%20version-0.1.0.013-orange.svg)](https://github.com/Nicolas-Schmidt/puy)
+[![](https://img.shields.io/badge/devel%20version-0.1.0.014-orange.svg)](https://github.com/Nicolas-Schmidt/puy)
 [![R-CMD-check](https://github.com/Nicolas-Schmidt/puy/workflows/R-CMD-check/badge.svg)](https://github.com/Nicolas-Schmidt/puy/actions)
 <!-- badges: end -->
 
@@ -67,9 +67,10 @@ Actualmente la base cuenta con la siguiente informacion:
 | Presidentes y Vicepresidentes                                                                    | 1830 - 2020 |
 | Legisladores                                                                                     | 1830 - 2020 |
 | Ministros de Estado                                                                              | 1904 - 2020 |
-| Alcaldes y Concejales                                                                            | 2010 - 2020 |
-| Ministros Corte Electoral                                                                        | 1985 - 2020 |
+| Intendentes                                                                                      | 1925 - 2020 |
 | Candidato Presidente y Vicepresidente<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup> | 1958 - 2020 |
+| Ministros Corte Electoral                                                                        | 1985 - 2020 |
+| Alcaldes y Concejales                                                                            | 2010 - 2020 |
 
 ##### `legislaturas`
 
@@ -83,17 +84,17 @@ Actualmente la base cuenta con la siguiente informacion:
 
 #### Funciones
 
-| Función       | Descripción                                                                                                                                                                                                                                                                              |
-| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `politico()`  | Permite buscar políticos en la base `puy::politicos`.                                                                                                                                                                                                                                    |
-| `add_party()` | Permite agregar la etiqueta partidaria de cada legislador a un diario de sesión en el formato que devuelve la función [`speech_build()`](https://nicolas-schmidt.github.io/speech/reference/speech_build.html) del paquete de R [`speech()`](https://nicolas-schmidt.github.io/speech/). |
+| Función        | Descripción                                                                                                                                                                                                                                                                              |
+| -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `buscar_puy()` | Permite buscar políticos en la base `puy::politicos`.                                                                                                                                                                                                                                    |
+| `add_party()`  | Permite agregar la etiqueta partidaria de cada legislador a un diario de sesión en el formato que devuelve la función [`speech_build()`](https://nicolas-schmidt.github.io/speech/reference/speech_build.html) del paquete de R [`speech()`](https://nicolas-schmidt.github.io/speech/). |
 
 ## Ejemplos
 
 ``` r
 library(puy)
 
-politico(nombre = "Mujica")
+buscar_puy(nombre = "Mujica")
 #> 
 #>  Los politicos encontrados con ese nombre son: 
 #> 
@@ -123,7 +124,7 @@ politico(nombre = "Mujica")
 #> 15 MUJICA, Jo~ Frente A~ 2009-06-28   2009-06-28          NA Candidato P~ <NA>  
 #> # ... with 2 more variables: circunscripcion <chr>, sexo <dbl>
 
-politico(nombre = "Mujica Cordano")
+buscar_puy(nombre = "Mujica Cordano")
 #> 
 #>  El politico encontrado con ese nombre es: 
 #> 
@@ -141,27 +142,28 @@ politico(nombre = "Mujica Cordano")
 #> 7 MUJICA COR~ Frente A~ 2010-03-01   2015-03-01          NA Presidente d~ Titul~
 #> # ... with 2 more variables: circunscripcion <chr>, sexo <dbl>
 
-politico("roballo")
+buscar_puy("roballo")
 #> 
 #>  El politico encontrado con ese nombre es: 
 #> 
-#>  ROBALLO, Alba
+#>  ROBALLO DE PREVITALI, Alba
 #> 
-#> # A tibble: 6 x 9
-#>   politico   partido    fecha_inicio fecha_fin  legislatura cargo         status
-#>   <chr>      <chr>      <date>       <date>           <dbl> <chr>         <chr> 
-#> 1 ROBALLO, ~ Partido C~ NA           NA                  38 Senador       Titul~
-#> 2 ROBALLO, ~ Partido C~ NA           NA                  39 Senador       Titul~
-#> 3 ROBALLO, ~ Partido C~ NA           NA                  40 Senador       Titul~
-#> 4 ROBALLO, ~ Frente Am~ NA           NA                  41 Senador       Suple~
-#> 5 ROBALLO, ~ Frente Am~ NA           NA                  43 Senador       Suple~
-#> 6 ROBALLO, ~ Partido C~ 1968-05-03   1968-06-13          NA Ministro Edu~ Titul~
+#> # A tibble: 7 x 9
+#>   politico      partido    fecha_inicio fecha_fin  legislatura cargo      status
+#>   <chr>         <chr>      <date>       <date>           <dbl> <chr>      <chr> 
+#> 1 ROBALLO DE P~ Partido C~ NA           NA                  38 Senador    Titul~
+#> 2 ROBALLO DE P~ Partido C~ NA           NA                  39 Senador    Titul~
+#> 3 ROBALLO DE P~ Partido C~ NA           NA                  40 Senador    Titul~
+#> 4 ROBALLO DE P~ Frente Am~ NA           NA                  41 Senador    Suple~
+#> 5 ROBALLO DE P~ Frente Am~ NA           NA                  43 Senador    Suple~
+#> 6 ROBALLO DE P~ Partido C~ 1968-05-03   1968-06-13          NA Ministro ~ Titul~
+#> 7 ROBALLO DE P~ Partido C~ 1955-02-15   1959-02-14          NA Concejal ~ Titul~
 #> # ... with 2 more variables: circunscripcion <chr>, sexo <dbl>
 
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Legisladores que tienen apellido iniciado por la letra 'W'
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-legis_W <- politico(nombre = "W")
+legis_W <- buscar_puy(nombre = "W")
 #> 
 #>  Los politicos encontrados con apellidoiniciado en 'W' son: 
 #> 
@@ -175,7 +177,7 @@ legis_W <- politico(nombre = "W")
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # legisladores que tienen la expresion lacalle en alguna parte del nombre
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-lacalle <- politico(nombre = "lacalle", contiene = TRUE)
+lacalle <- buscar_puy(nombre = "lacalle", contiene = TRUE)
 #> 
 #>  Los politicos encontrados con ese nombre son: 
 #> 
@@ -294,7 +296,7 @@ politicos %>%
               Mujeres = n() - sum(sexo),
               Prop_mujeres = paste0(round(Mujeres / n() *100), "%")) %>% 
     print(n = Inf)
-#> # A tibble: 17 x 4
+#> # A tibble: 22 x 4
 #>    cargo                                       Hombres Mujeres Prop_mujeres
 #>    <chr>                                         <dbl>   <dbl> <chr>       
 #>  1 Alcalde                                         134      29 18%         
@@ -303,17 +305,22 @@ politicos %>%
 #>  4 Candidato Presidente                             74       2 3%          
 #>  5 Candidato Vicepresidente                         84      15 15%         
 #>  6 Concejal                                        595     142 19%         
-#>  7 Diputado                                       5327     145 3%          
-#>  8 Miembro del Consejo Nacional de Gobierno         35       0 0%          
-#>  9 Miembro del Triunvirato                           3       0 0%          
-#> 10 Ministro                                        524      17 3%          
-#> 11 Presidente Corte Electoral                        4       0 0%          
-#> 12 Presidente de la Republica                       51       0 0%          
-#> 13 Presidente del Consejo Nacional de Gobierno      13       0 0%          
-#> 14 Secretario Corte Electoral                        3       3 50%         
-#> 15 Senador                                        1624      53 3%          
-#> 16 Vicepresidente Corte Electoral                    4       0 0%          
-#> 17 Vicepresidente de la Republica                   16       2 11%
+#>  7 Concejal Departamental                          218       1 0%          
+#>  8 Consejero Departamental                         172       0 0%          
+#>  9 Diputado                                       5327     145 3%          
+#> 10 Intendente                                      250      14 5%          
+#> 11 Intendente Interventor                           48       0 0%          
+#> 12 Miembro del Consejo Nacional de Gobierno         35       0 0%          
+#> 13 Miembro del Triunvirato                           3       0 0%          
+#> 14 Ministro                                        524      17 3%          
+#> 15 Presidente Corte Electoral                        4       0 0%          
+#> 16 Presidente de la Republica                       51       0 0%          
+#> 17 Presidente del Concejo Departamental             58       0 0%          
+#> 18 Presidente del Consejo Nacional de Gobierno      13       0 0%          
+#> 19 Secretario Corte Electoral                        3       3 50%         
+#> 20 Senador                                        1624      53 3%          
+#> 21 Vicepresidente Corte Electoral                    4       0 0%          
+#> 22 Vicepresidente de la Republica                   16       2 11%
 ```
 
 ¿En qué legislatura las mujeres ocuparon más cargos legislativos?
