@@ -133,6 +133,7 @@ dplyr::glimpse(floor_speech)
 
 floor_speech[c(1,2,7:12)]
 
+
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## Diario de sesión NO compilado
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -194,15 +195,6 @@ ggplot(data = legis_mujeres, aes(x = periodo , y = Porcentaje, fill = Sexo)) +
 
 
 ```
-
-
-
-
-
-
-
-
-
 
 
 

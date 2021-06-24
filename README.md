@@ -244,6 +244,7 @@ floor_speech[c(1,2,7:12)]
 #> 10 TOURNE              48     0 TOURNE, Daisy Frent~ FA                  1   111
 #> 11 VIERA               48     1 VIERA, Tabare Parti~ PC                  1     8
 
+
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## Diario de sesión NO compilado
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
