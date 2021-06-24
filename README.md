@@ -165,7 +165,7 @@ buscar_puy("roballo")
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 legis_W <- buscar_puy(nombre = "W")
 #> 
-#>  Los politicos encontrados con apellidoiniciado en 'W' son: 
+#>  Los politicos encontrados con apellido iniciado en 'W' son: 
 #> 
 #>  WETTSTEIN, Carlos
 #>  WILLIMAN, Claudio

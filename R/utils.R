@@ -64,7 +64,7 @@ can <- function(x, name, contiene){
         "No se encontraron politicos con ese nombre..."
     } else {
         if(nchar(paste(name, collapse = ""))  == 1){
-            paste0("Los politicos encontrados con apellido", ifelse(contiene, " que contiene la letra '", "iniciado en '"), toupper(name) ,"' son:")
+            paste0("Los politicos encontrados con apellido", ifelse(contiene, " que contiene la letra '", " iniciado en '"), toupper(name) ,"' son:")
         } else {
             ifelse(length(x) == 1,
                    "El politico encontrado con ese nombre es:",
