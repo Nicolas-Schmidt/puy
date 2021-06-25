@@ -39,17 +39,13 @@ surname <- function(B){
 aux <- function(x){ifelse(!is.na(unique(x)[1]), unique(x)[1], ifelse(length(unique(x)) > 1, unique(x)[2], NA))}
 aux2 <- function(x){ifelse(length(unique(x)) == 1 && is.na(unique(x)), NA, which(!is.na(x))[1])}
 
-
 acron <- function(x){
     x. <- merge(x, partidos_uy[, c("Partido", "Sigla")], by.x = "party",by.y = "Partido", all.x = TRUE, sort = FALSE)
     names(x.)[which(names(x.) == "Sigla")] <- "party_acron"
     x.[,c(2:8, 10, 1, 12, 11)] %>% tibble::as_tibble()
     }
 
-
 sec_ <- c("legislator", "legislature", "chamber", "date","id", "speech", "sex", "legislator2", "party", "party_acron", "indicator", "words")
-
-
 
 out.cat <- function(out, name, contiene){
     proto <- sort(unique(out$politico))
@@ -57,7 +53,6 @@ out.cat <- function(out, name, contiene){
     cat("\n", can(x = proto, name = name, contiene = contiene), "\n")
     cat(pol, "\n\n")
 }
-
 
 can <- function(x, name, contiene){
     if(length(x) == 0){
@@ -73,10 +68,7 @@ can <- function(x, name, contiene){
     }
 }
 
-
-
 buscar <- function(dat, nombre, contiene){
-
     nombre <- tolower(nombre) %>% chartr("\u00e1\u00e9\u00ed\u00f3\u00fa","aeiou", .)
     if(!contiene){nombre <- paste0("^", nombre)}
     u <- list()
