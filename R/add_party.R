@@ -68,4 +68,3 @@ add_party <- function(speech){
     invisible(dat[order(dat$legislator),])
 
 }
-
