@@ -23,8 +23,8 @@ step <- function(x, y, step){
     y$id <- paste(y$legislator, y$legislature, y$chamber, y$sex)
     out <-
         merge(y, x[, c("id", "politico", "partido")], by = "id", all.x = TRUE, sort = FALSE)
-    u <- which(names(out) %in% c("politico", "partido"))
-    names(out)[u] <- paste(names(out)[u], step, sep = "_")
+    # u <- which(names(out) %in% c("politico", "partido"))
+    # names(out)[u] <- paste(names(out)[u], step, sep = "_")
     out
 }
 
@@ -36,14 +36,15 @@ surname <- function(B){
     j2
 }
 
-aux <- function(x){ifelse(!is.na(unique(x)[1]), unique(x)[1], ifelse(length(unique(x)) > 1, unique(x)[2], NA))}
-aux2 <- function(x){ifelse(length(unique(x)) == 1 && is.na(unique(x)), NA, which(!is.na(x))[1])}
+#aux  <- function(x){ifelse(!is.na(unique(x)[1]), unique(x)[1], ifelse(length(unique(x)) > 1, unique(x)[2], NA))}
+#aux2 <- function(x){ifelse(length(unique(x)) == 1 && is.na(unique(x)), NA, which(!is.na(x))[1])}
 
 acron <- function(x){
     x. <- merge(x, partidos_uy[, c("Partido", "Sigla")], by.x = "party",by.y = "Partido", all.x = TRUE, sort = FALSE)
     names(x.)[which(names(x.) == "Sigla")] <- "party_acron"
-    x.[,c(2:8, 10, 1, 12, 11)] %>% tibble::as_tibble()
-    }
+    tibble::as_tibble(x.)
+    #x.[,c(2:8, 10, 1, 12, 11)] %>% tibble::as_tibble()
+}
 
 sec_ <- c("legislator", "legislature", "chamber", "date","id", "speech", "sex", "legislator2", "party", "party_acron", "indicator", "words")
 
@@ -81,14 +82,6 @@ buscar <- function(dat, nombre, contiene){
     }
     politicos[unique(unlist(u)),]
 }
-
-
-
-
-
-
-
-
 
 
 

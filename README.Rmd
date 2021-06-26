@@ -120,6 +120,11 @@ lacalle <- buscar_puy(nombre = "lacalle", contiene = TRUE)
 
 ##### Ejemplo con `speech::speech_build()`
 
+
+```{r, echo = F, message=FALSE}
+library(tidyverse)
+```
+
 ```{r}
 library(speech)
 
@@ -145,10 +150,6 @@ url %>%
   print(n = Inf)
 
 
-```
-
-```{r, echo = F, message=FALSE}
-library(tidyverse)
 ```
 
 ##### Exploración de base de datos `puy::politicos`

@@ -197,18 +197,18 @@ text1 <- speech::speech_build(file = url, compiler = TRUE)
 text1
 #> # A tibble: 11 x 7
 #>    legislator legislature chamber    date       id    speech                 sex
-#>    <chr>            <dbl> <chr>      <date>     <chr> <chr>                <dbl>
-#>  1 ABDALA              48 COMISION ~ NA         35AU~ SEÑOR ABDALA. Voto ~     1
-#>  2 ASTI                48 COMISION ~ NA         35AU~ SEÑOR ASTI. Obviame~     1
-#>  3 AVIAGA              48 COMISION ~ NA         35AU~ SEÑORA AVIAGA. Pido~     0
-#>  4 BORDABERRY          48 COMISION ~ NA         35AU~ SEÑOR BORDABERRY. P~     1
-#>  5 GOÑI                48 COMISION ~ NA         35AU~ SEÑOR GOÑI. Pido la~     1
-#>  6 LAZO                48 COMISION ~ NA         35AU~ SEÑORA LAZO. Voto p~     0
-#>  7 MAHIA               48 COMISION ~ NA         35AU~ SEÑOR MAHIA. Pido l~     1
-#>  8 MERONI              48 COMISION ~ NA         35AU~ SEÑOR MERONI. Voto,~     1
-#>  9 PEREYRA             48 COMISION ~ NA         35AU~ SEÑORA PEREYRA. Con~     0
-#> 10 TOURNE              48 COMISION ~ NA         35AU~ SEÑORA TOURNE. Voy ~     0
-#> 11 VIERA               48 COMISION ~ NA         35AU~ SEÑOR VIERA. Voto p~     1
+#>    <chr>            <int> <chr>      <date>     <chr> <chr>                <dbl>
+#>  1 ABDALA              48 COMISION ~ 2019-09-17 35AU~ SEÑOR ABDALA. Voto ~     1
+#>  2 ASTI                48 COMISION ~ 2019-09-17 35AU~ SEÑOR ASTI. Obviame~     1
+#>  3 AVIAGA              48 COMISION ~ 2019-09-17 35AU~ SEÑORA AVIAGA. Pido~     0
+#>  4 BORDABERRY          48 COMISION ~ 2019-09-17 35AU~ SEÑOR BORDABERRY. P~     1
+#>  5 GOÑI                48 COMISION ~ 2019-09-17 35AU~ SEÑOR GOÑI. Pido la~     1
+#>  6 LAZO                48 COMISION ~ 2019-09-17 35AU~ SEÑORA LAZO. Voto p~     0
+#>  7 MAHIA               48 COMISION ~ 2019-09-17 35AU~ SEÑOR MAHIA. Pido l~     1
+#>  8 MERONI              48 COMISION ~ 2019-09-17 35AU~ SEÑOR MERONI. Voto,~     1
+#>  9 PEREYRA             48 COMISION ~ 2019-09-17 35AU~ SEÑORA PEREYRA. Con~     0
+#> 10 TOURNE              48 COMISION ~ 2019-09-17 35AU~ SEÑORA TOURNE. Voy ~     0
+#> 11 VIERA               48 COMISION ~ 2019-09-17 35AU~ SEÑOR VIERA. Voto p~     1
 
 floor_speech <- add_party(speech = text1)
 
@@ -216,11 +216,11 @@ dplyr::glimpse(floor_speech)
 #> Rows: 11
 #> Columns: 12
 #> $ legislator  <chr> "ABDALA", "ASTI", "AVIAGA", "BORDABERRY", "GOÑI", "LAZO", ~
-#> $ legislature <dbl> 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48
+#> $ legislature <int> 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48
 #> $ chamber     <chr> "COMISION PERMANENTE", "COMISION PERMANENTE", "COMISION PE~
-#> $ date        <date> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA
-#> $ id          <chr> "35AUVF4", "35AUVF4", "35AUVF4", "35AUVF4", "35AUVF4", "35~
-#> $ speech      <chr> "SEÑOR ABDALA. Voto por la señora legisladora Daisy Tourn~
+#> $ date        <date> 2019-09-17, 2019-09-17, 2019-09-17, 2019-09-17, 2019-09-17~
+#> $ id          <chr> "ABDALA 48 COMISION PERMANENTE 1", "ASTI 48 COMISION PERM~
+#> $ speech      <chr> "SEÑOR ABDALA. Voto por la señora legisladora Daisy Tourné~
 #> $ sex         <dbl> 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1
 #> $ legislator2 <chr> "ABDALA, Pablo", "ASTI, Alfredo", "AVIAGA, Carol", "BORDAB~
 #> $ party       <chr> "Partido Nacional", "Frente Amplio", "Partido Nacional", "~
@@ -231,7 +231,7 @@ dplyr::glimpse(floor_speech)
 floor_speech[c(1,2,7:12)]
 #> # A tibble: 11 x 8
 #>    legislator legislature   sex legislator2   party  party_acron indicator words
-#>    <chr>            <dbl> <dbl> <chr>         <chr>  <chr>           <int> <int>
+#>    <chr>            <int> <dbl> <chr>         <chr>  <chr>           <int> <int>
 #>  1 ABDALA              48     1 ABDALA, Pablo Parti~ PN                  1   400
 #>  2 ASTI                48     1 ASTI, Alfredo Frent~ FA                  1    46
 #>  3 AVIAGA              48     0 AVIAGA, Carol Parti~ PN                  1   107
@@ -256,7 +256,7 @@ url %>%
   print(n = Inf)
 #> # A tibble: 24 x 8
 #>    legislator legislature   sex legislator2   party  party_acron indicator words
-#>    <chr>            <dbl> <dbl> <chr>         <chr>  <chr>           <int> <int>
+#>    <chr>            <int> <dbl> <chr>         <chr>  <chr>           <int> <int>
 #>  1 ABDALA              48     1 ABDALA, Pablo Parti~ PN                  1   311
 #>  2 ABDALA              48     1 ABDALA, Pablo Parti~ PN                  1    10
 #>  3 ABDALA              48     1 ABDALA, Pablo Parti~ PN                  1    79
@@ -265,14 +265,14 @@ url %>%
 #>  6 AVIAGA              48     0 AVIAGA, Carol Parti~ PN                  1     9
 #>  7 AVIAGA              48     0 AVIAGA, Carol Parti~ PN                  1    93
 #>  8 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1     5
-#>  9 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1   241
-#> 10 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1   113
+#>  9 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1    10
+#> 10 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1    16
 #> 11 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1   578
-#> 12 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1    16
-#> 13 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1    10
-#> 14 GOÑI                48     1 GOÑI ROMERO,~ Parti~ PN                  2     5
-#> 15 GOÑI                48     1 GOÑI ROMERO,~ Parti~ PN                  2    89
-#> 16 GOÑI                48     1 GOÑI ROMERO,~ Parti~ PN                  2     6
+#> 12 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1   241
+#> 13 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1   113
+#> 14 GOÑI                48     1 GOÑI ROMERO,~ Parti~ PN                  2     6
+#> 15 GOÑI                48     1 GOÑI ROMERO,~ Parti~ PN                  2     5
+#> 16 GOÑI                48     1 GOÑI ROMERO,~ Parti~ PN                  2    89
 #> 17 LAZO                48     0 LAZO, Sandra  Frent~ FA                  3   103
 #> 18 MAHIA               48     1 MAHIA, Jose ~ Frent~ FA                  1     5
 #> 19 MAHIA               48     1 MAHIA, Jose ~ Frent~ FA                  1    16

@@ -34,7 +34,6 @@
 #' }
 #' @export
 
-
 add_party <- function(speech){
 
     dat <- speech
@@ -47,15 +46,22 @@ add_party <- function(speech){
     b3          <- b2
     b2$camara   <- "COMISION PERMANENTE"
     B           <- rbind(b1, b2, b3)
-    dat$secuencia <-1:NROW(dat)
     match1 <- list()
-    for(i in 1:6){match1[[i]] <- step(B, dat, i)[8:10]}
-    match1 <- lapply(match1, function(z){z[order(z$secuencia),]})
-    match1 <- lapply(match1, '[',-1)
-    voi <- base::Reduce(function(...) cbind(...), match1)
-    dat$legislator2 <- apply(voi[, seq(1,ncol(voi), 2)], 1, aux)
-    dat$party       <- apply(voi[, seq(2,ncol(voi), 2)], 1, aux)
-    dat$indicator   <- apply(voi[, seq(1,ncol(voi), 2)], 1, aux2)
+    j <- 1L
+    for(i in 1:6){
+        if(j >= 1){
+            match1[[i]] <- step(B, dat, i)
+            match1[[i]]$indicator <- ifelse(is.na(match1[[i]]$politico), NA, i)
+            dat <- match1[[i]][is.na(match1[[i]]$politico), 1:(ncol(match1[[i]])-3)]
+            j   <- nrow(dat)
+        }
+    }
+    dat <- unique(do.call("rbind", match1))
+    names(dat)[names(dat) == "partido"] <- "party"
+    names(dat)[names(dat) == "politico"] <- "legislator2"
+    dat <- dat[order(dat$legislator2), ]
+    u <- which(duplicated(dat$legislator) & is.na(dat$party))
+    if(length(u) > 0){dat <- dat[-u,]}
     dat <- acron(dat)
     dat$words <- speech::speech_word_count(dat$speech)
     dat <- dat[,sec_]
