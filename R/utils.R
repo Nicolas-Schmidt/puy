@@ -14,15 +14,15 @@ if(getRversion() >= "2.15.1"){
 
 step <- function(x, y, step){
 
-    if(step == 1){x$id <- paste(x$apellido,          x$legislatura,      x$camara, x$sexo)} # match completo
-    if(step == 2){x$id <- paste(surname(x$apellido), x$legislatura,      x$camara, x$sexo)} # un solo apellido
-    if(step == 3){x$id <- paste(x$apellido,          c(x$legislatura-1), x$camara, x$sexo)} # legislatura anterior
-    if(step == 4){x$id <- paste(x$apellido,          c(x$legislatura+1), x$camara, x$sexo)} # legislatura posterior
-    if(step == 5){x$id <- paste(surname(x$apellido), c(x$legislatura-1), x$camara, x$sexo)} # legislatura anterior y un solo apellido
-    if(step == 6){x$id <- paste(surname(x$apellido), c(x$legislatura+1), x$camara, x$sexo)} # legislatura posterior y un solo apellido
-    y$id <- paste(y$legislator, y$legislature, y$chamber, y$sex)
+    if(step == 1){x$ids <- paste(x$apellido,          x$legislatura,      x$camara, x$sexo)} # match completo
+    if(step == 2){x$ids <- paste(surname(x$apellido), x$legislatura,      x$camara, x$sexo)} # un solo apellido
+    if(step == 3){x$ids <- paste(x$apellido,          c(x$legislatura-1), x$camara, x$sexo)} # legislatura anterior
+    if(step == 4){x$ids <- paste(x$apellido,          c(x$legislatura+1), x$camara, x$sexo)} # legislatura posterior
+    if(step == 5){x$ids <- paste(surname(x$apellido), c(x$legislatura-1), x$camara, x$sexo)} # legislatura anterior y un solo apellido
+    if(step == 6){x$ids <- paste(surname(x$apellido), c(x$legislatura+1), x$camara, x$sexo)} # legislatura posterior y un solo apellido
+    y$ids <- paste(y$legislator, y$legislature, y$chamber, y$sex)
     out <-
-        merge(y, x[, c("id", "politico", "partido")], by = "id", all.x = TRUE, sort = FALSE)
+        merge(y, x[, c("ids", "politico", "partido")], by = "ids", all.x = TRUE, sort = FALSE)
     # u <- which(names(out) %in% c("politico", "partido"))
     # names(out)[u] <- paste(names(out)[u], step, sep = "_")
     out
