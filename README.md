@@ -283,7 +283,7 @@ url %>%
 #> 24 VIERA               48     1 VIERA, Tabare Parti~ PC                  1     6
 ```
 
-##### Exploración de base de datos `puy::politicos`
+### Exploración de base de datos `puy::politicos`
 
 ¿Cuántas mujeres ocuparon cargos políticos?
 

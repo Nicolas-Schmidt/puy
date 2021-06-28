@@ -152,7 +152,7 @@ url %>%
 
 ```
 
-##### Exploración de base de datos `puy::politicos`
+### Exploración de base de datos `puy::politicos`
 
 ¿Cuántas mujeres ocuparon cargos políticos?
 
