@@ -116,12 +116,12 @@ buscar_puy(nombre = "Mujica")
 #>  7 MUJICA, Go~ Frente A~ 2010-02-15   NA                  47 Diputado     Titul~
 #>  8 MUJICA COR~ Frente A~ 2020-02-15   NA                  49 Senador      Titul~
 #>  9 MUJICA, Go~ Partido ~ 2020-02-15   NA                  49 Diputado     Titul~
-#> 10 MUJICA COR~ Frente A~ 2005-03-01   2008-03-03          NA Ministro Ga~ Titul~
-#> 11 MUJICA, Jo~ Partido ~ 2015-03-01   NA                  NA Concejal     Titul~
-#> 12 MUJICA, As~ Partido ~ 2015-03-01   NA                  NA Concejal     Titul~
-#> 13 MUJICA COR~ Frente A~ 2010-03-01   2015-03-01          NA Presidente ~ Titul~
-#> 14 MUJICA, Jo~ Frente A~ 2009-10-25   2009-10-25          NA Candidato P~ <NA>  
-#> 15 MUJICA, Jo~ Frente A~ 2009-06-28   2009-06-28          NA Candidato P~ <NA>  
+#> 10 MUJICA COR~ Frente A~ 2005-03-01   2008-03-03          46 Ministro Ga~ Titul~
+#> 11 MUJICA, Jo~ Partido ~ 2015-03-01   NA                  48 Concejal     Titul~
+#> 12 MUJICA, As~ Partido ~ 2015-03-01   NA                  48 Concejal     Titul~
+#> 13 MUJICA COR~ Frente A~ 2010-03-01   2015-03-01          47 Presidente ~ Titul~
+#> 14 MUJICA, Jo~ Frente A~ 2009-10-25   2009-10-25          46 Candidato P~ <NA>  
+#> 15 MUJICA, Jo~ Frente A~ 2009-06-28   2009-06-28          46 Candidato P~ <NA>  
 #> # ... with 2 more variables: circunscripcion <chr>, sexo <dbl>
 
 buscar_puy(nombre = "Mujica Cordano")
@@ -138,8 +138,8 @@ buscar_puy(nombre = "Mujica Cordano")
 #> 3 MUJICA COR~ Frente A~ 2005-02-15   NA                  46 Senador       Titul~
 #> 4 MUJICA COR~ Frente A~ 2015-02-15   NA                  48 Senador       Titul~
 #> 5 MUJICA COR~ Frente A~ 2020-02-15   NA                  49 Senador       Titul~
-#> 6 MUJICA COR~ Frente A~ 2005-03-01   2008-03-03          NA Ministro Gan~ Titul~
-#> 7 MUJICA COR~ Frente A~ 2010-03-01   2015-03-01          NA Presidente d~ Titul~
+#> 6 MUJICA COR~ Frente A~ 2005-03-01   2008-03-03          46 Ministro Gan~ Titul~
+#> 7 MUJICA COR~ Frente A~ 2010-03-01   2015-03-01          47 Presidente d~ Titul~
 #> # ... with 2 more variables: circunscripcion <chr>, sexo <dbl>
 
 buscar_puy("roballo")
@@ -156,8 +156,8 @@ buscar_puy("roballo")
 #> 3 ROBALLO DE P~ Partido C~ NA           NA                  40 Senador    Titul~
 #> 4 ROBALLO DE P~ Frente Am~ NA           NA                  41 Senador    Suple~
 #> 5 ROBALLO DE P~ Frente Am~ NA           NA                  43 Senador    Suple~
-#> 6 ROBALLO DE P~ Partido C~ 1968-05-03   1968-06-13          NA Ministro ~ Titul~
-#> 7 ROBALLO DE P~ Partido C~ 1955-02-15   1959-02-14          NA Concejal ~ Titul~
+#> 6 ROBALLO DE P~ Partido C~ 1968-05-03   1968-06-13          40 Ministro ~ Titul~
+#> 7 ROBALLO DE P~ Partido C~ 1955-02-15   1959-02-14          37 Concejal ~ Titul~
 #> # ... with 2 more variables: circunscripcion <chr>, sexo <dbl>
 
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -226,23 +226,23 @@ dplyr::glimpse(floor_speech)
 #> $ party       <chr> "Partido Nacional", "Frente Amplio", "Partido Nacional", "~
 #> $ party_acron <chr> "PN", "FA", "PN", "PC", "PN", "FA", "FA", NA, "FA", "FA", ~
 #> $ indicator   <int> 1, 1, 1, 1, 2, 3, 1, NA, 1, 1, 1
-#> $ words       <dbl> 398, 44, 105, 961, 98, 101, 126, 10, 10, 109, 6
+#> $ words       <int> 400, 46, 107, 963, 100, 103, 128, 12, 12, 111, 8
 
 floor_speech[c(1,2,7:12)]
 #> # A tibble: 11 x 8
 #>    legislator legislature   sex legislator2   party  party_acron indicator words
-#>    <chr>            <int> <dbl> <chr>         <chr>  <chr>           <int> <dbl>
-#>  1 ABDALA              48     1 ABDALA, Pablo Parti~ PN                  1   398
-#>  2 ASTI                48     1 ASTI, Alfredo Frent~ FA                  1    44
-#>  3 AVIAGA              48     0 AVIAGA, Carol Parti~ PN                  1   105
-#>  4 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1   961
-#>  5 GOÑI                48     1 GOÑI ROMERO,~ Parti~ PN                  2    98
-#>  6 LAZO                48     0 LAZO, Sandra  Frent~ FA                  3   101
-#>  7 MAHIA               48     1 MAHIA, Jose ~ Frent~ FA                  1   126
-#>  8 MERONI              48     1 <NA>          <NA>   <NA>               NA    10
-#>  9 PEREYRA             48     0 PEREYRA, Sus~ Frent~ FA                  1    10
-#> 10 TOURNE              48     0 TOURNE, Daisy Frent~ FA                  1   109
-#> 11 VIERA               48     1 VIERA, Tabare Parti~ PC                  1     6
+#>    <chr>            <int> <dbl> <chr>         <chr>  <chr>           <int> <int>
+#>  1 ABDALA              48     1 ABDALA, Pablo Parti~ PN                  1   400
+#>  2 ASTI                48     1 ASTI, Alfredo Frent~ FA                  1    46
+#>  3 AVIAGA              48     0 AVIAGA, Carol Parti~ PN                  1   107
+#>  4 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1   963
+#>  5 GOÑI                48     1 GOÑI ROMERO,~ Parti~ PN                  2   100
+#>  6 LAZO                48     0 LAZO, Sandra  Frent~ FA                  3   103
+#>  7 MAHIA               48     1 MAHIA, Jose ~ Frent~ FA                  1   128
+#>  8 MERONI              48     1 <NA>          <NA>   <NA>               NA    12
+#>  9 PEREYRA             48     0 PEREYRA, Sus~ Frent~ FA                  1    12
+#> 10 TOURNE              48     0 TOURNE, Daisy Frent~ FA                  1   111
+#> 11 VIERA               48     1 VIERA, Tabare Parti~ PC                  1     8
 
 
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -256,31 +256,31 @@ url %>%
   print(n = Inf)
 #> # A tibble: 24 x 8
 #>    legislator legislature   sex legislator2   party  party_acron indicator words
-#>    <chr>            <int> <dbl> <chr>         <chr>  <chr>           <int> <dbl>
-#>  1 ABDALA              48     1 ABDALA, Pablo Parti~ PN                  1   309
-#>  2 ABDALA              48     1 ABDALA, Pablo Parti~ PN                  1     8
-#>  3 ABDALA              48     1 ABDALA, Pablo Parti~ PN                  1    77
-#>  4 ASTI                48     1 ASTI, Alfredo Frent~ FA                  1    44
-#>  5 AVIAGA              48     0 AVIAGA, Carol Parti~ PN                  1     3
-#>  6 AVIAGA              48     0 AVIAGA, Carol Parti~ PN                  1     7
-#>  7 AVIAGA              48     0 AVIAGA, Carol Parti~ PN                  1    91
-#>  8 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1     3
-#>  9 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1     8
-#> 10 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1    14
-#> 11 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1   576
-#> 12 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1   239
-#> 13 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1   111
-#> 14 GOÑI                48     1 GOÑI ROMERO,~ Parti~ PN                  2     4
-#> 15 GOÑI                48     1 GOÑI ROMERO,~ Parti~ PN                  2     3
-#> 16 GOÑI                48     1 GOÑI ROMERO,~ Parti~ PN                  2    87
-#> 17 LAZO                48     0 LAZO, Sandra  Frent~ FA                  3   101
-#> 18 MAHIA               48     1 MAHIA, Jose ~ Frent~ FA                  1     3
-#> 19 MAHIA               48     1 MAHIA, Jose ~ Frent~ FA                  1    14
-#> 20 MAHIA               48     1 MAHIA, Jose ~ Frent~ FA                  1   105
-#> 21 MERONI              48     1 <NA>          <NA>   <NA>               NA    10
-#> 22 PEREYRA             48     0 PEREYRA, Sus~ Frent~ FA                  1    10
-#> 23 TOURNE              48     0 TOURNE, Daisy Frent~ FA                  1   109
-#> 24 VIERA               48     1 VIERA, Tabare Parti~ PC                  1     6
+#>    <chr>            <int> <dbl> <chr>         <chr>  <chr>           <int> <int>
+#>  1 ABDALA              48     1 ABDALA, Pablo Parti~ PN                  1   311
+#>  2 ABDALA              48     1 ABDALA, Pablo Parti~ PN                  1    10
+#>  3 ABDALA              48     1 ABDALA, Pablo Parti~ PN                  1    79
+#>  4 ASTI                48     1 ASTI, Alfredo Frent~ FA                  1    46
+#>  5 AVIAGA              48     0 AVIAGA, Carol Parti~ PN                  1     5
+#>  6 AVIAGA              48     0 AVIAGA, Carol Parti~ PN                  1     9
+#>  7 AVIAGA              48     0 AVIAGA, Carol Parti~ PN                  1    93
+#>  8 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1     5
+#>  9 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1    10
+#> 10 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1    16
+#> 11 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1   578
+#> 12 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1   241
+#> 13 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1   113
+#> 14 GOÑI                48     1 GOÑI ROMERO,~ Parti~ PN                  2     6
+#> 15 GOÑI                48     1 GOÑI ROMERO,~ Parti~ PN                  2     5
+#> 16 GOÑI                48     1 GOÑI ROMERO,~ Parti~ PN                  2    89
+#> 17 LAZO                48     0 LAZO, Sandra  Frent~ FA                  3   103
+#> 18 MAHIA               48     1 MAHIA, Jose ~ Frent~ FA                  1     5
+#> 19 MAHIA               48     1 MAHIA, Jose ~ Frent~ FA                  1    16
+#> 20 MAHIA               48     1 MAHIA, Jose ~ Frent~ FA                  1   107
+#> 21 MERONI              48     1 <NA>          <NA>   <NA>               NA    12
+#> 22 PEREYRA             48     0 PEREYRA, Sus~ Frent~ FA                  1    12
+#> 23 TOURNE              48     0 TOURNE, Daisy Frent~ FA                  1   111
+#> 24 VIERA               48     1 VIERA, Tabare Parti~ PC                  1     8
 ```
 
 ### Exploración de base de datos `puy::politicos`
@@ -300,27 +300,27 @@ politicos %>%
 #> # A tibble: 22 x 4
 #>    cargo                                       Hombres Mujeres Prop_mujeres
 #>    <chr>                                         <dbl>   <dbl> <chr>       
-#>  1 Alcalde                                         134      29 18%         
-#>  2 Candidato Consejo Nacional de Gobierno          163       4 2%          
-#>  3 Candidato Precandidato Presidente                68       4 6%          
-#>  4 Candidato Presidente                             74       2 3%          
-#>  5 Candidato Vicepresidente                         84      15 15%         
-#>  6 Concejal                                        595     142 19%         
-#>  7 Concejal Departamental                          218       1 0%          
-#>  8 Consejero Departamental                         172       0 0%          
+#>  1 Alcalde                                         159      36 18%         
+#>  2 Candidato Consejo Nacional de Gobierno          172       5 3%          
+#>  3 Candidato Precandidato Presidente                94       4 4%          
+#>  4 Candidato Presidente                            107       2 2%          
+#>  5 Candidato Vicepresidente                         93      16 15%         
+#>  6 Concejal                                        636     147 19%         
+#>  7 Concejal Departamental                          233       1 0%          
+#>  8 Consejero Departamental                         219       0 0%          
 #>  9 Diputado                                       5327     145 3%          
-#> 10 Intendente                                      250      14 5%          
+#> 10 Intendente                                      300      14 4%          
 #> 11 Intendente Interventor                           48       0 0%          
-#> 12 Miembro del Consejo Nacional de Gobierno         35       0 0%          
+#> 12 Miembro del Consejo Nacional de Gobierno         37       0 0%          
 #> 13 Miembro del Triunvirato                           3       0 0%          
-#> 14 Ministro                                        524      17 3%          
-#> 15 Presidente Corte Electoral                        4       0 0%          
-#> 16 Presidente de la Republica                       51       0 0%          
-#> 17 Presidente del Concejo Departamental             58       0 0%          
+#> 14 Ministro                                        584      18 3%          
+#> 15 Presidente Corte Electoral                        5       0 0%          
+#> 16 Presidente de la Republica                       62       0 0%          
+#> 17 Presidente del Concejo Departamental             59       0 0%          
 #> 18 Presidente del Consejo Nacional de Gobierno      13       0 0%          
-#> 19 Secretario Corte Electoral                        3       3 50%         
+#> 19 Secretario Corte Electoral                        5       3 38%         
 #> 20 Senador                                        1624      53 3%          
-#> 21 Vicepresidente Corte Electoral                    4       0 0%          
+#> 21 Vicepresidente Corte Electoral                    5       0 0%          
 #> 22 Vicepresidente de la Republica                   16       2 11%
 ```
 
