@@ -194,12 +194,6 @@ library(speech)
 
 url <- "http://bit.ly/35AUVF4"
 text1 <- speech::speech_build(file = url, compiler = TRUE)
-#> PDF error: Invalid XRef entry 90
-#> PDF error: xref num 90 not found but needed, try to reconstruct<0a>
-#> PDF error: Invalid XRef entry 90
-#> PDF error: Invalid XRef entry 89
-#> PDF error: Invalid XRef entry 85
-#> PDF error: Top-level pages object is wrong type (null)
 text1
 #> # A tibble: 11 x 7
 #>    legislator legislature chamber    date       id    speech                 sex

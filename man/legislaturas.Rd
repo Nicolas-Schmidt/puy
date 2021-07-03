@@ -8,7 +8,7 @@
 data.frame con 46 filas y 4. columnas.
 }
 \usage{
-data(politicos)
+data(legislaturas)
 }
 \description{
 Contiene las legislaturas desde 1830 a 2020 y el periodo de tiempo en formato \code{Date}.
