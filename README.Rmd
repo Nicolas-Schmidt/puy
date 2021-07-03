@@ -49,7 +49,7 @@ El manual del paquete se puede encontrar [__aquí__](https://github.com/Nicolas-
 
 | Variable          | Descripción                                                                                |
 | ----------------- | ------------------------------------------------------------------------------------------ |
-| `politico`        | Partido al que pertenece el político en el cargo.                                          |
+| `politico`        | Nombre completo del politico en el formato: 'APELLIDO, Nombre'                             |
 | `partido`         | Partido al que pertenece el político en el cargo.                                          |
 | `fecha_inicio`    | Fecha de inicio en el que comienza la gestión en el cargo.                                 |
 | `fecha_inicio`    | Fecha de fin en la que finaliza la gestión en el cargo.                                    |

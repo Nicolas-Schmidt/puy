@@ -50,7 +50,7 @@ El manual del paquete se puede encontrar
 
 | Variable          | Descripción                                                                                                                                                                 |
 | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `politico`        | Partido al que pertenece el político en el cargo.                                                                                                                           |
+| `politico`        | Nombre completo del politico en el formato: ‘APELLIDO, Nombre’                                                                                                              |
 | `partido`         | Partido al que pertenece el político en el cargo.                                                                                                                           |
 | `fecha_inicio`    | Fecha de inicio en el que comienza la gestión en el cargo.                                                                                                                  |
 | `fecha_inicio`    | Fecha de fin en la que finaliza la gestión en el cargo.                                                                                                                     |
@@ -194,6 +194,12 @@ library(speech)
 
 url <- "http://bit.ly/35AUVF4"
 text1 <- speech::speech_build(file = url, compiler = TRUE)
+#> PDF error: Invalid XRef entry 90
+#> PDF error: xref num 90 not found but needed, try to reconstruct<0a>
+#> PDF error: Invalid XRef entry 90
+#> PDF error: Invalid XRef entry 89
+#> PDF error: Invalid XRef entry 85
+#> PDF error: Top-level pages object is wrong type (null)
 text1
 #> # A tibble: 11 x 7
 #>    legislator legislature chamber    date       id    speech                 sex
