@@ -2,7 +2,7 @@ Package: puy
 Type: Package
 Title: Politicos Urugayos
 Version: 0.1.0.014
-Author: Nicolas Schmidt [aut, cre], Antonio Cardarello [ctb], Fabricio Carneiro [ctb], Diego Lujan [ctb], Felipe Monestier [ctb], Alfonso Castiglia [ctb], UMAD [dtc]
+Author: Nicolas Schmidt [aut, cre], Antonio Cardarello [ctb], Alfonso Castiglia [ctb], Fabricio Carneiro [ctb], Diego Lujan [ctb], Felipe Monestier [ctb], UMAD [dtc]
 Authors@R: c(person(given = "Nicolas", 
                     family = "Schmidt", 
                     role = c("aut", "cre"), 
@@ -10,6 +10,9 @@ Authors@R: c(person(given = "Nicolas",
                     comment = c(ORCID = "0000-0001-5083-5792")),
              person(given = "Antonio",
                     family = "Cardarello",
+                    role = c("ctb")),
+             person(given = "Alfonso",
+                    family = "Castiglia",
                     role = c("ctb")),
              person(given = "Fabricio",
                     family = "Carneiro",
@@ -19,9 +22,6 @@ Authors@R: c(person(given = "Nicolas",
                     role = c("ctb")),    
              person(given = "Felipe",
                     family = "Monestier",
-                    role = c("ctb")),
-            person(given = "Alfonso",
-                    family = "Castiglia",
                     role = c("ctb")),
              person(family = "Unidad de Metodos y Acceso a Datos (UMAD)",
                     role = c("dtc"))
