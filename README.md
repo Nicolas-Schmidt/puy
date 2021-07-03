@@ -42,7 +42,13 @@ El manual del paquete se puede encontrar
 > departamento de Treinta y Tres en
 > 1919<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>.
 
-## Contenido del paquete
+### Instalación
+
+``` r
+remotes::install_github("Nicolas-Schmidt/puy")
+```
+
+### Contenido del paquete
 
 #### Conjuntos de datos
 

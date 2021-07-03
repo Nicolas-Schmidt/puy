@@ -39,7 +39,14 @@ El manual del paquete se puede encontrar [__aquí__](https://github.com/Nicolas-
 
 > En la foto del logo aparece José Batlle y Ordóñez hablando desde la plataforma del vagón de un tren durante una gira política en el departamento de Treinta y Tres en 1919<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>.
 
-## Contenido del paquete
+
+### Instalación
+
+``` r
+remotes::install_github("Nicolas-Schmidt/puy")
+```
+
+### Contenido del paquete
 
 
 #### Conjuntos de datos

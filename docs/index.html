@@ -100,10 +100,15 @@
 <p>En la foto del logo aparece José Batlle y Ordóñez hablando desde la plataforma del vagón de un tren durante una gira política en el departamento de Treinta y Tres en 1919<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>.</p>
 </blockquote>
 </div>
+<div id="instalación" class="section level3">
+<h3 class="hasAnchor">
+<a href="#instalaci%C3%B3n" class="anchor"></a>Instalación</h3>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"Nicolas-Schmidt/puy"</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="contenido-del-paquete" class="section level2">
-<h2 class="hasAnchor">
-<a href="#contenido-del-paquete" class="anchor"></a>Contenido del paquete</h2>
+<div id="contenido-del-paquete" class="section level3">
+<h3 class="hasAnchor">
+<a href="#contenido-del-paquete" class="anchor"></a>Contenido del paquete</h3>
 <div id="conjuntos-de-datos" class="section level4">
 <h4 class="hasAnchor">
 <a href="#conjuntos-de-datos" class="anchor"></a>Conjuntos de datos</h4>
@@ -257,10 +262,11 @@
 </table>
 </div>
 </div>
+</div>
 <div id="ejemplos" class="section level2">
 <h2 class="hasAnchor">
 <a href="#ejemplos" class="anchor"></a>Ejemplos</h2>
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/Nicolas-Schmidt/puy">puy</a></span><span class="op">)</span>
 
 <span class="fu"><a href="reference/buscar_puy.html">buscar_puy</a></span><span class="op">(</span>nombre <span class="op">=</span> <span class="st">"Mujica"</span><span class="op">)</span>
@@ -358,7 +364,7 @@
 <h5 class="hasAnchor">
 <a href="#ejemplo-con-speechspeech_build" class="anchor"></a>Ejemplo con <code>speech::speech_build()</code>
 </h5>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/Nicolas-Schmidt/speech">speech</a></span><span class="op">)</span>
 
 <span class="va">url</span> <span class="op">&lt;-</span> <span class="st">"http://bit.ly/35AUVF4"</span>
@@ -456,7 +462,7 @@
 <a href="#exploraci%C3%B3n-de-base-de-datos-puypoliticos" class="anchor"></a>Exploración de base de datos <code>puy::politicos</code>
 </h3>
 <p>¿Cuántas mujeres ocuparon cargos políticos?</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">politicos</span> <span class="op">%&gt;%</span> 
     <span class="fu">select</span><span class="op">(</span><span class="va">politico</span>, <span class="va">legislatura</span>, <span class="va">cargo</span>, <span class="va">sexo</span><span class="op">)</span> <span class="op">%&gt;%</span> 
     <span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span> 
@@ -492,7 +498,7 @@
 <span class="co">#&gt; 21 Vicepresidente Corte Electoral                    5       0 0%          </span>
 <span class="co">#&gt; 22 Vicepresidente de la Republica                   16       2 11%</span></code></pre></div>
 <p>¿En qué legislatura las mujeres ocuparon más cargos legislativos?</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
 
 <span class="va">legis_mujeres</span> <span class="op">&lt;-</span> 
