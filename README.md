@@ -30,7 +30,7 @@ de un político a lo largo de su carrera y los distintos cargos que fue
 ocupando. Asimismo, es de gran utilidad para tener la identificación
 partidaria de los políticos en el tiempo para poder empalmar con otros
 conjuntos de datos en donde la unidad de análisis sea el político. El
-ejemplo inmediato de esto ultimo es la base de datos que se genera a
+ejemplo inmediato de esto último es la base de datos que se genera a
 partir de los diarios de sesión del parlamento con el paquete
 [`speech()`](https://nicolas-schmidt.github.io/speech/).
 
@@ -315,7 +315,7 @@ politicos %>%
 #>  7 Concejal Departamental                          233       1 0%          
 #>  8 Consejero Departamental                         219       0 0%          
 #>  9 Diputado                                       5327     145 3%          
-#> 10 Intendente                                      300      14 4%          
+#> 10 Intendente                                      312      14 4%          
 #> 11 Intendente Interventor                           48       0 0%          
 #> 12 Miembro del Consejo Nacional de Gobierno         37       0 0%          
 #> 13 Miembro del Triunvirato                           3       0 0%          

@@ -31,7 +31,7 @@ developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.re
 
 ### Descripción
 
-Contiene un conjunto de datos original de políticos uruguayos que ocuparon diversos cargos públicos: Presidentes, Ministros, Senadores, Diputados, Alcaldes, Concejales Municipales, Ministros de Corte Electoral entre otros. Esta base de datos permite seguir la trayectoria de un político a lo largo de su carrera y los distintos cargos que fue ocupando. Asimismo, es de gran utilidad para tener la identificación partidaria de los políticos en el tiempo para poder empalmar con otros conjuntos de datos en donde la unidad de análisis sea el político. El ejemplo inmediato de esto ultimo es la base de datos que se genera a partir de los diarios de sesión del parlamento con el paquete [`speech()`](https://nicolas-schmidt.github.io/speech/).
+Contiene un conjunto de datos original de políticos uruguayos que ocuparon diversos cargos públicos: Presidentes, Ministros, Senadores, Diputados, Alcaldes, Concejales Municipales, Ministros de Corte Electoral entre otros. Esta base de datos permite seguir la trayectoria de un político a lo largo de su carrera y los distintos cargos que fue ocupando. Asimismo, es de gran utilidad para tener la identificación partidaria de los políticos en el tiempo para poder empalmar con otros conjuntos de datos en donde la unidad de análisis sea el político. El ejemplo inmediato de esto último es la base de datos que se genera a partir de los diarios de sesión del parlamento con el paquete [`speech()`](https://nicolas-schmidt.github.io/speech/).
 
 El manual del paquete se puede encontrar [__aquí__](https://github.com/Nicolas-Schmidt/puy/blob/master/man/figures/Manual_puy.pdf).
 
@@ -203,8 +203,6 @@ ggplot(data = legis_mujeres, aes(x = periodo , y = Porcentaje, fill = Sexo)) +
 
 
 ```
-
-
 
 
 
