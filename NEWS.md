@@ -1,3 +1,7 @@
+# puy 0.1.0
+
+* versión estable
+
 # puy 0.1.0.014
 
 * se carga datos intendentes
