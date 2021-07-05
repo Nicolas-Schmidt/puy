@@ -63,7 +63,7 @@ add_party <- function(speech){
     u <- which(duplicated(dat$legislator) & is.na(dat$party))
     if(length(u) > 0){dat <- dat[-u,]}
     dat <- acron(dat)
-    dat$words <- speech::speech_word_count(dat$speech)
+    dat$words <- speech::speech_word_count(dat$speech, rm.name = TRUE)
     dat <- dat[,sec_]
     invisible(dat[order(dat$legislator),])
 

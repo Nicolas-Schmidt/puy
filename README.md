@@ -232,23 +232,23 @@ dplyr::glimpse(floor_speech)
 #> $ party       <chr> "Partido Nacional", "Frente Amplio", "Partido Nacional", "~
 #> $ party_acron <chr> "PN", "FA", "PN", "PC", "PN", "FA", "FA", NA, "FA", "FA", ~
 #> $ indicator   <int> 1, 1, 1, 1, 2, 3, 1, NA, 1, 1, 1
-#> $ words       <int> 400, 46, 107, 963, 100, 103, 128, 12, 12, 111, 8
+#> $ words       <dbl> 394, 44, 107, 951, 94, 103, 122, 10, 12, 111, 6
 
 floor_speech[c(1,2,7:12)]
 #> # A tibble: 11 x 8
 #>    legislator legislature   sex legislator2   party  party_acron indicator words
-#>    <chr>            <int> <dbl> <chr>         <chr>  <chr>           <int> <int>
-#>  1 ABDALA              48     1 ABDALA, Pablo Parti~ PN                  1   400
-#>  2 ASTI                48     1 ASTI, Alfredo Frent~ FA                  1    46
+#>    <chr>            <int> <dbl> <chr>         <chr>  <chr>           <int> <dbl>
+#>  1 ABDALA              48     1 ABDALA, Pablo Parti~ PN                  1   394
+#>  2 ASTI                48     1 ASTI, Alfredo Frent~ FA                  1    44
 #>  3 AVIAGA              48     0 AVIAGA, Carol Parti~ PN                  1   107
-#>  4 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1   963
-#>  5 GOÑI                48     1 GOÑI ROMERO,~ Parti~ PN                  2   100
+#>  4 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1   951
+#>  5 GOÑI                48     1 GOÑI ROMERO,~ Parti~ PN                  2    94
 #>  6 LAZO                48     0 LAZO, Sandra  Frent~ FA                  3   103
-#>  7 MAHIA               48     1 MAHIA, Jose ~ Frent~ FA                  1   128
-#>  8 MERONI              48     1 <NA>          <NA>   <NA>               NA    12
+#>  7 MAHIA               48     1 MAHIA, Jose ~ Frent~ FA                  1   122
+#>  8 MERONI              48     1 <NA>          <NA>   <NA>               NA    10
 #>  9 PEREYRA             48     0 PEREYRA, Sus~ Frent~ FA                  1    12
 #> 10 TOURNE              48     0 TOURNE, Daisy Frent~ FA                  1   111
-#> 11 VIERA               48     1 VIERA, Tabare Parti~ PC                  1     8
+#> 11 VIERA               48     1 VIERA, Tabare Parti~ PC                  1     6
 
 
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -262,31 +262,31 @@ url %>%
   print(n = Inf)
 #> # A tibble: 24 x 8
 #>    legislator legislature   sex legislator2   party  party_acron indicator words
-#>    <chr>            <int> <dbl> <chr>         <chr>  <chr>           <int> <int>
-#>  1 ABDALA              48     1 ABDALA, Pablo Parti~ PN                  1   311
-#>  2 ABDALA              48     1 ABDALA, Pablo Parti~ PN                  1    10
-#>  3 ABDALA              48     1 ABDALA, Pablo Parti~ PN                  1    79
-#>  4 ASTI                48     1 ASTI, Alfredo Frent~ FA                  1    46
+#>    <chr>            <int> <dbl> <chr>         <chr>  <chr>           <int> <dbl>
+#>  1 ABDALA              48     1 ABDALA, Pablo Parti~ PN                  1   309
+#>  2 ABDALA              48     1 ABDALA, Pablo Parti~ PN                  1     8
+#>  3 ABDALA              48     1 ABDALA, Pablo Parti~ PN                  1    77
+#>  4 ASTI                48     1 ASTI, Alfredo Frent~ FA                  1    44
 #>  5 AVIAGA              48     0 AVIAGA, Carol Parti~ PN                  1     5
 #>  6 AVIAGA              48     0 AVIAGA, Carol Parti~ PN                  1     9
 #>  7 AVIAGA              48     0 AVIAGA, Carol Parti~ PN                  1    93
-#>  8 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1     5
-#>  9 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1    10
-#> 10 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1    16
-#> 11 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1   578
-#> 12 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1   241
-#> 13 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1   113
-#> 14 GOÑI                48     1 GOÑI ROMERO,~ Parti~ PN                  2     6
-#> 15 GOÑI                48     1 GOÑI ROMERO,~ Parti~ PN                  2     5
-#> 16 GOÑI                48     1 GOÑI ROMERO,~ Parti~ PN                  2    89
+#>  8 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1     3
+#>  9 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1     8
+#> 10 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1    14
+#> 11 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1   576
+#> 12 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1   239
+#> 13 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1   111
+#> 14 GOÑI                48     1 GOÑI ROMERO,~ Parti~ PN                  2     4
+#> 15 GOÑI                48     1 GOÑI ROMERO,~ Parti~ PN                  2     3
+#> 16 GOÑI                48     1 GOÑI ROMERO,~ Parti~ PN                  2    87
 #> 17 LAZO                48     0 LAZO, Sandra  Frent~ FA                  3   103
-#> 18 MAHIA               48     1 MAHIA, Jose ~ Frent~ FA                  1     5
-#> 19 MAHIA               48     1 MAHIA, Jose ~ Frent~ FA                  1    16
-#> 20 MAHIA               48     1 MAHIA, Jose ~ Frent~ FA                  1   107
-#> 21 MERONI              48     1 <NA>          <NA>   <NA>               NA    12
+#> 18 MAHIA               48     1 MAHIA, Jose ~ Frent~ FA                  1     3
+#> 19 MAHIA               48     1 MAHIA, Jose ~ Frent~ FA                  1    14
+#> 20 MAHIA               48     1 MAHIA, Jose ~ Frent~ FA                  1   105
+#> 21 MERONI              48     1 <NA>          <NA>   <NA>               NA    10
 #> 22 PEREYRA             48     0 PEREYRA, Sus~ Frent~ FA                  1    12
 #> 23 TOURNE              48     0 TOURNE, Daisy Frent~ FA                  1   111
-#> 24 VIERA               48     1 VIERA, Tabare Parti~ PC                  1     8
+#> 24 VIERA               48     1 VIERA, Tabare Parti~ PC                  1     6
 ```
 
 ### Exploración de base de datos `puy::politicos`
