@@ -5,7 +5,7 @@ citEntry(
   title    = "puy: politicos uruguayos 1830-2020",
   author   = "Nicolas Schmidt, Antonio Cardarello, Alfonso Castiglia, Fabricio Carneiro, Diego Lujan, Felipe Monestier, UMAD",
   year     = 2021,
-  note     = "R package version 0.1.0.014",
+  note     = "R package version 0.1.0",
   url      = "https://nicolas-schmidt.github.io/puy/",
   textVersion = paste(
 

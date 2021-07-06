@@ -358,6 +358,14 @@ ggplot(data = legis_mujeres, aes(x = periodo , y = Porcentaje, fill = Sexo)) +
 
 <img src="man/figures/README-unnamed-chunk-6-1.png" width="100%" />
 
+#### Citar
+
+Para citar el paquete `puy` en publicaciones use:
+
+Schmidt N., Cardarello A., Castiglia A., Carneiro F., Lujan D.,
+Monestier F., UMAD (2021). puy: politicos uruguayos 1830-2020. R
+package, version 0.1.0, <https://nicolas-schmidt.github.io/puy/>.
+
 #### Notas
 
 -----
