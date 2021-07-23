@@ -1,4 +1,4 @@
-#' @title Agrega etiqueta partidaria a la base de datos generada por \code{speech::speech_build()}.
+#' @title Agrega etiqueta partidaria a la base de datos generada por \code{\link[speech]{speech_build}}.
 #' @description Adapta base de datos de politicos para pegar con \code{speech} (compilacion de diarios de sesion del parlamento de formato PDF
 #'     a \code{data.frame}). Es particularmente relevante para tener la filiacion partidaria de los legisladores y de ese modo poder hacer analisis
 #'     de contenido o de posicionamiento ideologico (e.g. text scaling) con el corte partidario.
@@ -9,13 +9,13 @@
 #'             \item{\code{party}: Partido politico al que pertenece el legislador/a en ese momento (legislatura)}
 #'             \item{\code{party_acron}: Sigla de partido politico al que pertenece el legislador/a en ese momento}
 #'             \item{\code{indicator}: un indicador de calidad del merge entre el diario de sesion y la base de politicos. Puede asumir los siguientres valores:}
-#'                  \itemize{
-#'                  \item{1 - Match perfecto (nombre del legislador/a, legislatura, camara y sexo)}
-#'                  \item{2 - Match parcial (igual al anterior pero solo con el primer apellido del legislador en la base de politicos. Sucede que mucahs veces en los diarios de sesion no aparece el legislador con ambos apellidos y en la base de politicos si.}
-#'                  \item{3 - Match parcial (igual que el valor 1 pero cambiando la identificacion de legislatura para atras en una unidad)}
-#'                  \item{4 - Match parcial (igual que el valor 1 pero cambiando la identificacion de legislatura para adelante en una unidad)}
-#'                  \item{5 - Match parcial debil (un solo apellido con la legislatura anterior)}
-#'                  \item{6 - Match parcial debil (un solo apellido con la legislatura posterior)}
+#'                  \enumerate{
+#'                  \item{Match perfecto (nombre del legislador/a, legislatura, camara y sexo)}
+#'                  \item{Match parcial (igual al anterior pero solo con el primer apellido del legislador en la base de politicos. Sucede que mucahs veces en los diarios de sesion no aparece el legislador con ambos apellidos y en la base de politicos si.}
+#'                  \item{Match parcial (igual que el valor 1 pero cambiando la identificacion de legislatura para atras en una unidad)}
+#'                  \item{Match parcial (igual que el valor 1 pero cambiando la identificacion de legislatura para adelante en una unidad)}
+#'                  \item{Match parcial debil (un solo apellido con la legislatura anterior)}
+#'                  \item{Match parcial debil (un solo apellido con la legislatura posterior)}
 #'                   }
 #'            \item{\code{words}: cantidad de palabras.}
 #'            }

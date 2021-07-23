@@ -40,11 +40,11 @@ En las variables \code{fecha_inicio} y \code{fecha_fin} cuando se tiene solo el 
          Se incorporo a la base los datos de candidaturas presidenciales y de precandidaturas presidenciales (elecciones internas) a los efectos de tener informacion adicional sobre las carreras politicas, aunque la pieza clave del origen de la carrera politica radica en las candidaturas que aparecen en las hojas de votacion a los distintos cargos. Estos politicos son la unica excepcion en la base que en esas instancias no ocuparon ningun cargo sino que se postularon.
          Para ahondar en los distintos problemas para abordar el fenomeno de carreras politicas en Uruguay ver:
 
-         Chasquetti, Daniel, Buquet, Daniel (2018) "Parliamentary style. Portfolio allocation: Uruguay (1967–2015)" en Camerlo, Marcelo y Cecilia Martínez Gallardo (eds.). Government Formation and Minster Turnover in Presidential Cabinets. Comparative Analysis in the Americas. Routledge. pp. 67-89.
+         Chasquetti, Daniel, Buquet, Daniel (2018) \emph{Parliamentary style. Portfolio allocation: Uruguay (1967–2015).} en Camerlo, Marcelo y Cecilia Martínez Gallardo (eds.). Government Formation and Minster Turnover in Presidential Cabinets. Comparative Analysis in the Americas. Routledge. pp. 67-89.
 
-         Chasquetti, Daniel, Buquet, Daniel, Cardarello, Antonio (2013) "La designacion de gabinetes en Uruguay: estrategia legislativa, jerarquia de los ministerios y afiliación partidaria de los ministros", América Latina Hoy 64:15-40
+         Chasquetti, Daniel, Buquet, Daniel, Cardarello, Antonio (2013) \emph{La designacion de gabinetes en Uruguay: estrategia legislativa, jerarquia de los ministerios y afiliación partidaria de los ministros.}, América Latina Hoy 64:15-40
 
-         Chasquetti, Daniel (2008) "Parlamento y carreras legislativas en Uruguay. Un estudio sobre reglas, partidos y legisladores en las camaras", FCS-Udelar, Montevideo.
+         Chasquetti, Daniel (2008) \emph{Parlamento y carreras legislativas en Uruguay. Un estudio sobre reglas, partidos y legisladores en las camaras.}, FCS-Udelar, Montevideo.
 }
 \references{
 \insertRef{legislativo2}{puy}
