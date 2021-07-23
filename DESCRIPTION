@@ -2,12 +2,15 @@ Package: puy
 Type: Package
 Title: Politicos Urugayos
 Version: 0.1.0
-Author: Nicolas Schmidt [aut, cre], Antonio Cardarello [ctb], Alfonso Castiglia [ctb], Fabricio Carneiro [ctb], Diego Lujan [ctb], Felipe Monestier [ctb], UMAD [dtc]
+Author: Nicolas Schmidt [aut, cre], Daniel Chasquetti [ctb] Antonio Cardarello [ctb], Alfonso Castiglia [ctb], Fabricio Carneiro [ctb], Diego Lujan [ctb], Felipe Monestier [ctb], UMAD [dtc]
 Authors@R: c(person(given = "Nicolas", 
                     family = "Schmidt", 
                     role = c("aut", "cre"), 
                     email = "nschmidt@cienciassociales.edu.uy",
                     comment = c(ORCID = "0000-0001-5083-5792")),
+             person(given = "Daniel",
+                    family = "Chasquetti",
+                    role = c("ctb")), 
              person(given = "Antonio",
                     family = "Cardarello",
                     role = c("ctb")),
@@ -34,7 +37,8 @@ Description: Contiene un conjunto de datos original de politicos uruguayos que
     partidaria de los politicos en el tiempo para poder empalmar con otros conjuntos de datos en donde 
     la unidad de analisis sea el politico. El ejemplo inmediato de esto ultimo es la base de 
     datos que se genera a partir de los diarios de sesion del parlamento con el paquete 
-    speech.
+    speech (https://nicolas-schmidt.github.io/speech/). Tambien se proporcionan las funciones para buscar con facilidad 
+    politicos en la base y una funcion de busqueda de politicos a partir de diarios de sesion del Parlamento Uruguayo.
 License: GPL-2
 Encoding: UTF-8
 LazyData: true

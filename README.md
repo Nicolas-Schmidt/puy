@@ -3,8 +3,8 @@
 
 ## `puy`: políticos uruguayos <img src='man/figures/logo.png' align="right" height="180" />
 
-*Nicolás Schmidt, Antonio Cardarello, Alfonso Castiglia, Fabricio
-Carneiro, Diego Luján, Felipe Monestier,
+*Nicolás Schmidt, Daniel Chasquetti, Antonio Cardarello, Alfonso
+Castiglia, Fabricio Carneiro, Diego Luján, Felipe Monestier,
 UMAD<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>.*
 
 <!-- badges: start -->
@@ -24,16 +24,16 @@ stable](https://img.shields.io/badge/lifecycle-stable-green.svg)](https://lifecy
 ### Descripción
 
 Contiene un conjunto de datos original de políticos uruguayos que
-ocuparon diversos cargos públicos: Presidentes, Ministros, Senadores,
-Diputados, Alcaldes, Concejales Municipales, Ministros de Corte
-Electoral entre otros. Esta base de datos permite seguir la trayectoria
-de un político a lo largo de su carrera y los distintos cargos que fue
-ocupando. Asimismo, es de gran utilidad para tener la identificación
-partidaria de los políticos en el tiempo para poder empalmar con otros
-conjuntos de datos en donde la unidad de análisis sea el político. El
-ejemplo inmediato de esto último es la base de datos que se genera a
-partir de los diarios de sesión del parlamento con el paquete
-[`speech()`](https://nicolas-schmidt.github.io/speech/).
+ocuparon diversos cargos públicos: Presidentes, Ministros, Intendentes,
+Senadores, Diputados, Alcaldes, Concejales Municipales, Ministros de
+Corte Electoral entre otros. Esta base de datos permite seguir la
+trayectoria de un político a lo largo de su carrera y los distintos
+cargos que fue ocupando. Asimismo, es de gran utilidad para tener la
+identificación partidaria de los políticos en el tiempo para poder
+empalmar con otros conjuntos de datos en donde la unidad de análisis sea
+el político. El ejemplo inmediato de esto último es la base de datos que
+se genera a partir de los diarios de sesión del parlamento con el
+paquete [`speech()`](https://nicolas-schmidt.github.io/speech/).
 
 El manual del paquete se puede encontrar
 [**aquí**](https://github.com/Nicolas-Schmidt/puy/blob/master/man/figures/Manual_puy.pdf).
@@ -363,9 +363,9 @@ ggplot(data = legis_mujeres, aes(x = periodo , y = Porcentaje, fill = Sexo)) +
 
 Para citar el paquete `puy` en publicaciones use:
 
-Schmidt N., Cardarello A., Castiglia A., Carneiro F., Lujan D.,
-Monestier F., UMAD (2021). puy: politicos uruguayos 1830-2020. R
-package, version 0.1.0, <https://nicolas-schmidt.github.io/puy/>.
+Schmidt N., Chasquetti, D., Cardarello A., Castiglia A., Carneiro F.,
+Lujan D., Monestier F., UMAD (2021). puy: politicos uruguayos 1830-2020.
+R package, version 0.1.0, <https://nicolas-schmidt.github.io/puy/>.
 
 #### Notas
 
