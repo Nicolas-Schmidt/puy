@@ -37,6 +37,7 @@
 add_party <- function(speech){
 
     dat <- speech
+    politicos <- puy::politicos
     politicos   <- subset(politicos, subset = politicos$cargo %in% c("Diputado", "Senador"))
     b1          <- politicos
     b1$apellido <- stringr::str_extract(b1$politico, pattern = "[A-Z\u00D1. ]{2,}")

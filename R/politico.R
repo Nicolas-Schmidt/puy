@@ -26,7 +26,7 @@
 #' @export
 
 buscar_puy <- function(nombre = character(), contiene = FALSE){
-    dat <- politicos
+    dat <- puy::politicos
     dat$pol <- tolower(dat$politico)
     out <- buscar(dat = dat$pol, nombre = nombre, contiene = contiene)
     out.cat(out = out, name = nombre, contiene = contiene)
