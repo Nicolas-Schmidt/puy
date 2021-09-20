@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Agrega etiqueta partidaria a la base de datos generada por speech::speech_build(). — add_party • puy</title>
+<title>Agrega etiqueta partidaria a la base de datos generada por speech_build. — add_party • puy</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,7 +46,7 @@
 
 
 
-<meta property="og:title" content="Agrega etiqueta partidaria a la base de datos generada por speech::speech_build(). — add_party" />
+<meta property="og:title" content="Agrega etiqueta partidaria a la base de datos generada por speech_build. — add_party" />
 <meta property="og:description" content="Adapta base de datos de politicos para pegar con speech (compilacion de diarios de sesion del parlamento de formato PDF
     a data.frame). Es particularmente relevante para tener la filiacion partidaria de los legisladores y de ese modo poder hacer analisis
     de contenido o de posicionamiento ideologico (e.g. text scaling) con el corte partidario." />
@@ -121,7 +121,7 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Agrega etiqueta partidaria a la base de datos generada por <code>speech::speech_build()</code>.</h1>
+    <h1>Agrega etiqueta partidaria a la base de datos generada por <code><a href='https://rdrr.io/pkg/speech/man/speech_build.html'>speech_build</a></code>.</h1>
     <small class="dont-index">Source: <a href='https://github.com/Nicolas-Schmidt/puy/blob/master/R/add_party.R'><code>R/add_party.R</code></a></small>
     <div class="hidden name"><code>add_party.Rd</code></div>
     </div>
@@ -149,14 +149,14 @@
 <li><p><code>legislator2</code>: Nombre completo del legislador/a en el formato 'APELLIDO, Nombre'</p></li>
 <li><p><code>party</code>: Partido politico al que pertenece el legislador/a en ese momento (legislatura)</p></li>
 <li><p><code>party_acron</code>: Sigla de partido politico al que pertenece el legislador/a en ese momento</p></li>
-<li><p><code>indicator</code>: un indicador de calidad del merge entre el diario de sesion y la base de politicos. Puede asumir los siguientres valores:</p><ul>
-<li><p>1 - Match perfecto (nombre del legislador/a, legislatura, camara y sexo)</p></li>
-<li><p>2 - Match parcial (igual al anterior pero solo con el primer apellido del legislador en la base de politicos. Sucede que mucahs veces en los diarios de sesion no aparece el legislador con ambos apellidos y en la base de politicos si.</p></li>
-<li><p>3 - Match parcial (igual que el valor 1 pero cambiando la identificacion de legislatura para atras en una unidad)</p></li>
-<li><p>4 - Match parcial (igual que el valor 1 pero cambiando la identificacion de legislatura para adelante en una unidad)</p></li>
-<li><p>5 - Match parcial debil (un solo apellido con la legislatura anterior)</p></li>
-<li><p>6 - Match parcial debil (un solo apellido con la legislatura posterior)</p></li>
-</ul></li>
+<li><p><code>indicator</code>: un indicador de calidad del merge entre el diario de sesion y la base de politicos. Puede asumir los siguientres valores:</p><ol>
+<li><p>Match perfecto (nombre del legislador/a, legislatura, camara y sexo)</p></li>
+<li><p>Match parcial (igual al anterior pero solo con el primer apellido del legislador en la base de politicos. Sucede que mucahs veces en los diarios de sesion no aparece el legislador con ambos apellidos y en la base de politicos si.</p></li>
+<li><p>Match parcial (igual que el valor 1 pero cambiando la identificacion de legislatura para atras en una unidad)</p></li>
+<li><p>Match parcial (igual que el valor 1 pero cambiando la identificacion de legislatura para adelante en una unidad)</p></li>
+<li><p>Match parcial debil (un solo apellido con la legislatura anterior)</p></li>
+<li><p>Match parcial debil (un solo apellido con la legislatura posterior)</p></li>
+</ol></li>
 <li><p><code>words</code>: cantidad de palabras.</p></li>
 </ul>
 

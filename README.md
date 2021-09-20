@@ -56,7 +56,7 @@ remotes::install_github("Nicolas-Schmidt/puy")
 ##### `politicos`
 
 | Variable          | Descripción                                                                                                                                                                 |
-| ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `politico`        | Nombre completo del politico en el formato: ‘APELLIDO, Nombre’                                                                                                              |
 | `partido`         | Partido al que pertenece el político en el cargo.                                                                                                                           |
 | `fecha_inicio`    | Fecha de inicio en el que comienza la gestión en el cargo.                                                                                                                  |
@@ -70,7 +70,7 @@ remotes::install_github("Nicolas-Schmidt/puy")
 Actualmente la base cuenta con la siguiente informacion:
 
 | Políticos                                                                                        | Periodo     |
-| ------------------------------------------------------------------------------------------------ | ----------- |
+|--------------------------------------------------------------------------------------------------|-------------|
 | Presidentes y Vicepresidentes                                                                    | 1830 - 2020 |
 | Legisladores                                                                                     | 1830 - 2020 |
 | Ministros de Estado                                                                              | 1904 - 2020 |
@@ -82,7 +82,7 @@ Actualmente la base cuenta con la siguiente informacion:
 ##### `legislaturas`
 
 | Variable      | Descripción                                         |
-| ------------- | --------------------------------------------------- |
+|---------------|-----------------------------------------------------|
 | `legislatura` | Número de la legislatura.                           |
 | `inicio`      | Fecha de inicio de la legislatura.                  |
 | `fin`         | Fecha de cierre de la legislatura                   |
@@ -92,7 +92,7 @@ Actualmente la base cuenta con la siguiente informacion:
 #### Funciones
 
 | Función        | Descripción                                                                                                                                                                                                                                                                              |
-| -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `buscar_puy()` | Permite buscar políticos en la base `puy::politicos`.                                                                                                                                                                                                                                    |
 | `add_party()`  | Permite agregar la etiqueta partidaria de cada legislador a un diario de sesión en el formato que devuelve la función [`speech_build()`](https://nicolas-schmidt.github.io/speech/reference/speech_build.html) del paquete de R [`speech()`](https://nicolas-schmidt.github.io/speech/). |
 
@@ -203,19 +203,19 @@ url <- "http://bit.ly/35AUVF4"
 text1 <- speech::speech_build(file = url, compiler = TRUE)
 text1
 #> # A tibble: 11 x 7
-#>    legislator legislature chamber    date       id    speech                 sex
-#>    <chr>            <int> <chr>      <date>     <chr> <chr>                <dbl>
-#>  1 ABDALA              48 COMISION ~ 2019-09-17 35AU~ SEÑOR ABDALA. Voto ~     1
-#>  2 ASTI                48 COMISION ~ 2019-09-17 35AU~ SEÑOR ASTI. Obviame~     1
-#>  3 AVIAGA              48 COMISION ~ 2019-09-17 35AU~ SEÑORA AVIAGA. Pido~     0
-#>  4 BORDABERRY          48 COMISION ~ 2019-09-17 35AU~ SEÑOR BORDABERRY. P~     1
-#>  5 GOÑI                48 COMISION ~ 2019-09-17 35AU~ SEÑOR GOÑI. Pido la~     1
-#>  6 LAZO                48 COMISION ~ 2019-09-17 35AU~ SEÑORA LAZO. Voto p~     0
-#>  7 MAHIA               48 COMISION ~ 2019-09-17 35AU~ SEÑOR MAHIA. Pido l~     1
-#>  8 MERONI              48 COMISION ~ 2019-09-17 35AU~ SEÑOR MERONI. Voto,~     1
-#>  9 PEREYRA             48 COMISION ~ 2019-09-17 35AU~ SEÑORA PEREYRA. Con~     0
-#> 10 TOURNE              48 COMISION ~ 2019-09-17 35AU~ SEÑORA TOURNE. Voy ~     0
-#> 11 VIERA               48 COMISION ~ 2019-09-17 35AU~ SEÑOR VIERA. Voto p~     1
+#>    legislator legislature chamber             date       id      speech      sex
+#>    <chr>            <int> <chr>               <date>     <chr>   <chr>     <dbl>
+#>  1 ABDALA              48 COMISION PERMANENTE 2019-09-17 35AUVF4 SEÑOR AB~     1
+#>  2 ASTI                48 COMISION PERMANENTE 2019-09-17 35AUVF4 SEÑOR AS~     1
+#>  3 AVIAGA              48 COMISION PERMANENTE 2019-09-17 35AUVF4 SEÑORA A~     0
+#>  4 BORDABERRY          48 COMISION PERMANENTE 2019-09-17 35AUVF4 SEÑOR BO~     1
+#>  5 GOÑI                48 COMISION PERMANENTE 2019-09-17 35AUVF4 SEÑOR GO~     1
+#>  6 LAZO                48 COMISION PERMANENTE 2019-09-17 35AUVF4 SEÑORA L~     0
+#>  7 MAHIA               48 COMISION PERMANENTE 2019-09-17 35AUVF4 SEÑOR MA~     1
+#>  8 MERONI              48 COMISION PERMANENTE 2019-09-17 35AUVF4 SEÑOR ME~     1
+#>  9 PEREYRA             48 COMISION PERMANENTE 2019-09-17 35AUVF4 SEÑORA P~     0
+#> 10 TOURNE              48 COMISION PERMANENTE 2019-09-17 35AUVF4 SEÑORA T~     0
+#> 11 VIERA               48 COMISION PERMANENTE 2019-09-17 35AUVF4 SEÑOR VI~     1
 
 floor_speech <- add_party(speech = text1)
 
@@ -233,16 +233,16 @@ dplyr::glimpse(floor_speech)
 #> $ party       <chr> "Partido Nacional", "Frente Amplio", "Partido Nacional", "~
 #> $ party_acron <chr> "PN", "FA", "PN", "PC", "PN", "FA", "FA", NA, "FA", "FA", ~
 #> $ indicator   <int> 1, 1, 1, 1, 2, 3, 1, NA, 1, 1, 1
-#> $ words       <dbl> 394, 44, 107, 951, 94, 103, 122, 10, 12, 111, 6
+#> $ words       <dbl> 402, 52, 107, 967, 94, 103, 122, 10, 12, 111, 6
 
 floor_speech[c(1,2,7:12)]
 #> # A tibble: 11 x 8
 #>    legislator legislature   sex legislator2   party  party_acron indicator words
 #>    <chr>            <int> <dbl> <chr>         <chr>  <chr>           <int> <dbl>
-#>  1 ABDALA              48     1 ABDALA, Pablo Parti~ PN                  1   394
-#>  2 ASTI                48     1 ASTI, Alfredo Frent~ FA                  1    44
+#>  1 ABDALA              48     1 ABDALA, Pablo Parti~ PN                  1   402
+#>  2 ASTI                48     1 ASTI, Alfredo Frent~ FA                  1    52
 #>  3 AVIAGA              48     0 AVIAGA, Carol Parti~ PN                  1   107
-#>  4 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1   951
+#>  4 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1   967
 #>  5 GOÑI                48     1 GOÑI ROMERO,~ Parti~ PN                  2    94
 #>  6 LAZO                48     0 LAZO, Sandra  Frent~ FA                  3   103
 #>  7 MAHIA               48     1 MAHIA, Jose ~ Frent~ FA                  1   122
@@ -266,8 +266,8 @@ url %>%
 #>    <chr>            <int> <dbl> <chr>         <chr>  <chr>           <int> <dbl>
 #>  1 ABDALA              48     1 ABDALA, Pablo Parti~ PN                  1   309
 #>  2 ABDALA              48     1 ABDALA, Pablo Parti~ PN                  1     8
-#>  3 ABDALA              48     1 ABDALA, Pablo Parti~ PN                  1    77
-#>  4 ASTI                48     1 ASTI, Alfredo Frent~ FA                  1    44
+#>  3 ABDALA              48     1 ABDALA, Pablo Parti~ PN                  1    85
+#>  4 ASTI                48     1 ASTI, Alfredo Frent~ FA                  1    52
 #>  5 AVIAGA              48     0 AVIAGA, Carol Parti~ PN                  1     5
 #>  6 AVIAGA              48     0 AVIAGA, Carol Parti~ PN                  1     9
 #>  7 AVIAGA              48     0 AVIAGA, Carol Parti~ PN                  1    93
@@ -275,8 +275,8 @@ url %>%
 #>  9 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1     8
 #> 10 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1    14
 #> 11 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1   576
-#> 12 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1   239
-#> 13 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1   111
+#> 12 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1   247
+#> 13 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1   119
 #> 14 GOÑI                48     1 GOÑI ROMERO,~ Parti~ PN                  2     4
 #> 15 GOÑI                48     1 GOÑI ROMERO,~ Parti~ PN                  2     3
 #> 16 GOÑI                48     1 GOÑI ROMERO,~ Parti~ PN                  2    87
@@ -369,7 +369,7 @@ R package, version 0.1.0, <https://nicolas-schmidt.github.io/puy/>.
 
 #### Notas
 
------
+------------------------------------------------------------------------
 
 <sup><a id="fn.1" href="#fnr.1">1</a></sup> Unidad de Métodos y Acceso a
 Datos, Facultad de Ciencias Sociales, Universidad de la República

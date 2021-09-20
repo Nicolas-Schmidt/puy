@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Politicos Urugayos • puy</title>
+<title>Politicos Uruguayos • puy</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="apple-touch-icon.png">
@@ -17,7 +17,7 @@
 <script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script><meta property="og:title" content="Politicos Urugayos">
+<script src="pkgdown.js"></script><meta property="og:title" content="Politicos Uruguayos">
 <meta property="og:description" content="Contiene un conjunto de datos original de politicos uruguayos que 
     ocuparon diversos cargos publicos: Presidentes, Vicepresidentes, Ministros, Senadores, Diputados, Intendentes, Alcaldes, Concejales municipales, Ministros de Corte Electoral entre otros. 
     Esta base de datos permite seguir la trayectoria de un politico a lo largo de su carrera y los 
@@ -243,8 +243,8 @@
 <a href="#funciones" class="anchor"></a>Funciones</h4>
 <table class="table">
 <colgroup>
-<col width="4%">
-<col width="95%">
+<col width="5%">
+<col width="94%">
 </colgroup>
 <thead><tr class="header">
 <th>Función</th>
@@ -372,19 +372,19 @@
 <span class="va">text1</span> <span class="op">&lt;-</span> <span class="fu">speech</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/speech/man/speech_build.html">speech_build</a></span><span class="op">(</span>file <span class="op">=</span> <span class="va">url</span>, compiler <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
 <span class="va">text1</span>
 <span class="co">#&gt; # A tibble: 11 x 7</span>
-<span class="co">#&gt;    legislator legislature chamber    date       id    speech                 sex</span>
-<span class="co">#&gt;    &lt;chr&gt;            &lt;int&gt; &lt;chr&gt;      &lt;date&gt;     &lt;chr&gt; &lt;chr&gt;                &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 ABDALA              48 COMISION ~ 2019-09-17 35AU~ SEÑOR ABDALA. Voto ~     1</span>
-<span class="co">#&gt;  2 ASTI                48 COMISION ~ 2019-09-17 35AU~ SEÑOR ASTI. Obviame~     1</span>
-<span class="co">#&gt;  3 AVIAGA              48 COMISION ~ 2019-09-17 35AU~ SEÑORA AVIAGA. Pido~     0</span>
-<span class="co">#&gt;  4 BORDABERRY          48 COMISION ~ 2019-09-17 35AU~ SEÑOR BORDABERRY. P~     1</span>
-<span class="co">#&gt;  5 GOÑI                48 COMISION ~ 2019-09-17 35AU~ SEÑOR GOÑI. Pido la~     1</span>
-<span class="co">#&gt;  6 LAZO                48 COMISION ~ 2019-09-17 35AU~ SEÑORA LAZO. Voto p~     0</span>
-<span class="co">#&gt;  7 MAHIA               48 COMISION ~ 2019-09-17 35AU~ SEÑOR MAHIA. Pido l~     1</span>
-<span class="co">#&gt;  8 MERONI              48 COMISION ~ 2019-09-17 35AU~ SEÑOR MERONI. Voto,~     1</span>
-<span class="co">#&gt;  9 PEREYRA             48 COMISION ~ 2019-09-17 35AU~ SEÑORA PEREYRA. Con~     0</span>
-<span class="co">#&gt; 10 TOURNE              48 COMISION ~ 2019-09-17 35AU~ SEÑORA TOURNE. Voy ~     0</span>
-<span class="co">#&gt; 11 VIERA               48 COMISION ~ 2019-09-17 35AU~ SEÑOR VIERA. Voto p~     1</span>
+<span class="co">#&gt;    legislator legislature chamber             date       id      speech      sex</span>
+<span class="co">#&gt;    &lt;chr&gt;            &lt;int&gt; &lt;chr&gt;               &lt;date&gt;     &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt;</span>
+<span class="co">#&gt;  1 ABDALA              48 COMISION PERMANENTE 2019-09-17 35AUVF4 SEÑOR AB~     1</span>
+<span class="co">#&gt;  2 ASTI                48 COMISION PERMANENTE 2019-09-17 35AUVF4 SEÑOR AS~     1</span>
+<span class="co">#&gt;  3 AVIAGA              48 COMISION PERMANENTE 2019-09-17 35AUVF4 SEÑORA A~     0</span>
+<span class="co">#&gt;  4 BORDABERRY          48 COMISION PERMANENTE 2019-09-17 35AUVF4 SEÑOR BO~     1</span>
+<span class="co">#&gt;  5 GOÑI                48 COMISION PERMANENTE 2019-09-17 35AUVF4 SEÑOR GO~     1</span>
+<span class="co">#&gt;  6 LAZO                48 COMISION PERMANENTE 2019-09-17 35AUVF4 SEÑORA L~     0</span>
+<span class="co">#&gt;  7 MAHIA               48 COMISION PERMANENTE 2019-09-17 35AUVF4 SEÑOR MA~     1</span>
+<span class="co">#&gt;  8 MERONI              48 COMISION PERMANENTE 2019-09-17 35AUVF4 SEÑOR ME~     1</span>
+<span class="co">#&gt;  9 PEREYRA             48 COMISION PERMANENTE 2019-09-17 35AUVF4 SEÑORA P~     0</span>
+<span class="co">#&gt; 10 TOURNE              48 COMISION PERMANENTE 2019-09-17 35AUVF4 SEÑORA T~     0</span>
+<span class="co">#&gt; 11 VIERA               48 COMISION PERMANENTE 2019-09-17 35AUVF4 SEÑOR VI~     1</span>
 
 <span class="va">floor_speech</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/add_party.html">add_party</a></span><span class="op">(</span>speech <span class="op">=</span> <span class="va">text1</span><span class="op">)</span>
 
@@ -402,16 +402,16 @@
 <span class="co">#&gt; $ party       &lt;chr&gt; "Partido Nacional", "Frente Amplio", "Partido Nacional", "~</span>
 <span class="co">#&gt; $ party_acron &lt;chr&gt; "PN", "FA", "PN", "PC", "PN", "FA", "FA", NA, "FA", "FA", ~</span>
 <span class="co">#&gt; $ indicator   &lt;int&gt; 1, 1, 1, 1, 2, 3, 1, NA, 1, 1, 1</span>
-<span class="co">#&gt; $ words       &lt;dbl&gt; 394, 44, 107, 951, 94, 103, 122, 10, 12, 111, 6</span>
+<span class="co">#&gt; $ words       &lt;dbl&gt; 402, 52, 107, 967, 94, 103, 122, 10, 12, 111, 6</span>
 
 <span class="va">floor_speech</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">7</span><span class="op">:</span><span class="fl">12</span><span class="op">)</span><span class="op">]</span>
 <span class="co">#&gt; # A tibble: 11 x 8</span>
 <span class="co">#&gt;    legislator legislature   sex legislator2   party  party_acron indicator words</span>
 <span class="co">#&gt;    &lt;chr&gt;            &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;         &lt;chr&gt;  &lt;chr&gt;           &lt;int&gt; &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 ABDALA              48     1 ABDALA, Pablo Parti~ PN                  1   394</span>
-<span class="co">#&gt;  2 ASTI                48     1 ASTI, Alfredo Frent~ FA                  1    44</span>
+<span class="co">#&gt;  1 ABDALA              48     1 ABDALA, Pablo Parti~ PN                  1   402</span>
+<span class="co">#&gt;  2 ASTI                48     1 ASTI, Alfredo Frent~ FA                  1    52</span>
 <span class="co">#&gt;  3 AVIAGA              48     0 AVIAGA, Carol Parti~ PN                  1   107</span>
-<span class="co">#&gt;  4 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1   951</span>
+<span class="co">#&gt;  4 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1   967</span>
 <span class="co">#&gt;  5 GOÑI                48     1 GOÑI ROMERO,~ Parti~ PN                  2    94</span>
 <span class="co">#&gt;  6 LAZO                48     0 LAZO, Sandra  Frent~ FA                  3   103</span>
 <span class="co">#&gt;  7 MAHIA               48     1 MAHIA, Jose ~ Frent~ FA                  1   122</span>
@@ -435,8 +435,8 @@
 <span class="co">#&gt;    &lt;chr&gt;            &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;         &lt;chr&gt;  &lt;chr&gt;           &lt;int&gt; &lt;dbl&gt;</span>
 <span class="co">#&gt;  1 ABDALA              48     1 ABDALA, Pablo Parti~ PN                  1   309</span>
 <span class="co">#&gt;  2 ABDALA              48     1 ABDALA, Pablo Parti~ PN                  1     8</span>
-<span class="co">#&gt;  3 ABDALA              48     1 ABDALA, Pablo Parti~ PN                  1    77</span>
-<span class="co">#&gt;  4 ASTI                48     1 ASTI, Alfredo Frent~ FA                  1    44</span>
+<span class="co">#&gt;  3 ABDALA              48     1 ABDALA, Pablo Parti~ PN                  1    85</span>
+<span class="co">#&gt;  4 ASTI                48     1 ASTI, Alfredo Frent~ FA                  1    52</span>
 <span class="co">#&gt;  5 AVIAGA              48     0 AVIAGA, Carol Parti~ PN                  1     5</span>
 <span class="co">#&gt;  6 AVIAGA              48     0 AVIAGA, Carol Parti~ PN                  1     9</span>
 <span class="co">#&gt;  7 AVIAGA              48     0 AVIAGA, Carol Parti~ PN                  1    93</span>
@@ -444,8 +444,8 @@
 <span class="co">#&gt;  9 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1     8</span>
 <span class="co">#&gt; 10 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1    14</span>
 <span class="co">#&gt; 11 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1   576</span>
-<span class="co">#&gt; 12 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1   239</span>
-<span class="co">#&gt; 13 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1   111</span>
+<span class="co">#&gt; 12 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1   247</span>
+<span class="co">#&gt; 13 BORDABERRY          48     1 BORDABERRY, ~ Parti~ PC                  1   119</span>
 <span class="co">#&gt; 14 GOÑI                48     1 GOÑI ROMERO,~ Parti~ PN                  2     4</span>
 <span class="co">#&gt; 15 GOÑI                48     1 GOÑI ROMERO,~ Parti~ PN                  2     3</span>
 <span class="co">#&gt; 16 GOÑI                48     1 GOÑI ROMERO,~ Parti~ PN                  2    87</span>

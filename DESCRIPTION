@@ -1,6 +1,6 @@
 Package: puy
 Type: Package
-Title: Politicos Urugayos
+Title: Politicos Uruguayos
 Version: 0.1.0
 Author: Nicolas Schmidt [aut, cre], Daniel Chasquetti [ctb] Antonio Cardarello [ctb], Alfonso Castiglia [ctb], Fabricio Carneiro [ctb], Diego Lujan [ctb], Felipe Monestier [ctb], UMAD [dtc]
 Authors@R: c(person(given = "Nicolas", 
